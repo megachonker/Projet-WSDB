@@ -7,3 +7,15 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 - Le joueur peut choisir de  :  coopérer/Trahire
 
 https://fr.wikipedia.org/wiki/Théorie_des_jeux
+
+## La maquette  temporaire:
+
+### partie zoning
+
+![zoning](https://github.com/thirax/Projet-WSDB/blob/master/Maquette/Maquette.png)
+
+
+### partie wireframe
+
+![plant](https://raw.githubusercontent.com/thirax/Projet-WSDB/master/Maquette/Maquette-2.png)
+
