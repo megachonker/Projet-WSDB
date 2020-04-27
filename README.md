@@ -8,9 +8,9 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 - coopérer
 - Trahire
 
-__il devra  trouver la  meilleur stratégie  gagnante !__
+__il devra  trouver la  meilleur [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
 
-https://fr.wikipedia.org/wiki/Théorie_des_jeux
+
 
 ## La maquette  temporaire:
 
