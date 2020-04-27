@@ -2,13 +2,13 @@
 
 L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des  modèles d’intelligence artificielle (Théorie des Jeux).  Pour cela, une activité sur internet est proposée, modélisant les différentes stratégies possibles.  Cette application sera créée dans le but d'être utilisée par les classes niveau collège.
 
-## Fonctionnement basé sur la théorie des jeux
+## Fonctionnement basé sur la théorie des jeux.
 
-### Le joueur peut choisir de  :
+### Le joueur peut choisir de :
 - coopérer
 - Trahire
 
-__il devra  trouver la  meilleur [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
+__et il devra trouver la  meilleure [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
 
 
 
