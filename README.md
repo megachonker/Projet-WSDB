@@ -10,12 +10,4 @@ https://fr.wikipedia.org/wiki/Théorie_des_jeux
 
 ## La maquette  temporaire:
 
-### partie zoning
-
-![zoning](https://github.com/thirax/Projet-WSDB/blob/master/Maquette/Maquette.png)
-
-
-### partie wireframe
-
-![plant](https://raw.githubusercontent.com/thirax/Projet-WSDB/master/Maquette/Maquette-2.png)
-
+### __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki/Maquette)__
