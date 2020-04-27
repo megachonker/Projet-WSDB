@@ -6,4 +6,4 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 
 - Le joueur peut choisir de  :  coopérer/Trahire
 
-https://fr.wikipedia.org/wiki/Th%C3%A9orie_des_jeux
+https://fr.wikipedia.org/wiki/Théorie_des_jeux
