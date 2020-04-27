@@ -14,4 +14,4 @@ __il devra  trouver la  meilleur [stratégie](https://fr.wikipedia.org/wiki/Thé
 
 ## La maquette  temporaire:
 
-### __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki/Maquette)__
+### __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki)__
