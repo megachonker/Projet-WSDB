@@ -8,10 +8,10 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 - coopérer
 - Trahire
 
-__parmis ces deux choix il devra trouver la  meilleure [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
+__Parmis ces deux choix il devra trouver la  meilleure [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
 
 
 
 ## La maquette  temporaire:
 
-### __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki)__
+__[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki)__
