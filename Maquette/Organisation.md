@@ -1,8 +1,5 @@
 # Maquette - Organisation : Projet 2
-
-
-## Groupe: 3 participants : William WIPF-SCHEIBEL, Louis DUVAL, Nicolas BILLAND
-
+###### _Groupe: William WIPF-SCHEIBEL, Louis DUVAL, Nicolas BILLAND_
 
 ## Pages :
 
