@@ -7,5 +7,3 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 - Le joueur peut choisir de  :  coopérer/Trahire
 
 https://fr.wikipedia.org/wiki/Théorie_des_jeux
-
-# osef TEST
