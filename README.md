@@ -8,4 +8,4 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 
 https://fr.wikipedia.org/wiki/Théorie_des_jeux
 
-#osef TEST
+# osef TEST
