@@ -7,7 +7,7 @@
 * 1.1. Présentation
 
 ### 2. Identification
-* 2.1. Se connecter (pa défaut nous sommes connecté en **anonymes**) 
+* 2.1. Se connecter (pa défaut nous sommes connecté en **anonyme**) 
 	
 ### 3. Jeux
 * 3.1. Gestion de la liste des salles de jeux
