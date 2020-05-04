@@ -1,0 +1,63 @@
+Questionnaire  reponse
+
+
+-App est composer de //aplication ressource
+	controllers:
+		contien homeControler, qui contient les methode appeler par le routage pour genere des page.
+	views:
+		contient les page au format scala.html qui compose le  squelete du cite web
+-Conf est composer  de: //configuration
+	routes:
+		va associer les URI a une action a faire decrite dans app/constrollers
+	application.conf
+		utilise  le  format HOCON permet de specifier les option serveur (adresse port) et autre plus d'info sur https://www.playframework.com/documentation/2.8.x/ConfigFile
+	logback.xml:
+		fichier xml qui permet de metre en forme les Log, qui server a avoire un feedback pour le programeur
+-lib  //lib
+	librairie a  utiliser importer 
+-public // public  ressource
+	composer  de image, js,  css sont les resource utiliser par le serveur  web
+-test dossier avec  des fonction a  tester
+
+question 6 : dans le  dossier target\classe plus precisement .\TD1\target\scala-2.13\classes
+
+
+
+
+pour la  question  1 a 5
+si  ce que je dit n'es pas bien:
+
+├── app                      → Application sources
+│   ├── assets               → Compiled Asset sources
+│   │   ├── javascripts      → Typically Coffee Script sources
+│   │   └── stylesheets      → Typically LESS CSS sources
+│   ├── controllers          → Application controllers
+│   ├── models               → Application business layer
+│   └── views                → Templates
+├── build.sbt                → Application build script
+├── conf                     → Configurations files and other non-compiled resources (on classpath)
+│   ├── application.conf     → Main configuration file
+│   └── routes               → Routes definition
+├── dist                     → Arbitrary files to be included in your projects distribution
+├── lib                      → Unmanaged libraries dependencies
+├── logs                     → Logs folder
+│   └── application.log      → Default log file
+├── project                  → sbt configuration files
+│   ├── build.properties     → Marker for sbt project
+│   └── plugins.sbt          → sbt plugins including the declaration for Play itself
+├── public                   → Public assets
+│   ├── images               → Image files
+│   ├── javascripts          → Javascript files
+│   └── stylesheets          → CSS files
+├── target                   → Generated files
+│   ├── resolution-cache     → Information about dependencies
+│   ├── scala-2.11            
+│   │   ├── api              → Generated API docs
+│   │   ├── classes          → Compiled class files
+│   │   ├── routes           → Sources generated from routes
+│   │   └── twirl            → Sources generated from templates
+│   ├── universal            → Application packaging
+│   └── web                  → Compiled web assets
+└── test                     → source folder for unit or functional tests
+
+source: https://www.baeldung.com/java-intro-to-the-play-framework
