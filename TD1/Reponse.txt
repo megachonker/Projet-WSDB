@@ -32,8 +32,6 @@ Question 9:  l'aspect statique veux dire que index contien uniquement le contenu
 
 Question  10: la méthode render fait appel au template main.scala.html dans lequelle il va injecter le contenu de index.scala.html
 
-Question 11: ligne 18 remplacer par 'return ok(render("Je suis un controleur."));'
-
 pour la  question  1 a 5
 si  ce que je dit n'es pas bien:
 
