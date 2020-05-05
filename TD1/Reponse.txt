@@ -1,11 +1,11 @@
-Questionnaire  reponse
-
-
+Question 1:
 -App est composer de //aplication ressource
 	controllers:
 		contien homeControler, qui contient les methode appeler par le routage pour genere des page.
 	views:
 		contient les page au format scala.html qui compose le  squelete du cite web
+Question 2:
+
 -Conf est composer  de: //configuration
 	routes:
 		va associer les URI a une action a faire decrite dans app/constrollers
@@ -13,16 +13,26 @@ Questionnaire  reponse
 		utilise  le  format HOCON permet de specifier les option serveur (adresse port) et autre plus d'info sur https://www.playframework.com/documentation/2.8.x/ConfigFile
 	logback.xml:
 		fichier xml qui permet de metre en forme les Log, qui server a avoire un feedback pour le programeur
+Qestion 3:
 -lib  //lib
 	librairie a  utiliser importer 
+Question 4:
 -public // public  ressource
 	composer  de image, js,  css sont les resource utiliser par le serveur  web
+Question 5:
 -test dossier avec  des fonction a  tester
 
 question 6 : dans le  dossier target\classe plus precisement .\TD1\target\scala-2.13\classes
 
+question 7: pour  des exemple  de  caractere non  reconu sonttabulation entrer et { @
 
+Question 8: la  route emprunter sera "controllers.HomeController.index"
 
+Question 9:  l'aspect statique veux dire que index contien uniquement le contenus est que donc le contenus étant de la donnée il ne va  pas changer
+
+Question  10: la méthode render fait appel au template main.scala.html dans lequelle il va injecter le contenu de index.scala.html
+
+Question 11: ligne 18 remplacer par 'return ok(render("Je suis un controleur."));'
 
 pour la  question  1 a 5
 si  ce que je dit n'es pas bien:

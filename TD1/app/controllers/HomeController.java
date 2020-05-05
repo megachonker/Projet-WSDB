@@ -15,7 +15,15 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(views.html.index.render());
+		return ok(views.html.index.render("Je suis le controleur."));
+    }
+    public Result faireHelp() {
+		return ok(views.html.help.render());
+    }
+	
+    public Result rien(String champ) {
+		return ok(views.html.notfound.render("404",champ));
     }
 
 }
+
