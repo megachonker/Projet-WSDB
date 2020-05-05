@@ -24,7 +24,7 @@ Question 5:
 
 question 6 : dans le  dossier target\classe plus precisement .\TD1\target\scala-2.13\classes
 
-question 7: pour  des exemple  de  caractere non  reconu sonttabulation entrer et { @
+question 7: pour  des exemple  de  caractere non  reconu sont : tabulation entrer { @
 
 Question 8: la  route emprunter sera "controllers.HomeController.index"
 
