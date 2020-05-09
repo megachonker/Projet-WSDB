@@ -18,8 +18,11 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
     
-        public Result test() {
-        return ok(views.html.test.render());
+    public Result test(String fname) {
+        return ok(views.html.test.render(fname));
     }
 
+    public Result login() {
+        return ok(views.html.login.render());
+    }
 }
