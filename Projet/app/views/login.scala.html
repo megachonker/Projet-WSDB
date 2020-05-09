@@ -1,8 +1,7 @@
 @()
-<html>
-
-@helper.form(action=routes.HomeController.test("")){
+@main("Login") {
+<form action="/test?fname=" method="GET" >
     <input name="fname"/>
-    <input type="submit"  value="MARCHE-PUTAIN"/>
-    }
-</html>
+    <input type="submit"  value="MARCHE-PUTAIN"/>   
+</form>
+}
