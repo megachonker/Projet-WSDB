@@ -506,6 +506,13 @@ width:auto;
 border-top:0;
 box-shadow:none;
 }
+
+.navbar-collapse.collapse {
+display:block!important;
+height:auto!important;
+padding-bottom:0;
+overflow:visible!important;
+}
 }
 
 .container > .navbar-header,.container-fluid > .navbar-header,.container > .navbar-collapse,.container-fluid > .navbar-collapse {
