@@ -1,0 +1,277 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @* Here's where we render the page title `String`. *@
+        <title>@title</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.ico")">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        
+        <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+        
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery.js")"></script>
+        
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-ui.min.js")"></script>
+        
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+       
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/totop.js")"></script>
+        
+        
+    </head>
+    
+    
+    <body>
+        
+        <!-- Flèche de remonte rapide -->
+        
+        <div class="totopshow">
+            <a href="#" class="back-to-top"><img alt="Back to Top" src="@routes.Assets.versioned("../images/gototop0.png")"/></a>
+        </div>
+        
+        <!-- Fin de flèche de remonte rapide -->
+        
+        <!-- BARRE DE NAVIGATION -->
+        
+        <nav id="wsdb_menu" class="navbar-default navbar">
+            <div id="wsdb_menu_inner_in">
+                <div id="navigationmenu">
+                    <div class="wsdb_menu_logo">
+                        <a href="index" target="_self">
+                            <img src="@routes.Assets.versioned("../images/menulogo.png")" alt="menuimage" />
+                        </a>
+                    </div>
+                    <div class="navbar-header">
+        <!-- Menu hamburger-->
+                        <button id="nav-expander" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                            <span class="wsdb_menu_toggle_button">
+                                <span class="sr-only">
+                                </span>
+                                <span class="icon-bar">
+                                </span>
+                                <span class="icon-bar">
+                                </span>
+                                <span class="icon-bar">
+                                </span>
+                            </span>
+                        </button>
+                        <!-- Fin menu hamburger-->
+                    </div>
+    
+                    <div class="menu-center collapse navbar-collapse">
+                        <ul class="wsdb_menu_items nav navbar-nav navbar-right">
+                            <li class="wsdb_menu_items_parent dropdown"><a href="index" class="wsdb_menu_items_parent_link"><span class="menuchildicon"></span>Home</a>
+                                <hr class ="horiz_separator"/>
+                            </li>
+                            <li class="wsdb_menu_items_parent dropdown"><a href="test" class="wsdb_menu_items_parent_link"><span class="menuchildicon"></span>Test</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- FIN BARRE DE NAVIGATION -->
+        
+        <!-- CONTENU et SIDEBAR -->
+        <div id="wsdb_page" class="container">
+            <div id="wsdb_content_and_sidebar_container">
+    
+           <!-- SIDEBAR -->
+                <aside id="wsdb_sidebar_left">
+                    <div id="wsdb_sidebar_left_margin">
+                        <div class="wsdb_sidebar_left_padding">
+                            
+                            
+                            
+                            <div class="wsdb_block">
+                                <div class=" wsdb_block_header">
+                                    <h2 class="wsdb_block_heading">
+                                        Partie en cours
+                                    </h2>
+                                </div>
+                                <div class="wsdb_block_content">
+                                    <div class="html_content"><p style="margin:0em 0em 0.36em 0em;text-align:Center;"> Coucou </p></div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="wsdb_block">
+                                <div class=" wsdb_block_header">
+                                    <h2 class="wsdb_block_heading">
+                                        Nombres d'amis connectés
+                                    </h2>
+                                </div>
+                                <div class="wsdb_block_content">
+                                    <div class="html_content"><p style="margin:0em 0em 0.36em 0em;text-align:Center;"> Coucou </p></div>
+                                </div>
+                                
+                                
+                                
+                            </div>
+                            
+                            
+                            <div class="wsdb_block">
+                                <div class=" wsdb_block_header">
+                                    <h2 class="wsdb_block_heading">
+                                        Nombre de joueurs connectés
+                                    </h2>
+                                </div>
+                                <div class="wsdb_block_content">
+                                    <div class="html_content"><p style="margin:0em 0em 0.36em 0em;text-align:Center;"> Coucou </p></div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="wsdb_block">
+                                <div class=" wsdb_block_header">
+                                    <h2 class="wsdb_block_heading">
+                                        Nombres de joueurs en jeu
+                                    </h2>
+                                </div>
+                                <div class="wsdb_block_content">
+                                    <div class="html_content"><p style="margin:0em 0em 0.36em 0em;text-align:Center;"> Coucou </p></div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="wsdb_block">
+                                <div class=" wsdb_block_header">
+                                    <h2 class="wsdb_block_heading">
+                                        Nombres de matchs effectués
+                                    </h2>
+                                </div>
+                                <div class="wsdb_block_content">
+                                    <div class="html_content"><p style="margin:0em 0em 0.36em 0em;text-align:Center;"> Coucou </p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- FIN SIDEBAR -->
+    
+    
+                <!-- Début CONTENU -->
+                <div id="wsdb_content">
+            @* And here's where we render the `Html` object containing
+            * the page content. *@
+            @content
+                </div>
+        <!-- FIN CONTENU -->
+            </div>
+        </div>
+        <!-- Fin CONTENU et SIDEBAR -->
+        
+        <!-- Pied de Page -->
+        <footer id="wsdb_footer">
+            <div class="wsdb_footer-widget-cell_inner_widget_container row">
+                <div class="wsdb_footer-widget-cell_inner0 container">
+                    
+                    <!-- Colonne de séparation -->
+                    <div class="post_column col-lg-1 col-md-3 col-sm-3 col-xs-1">
+                        <div class="footercellcolumn1"><br>
+                        </div>
+                    </div>
+                    
+                            <!-- Logo dans le footer-->
+                    <div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-10">
+                        <div class="footercellcolumn2">
+                            <div class="html_content"><p style="margin:0em 0em 0em 0em;line-height:1.71428571428571;"><span class="wsdb_image" style="float:Left;overflow:hidden;margin:2.86em 0em 1.43em 0em;">
+                                <span>
+                                    <img class="wsdb_uniform" style="max-height:160px;max-width:831px;" src="../images/L11.png" alt="Logo du site" />
+                                </span>
+                                </span>
+                                </p>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <!-- Colonne de séparation -->
+                    <div class="post_column col-lg-1 col-md-3 col-sm-3 col-xs-1">
+                        <div class="footercellcolumn3"><br>
+                        </div>
+                    </div>
+                    
+                            <!-- Zone de texte 1 du footer -->
+                    <div class="post_column col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                        <div class="footercellcolumn4">
+                            <div class="html_content">
+                                <article class="parafooter">
+                                    <p class="footertitre">
+                                        Contenu
+                                    </p>
+                                    
+                                    <span class="footertexteblanc">
+                                        Prout
+                                    </span>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Colonne de séparation -->
+                    <div class="post_column col-lg-1 col-md-2 col-sm-2 col-xs-1">
+                        <div class="footercellcolumn5"><br>
+                        </div>
+                    </div>
+                    
+                    <!-- Zone de texte 2 du footer -->
+                    <div class="post_column col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                        <div class="footercellcolumn6">
+                            <div class="html_content">
+                                <article class="parafooter">
+                                    <p class="footertitre">Contact</p>
+                                    
+                                <p class="footertexteblanc">
+                                    34 rue du Grillenbreit
+                                </p>
+                                    
+                               <p class="footertexteblanc"> 68000 - COLMAR
+                                    </p>
+                                    
+                                    <p class="footercoordonnees">+33 3 89 20 23 58</p>
+                                    
+                                    <p class="footercoordonnees">contact(at)wsdb.com</p>
+                                    
+                    
+                                <p>
+                                    <a href="http://facebook.com/TemplateToaster" class="tt_link" target="_self">
+                                        <span class="footerreseauxs">Facebook</span>
+                                    </a>
+                                    
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <!-- Zone de texte tout en bas du footer -->
+            <div class="wsdb_footer_bottom_footer">
+                <div class="wsdb_footer_bottom_footer_inner">
+                    <div id="wsdb_footer_designed_by_links">
+                        <a href="http://templatetoaster.com" target="_blank" >
+                            Website
+                        </a>
+                        <span id="wsdb_footer_designed_by">
+                            Designed With TemplateToaster
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>
