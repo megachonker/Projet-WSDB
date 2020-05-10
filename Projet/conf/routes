@@ -5,8 +5,10 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
-GET     /test                       controllers.HomeController.test(fname  :  String ?="rien")
-GET     /login                     controllers.HomeController.login
+GET     /test                       controllers.HomeController.test(x$1: play.mvc.Http.Request)
+#(fname  :  String ?="rien")
+#GET     /login                     controllers.HomeController.login
+GET     /loginbis                     controllers.HomeController.loginBIS
 
 
 # Map static resources from the /public folder to the /assets URL path
@@ -17,4 +19,4 @@ GET     /javascripts/*file          controllers.Assets.at(path="/public/javascri
 
 #POST voir ==> https://www.playframework.com/documentation/2.8.x/JavaCsrf
 
-#POST     /test                       controllers.HomeController.test(fname : String)
+#POST     /login                       controllers.HomeController.identification()

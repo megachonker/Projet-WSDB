@@ -1,7 +1,11 @@
-@()
+@(userForm: Form[User])
 @main("Login") {
-<form action="/test?fname=" method="GET" >
-    <input name="fname"/>
-    <input type="submit"  value="MARCHE-PUTAIN"/>   
-</form>
+<h2>Login</h2>
+@helper.form(action = routes.HomeController.test()){
+    <h3>pseudo</h3>
+    <input name="pseudo"/>
+    <h3>password</h3>
+    <input name="password"/>
+    <input type="submit"  value="MARCHE-PUTAIN"/> 
+}
 }
