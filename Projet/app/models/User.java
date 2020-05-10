@@ -11,9 +11,8 @@ public class User {
     //verifier si pas  existant dans la  bd  ?
     
 	private String pseudo;
-
     @Required
-    @Pattern(value = "^((?=.*[A-Z]+)(?=.*[0-9]+).*){7,32}$",    message = "kikko detected")//MDP quiu  contien au moin un  chifre est une  majuscule   est qui va  entre  8 et 32 caractere 
+    @Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "kikko detected")//MDP quiu  contien au moin un  chifre est une  majuscule   est qui va  entre  8 et 32 caractere 
     
     private String password; 
     
