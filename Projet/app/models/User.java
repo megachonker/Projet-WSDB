@@ -1,23 +1,23 @@
 package models;
-
+//import play.api.data.*;  //  usless
 import play.libs.Files.TemporaryFile;
 import play.mvc.Http.MultipartFormData.FilePart;
 import play.data.validation.Constraints.* ;
+
 public class User {
     
     @Required
-    @Pattern(value = "^.{8,32}",    message = "sale bz on  est plus en 2010")
+    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
+    //verifier si pas  existant dans la  bd  ?
     
-	public String pseudo;
+	private String pseudo;
 
     @Required
-    @Pattern(value = "^.{3,20}",    message = "kikko detected")
+    @Pattern(value = "^((?=.*[A-Z]+)(?=.*[0-9]+).*){7,32}$",    message = "kikko detected")//MDP quiu  contien au moin un  chifre est une  majuscule   est qui va  entre  8 et 32 caractere 
     
-    public String password; 
+    private String password; 
     
-    //getter   est seter  pour la  sécu
     
-    /*
       public void setPassword(String password) {
         this.password = password;
       }
@@ -32,5 +32,5 @@ public class User {
       public String getPseudo() {
         return pseudo;
     }
-    */
+    
   }
