@@ -5,7 +5,7 @@
 # Route référant au différante page:
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
-GET     /profile                    controllers.HomeController.profile(formulaire : play.mvc.Http.Request)
+GET     /profile                    controllers.HomeController.profile(formulaire : Request )
 GET     /login                    	controllers.HomeController.login()
 
 
