@@ -22,9 +22,14 @@ public class HomeController extends Controller {
     public Result profile(Http.Request request) {
         DynamicForm requestData = formFactory.form().bindFromRequest(request); // dans le  cour  le request n'existe pas  ...
         
-        String pseudo = requestData.get("pseudo");  //TELMENT  MOCHE mais renvoiller un  object ne  marche pas ...
-        String password = requestData.get("password");
-        return ok(views.html.profile.render(pseudo,password));
+        if (requestData.hasErrors()) {
+            return badRequest(views.html.login.render(formFactory.form(User.class))) ;//  utilisant  un dynamic  form  je ne peut pas revoiller  l'objet donc   l'erreur
+        }
+        else{
+            String pseudo = requestData.get("pseudo");  //TELMENT  MOCHE mais renvoiller un  object ne  marche pas ...
+            String password = requestData.get("password");
+            return ok(views.html.profile.render(pseudo,password));   
+        }
     }
 
     public Result login() {

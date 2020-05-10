@@ -1,11 +1,13 @@
 @(userForm: Form[User])
 @main("Login") {
 <h2>Login</h2>
-@helper.form(action = routes.HomeController.profile()){ //comment on  demande  a  avoir  du  POST car ces moche
+@helper.form(action = routes.HomeController.profile()){    
     <h3>pseudo</h3>
-    <input name="pseudo"/>
+    <input name="pseudo"/> 
     <h3>password</h3>
     <input name="password"/>
     <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/> 
 }
 }
+//comment on  demande  a  avoir  du  POST car ces moche   
+// normalemnet (arobase)helper.inputText(userForm("pseudo")) mais erreur  inconu...  A la ligne  6 et 8
