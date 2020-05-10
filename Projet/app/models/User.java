@@ -1,16 +1,13 @@
 package models;
-/*
-import javax.persistence.*;
-import com.avaje.ebean.Model;
-import play.data.validation.*;
-*/
 
 import play.libs.Files.TemporaryFile;
 import play.mvc.Http.MultipartFormData.FilePart;
 
-
 public class User {
 	public String pseudo, password; 
+    
+    //getter   est seter  pour la  sécu
+    
     /*
       public void setPassword(String password) {
         this.password = password;

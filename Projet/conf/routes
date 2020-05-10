@@ -1,22 +1,18 @@
 # Routes
-# This file defines all application routes (Higher priority routes first)
+# Ce fichier definit toute  les  route
 # ~~~~
 
-# An example controller showing a sample home page
+# Route référant au différante page:
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
-GET     /test                       controllers.HomeController.test(x$1: play.mvc.Http.Request)
-#(fname  :  String ?="rien")
-#GET     /login                     controllers.HomeController.login
-GET     /loginbis                     controllers.HomeController.loginBIS
+ #Obliger  de  faire ça  ................
+GET     /profile                       controllers.HomeController.profile(x$1: play.mvc.Http.Request)
+GET     /login                    controllers.HomeController.login
 
 
-# Map static resources from the /public folder to the /assets URL path
+# Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /images/*file               controllers.Assets.at(path="/public/images", file)
 GET     /javascripts/*file          controllers.Assets.at(path="/public/javascripts", file)
 
-
-#POST voir ==> https://www.playframework.com/documentation/2.8.x/JavaCsrf
-
-#POST     /login                       controllers.HomeController.identification()
+#Faire des  post çaserait plus  safe
