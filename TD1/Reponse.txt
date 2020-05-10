@@ -1,38 +1,63 @@
 Question 1:
--App est composer de //aplication ressource
+
+-App <=>  application resource est composer de:
 	controllers:
 		contien homeControler, qui contient les methode appeler par le routage pour genere des page.
 	views:
-		contient les page au format scala.html qui compose le  squelete du cite web
+		contient les page au format scala.html qui compose le squelete du cite web
+en résumer  on  va majoritairement travailler dedant  l'orsque nous créron nos objet, éditeron le HomeController, et les différante  page  qui  compose  le  cite
+
 Question 2:
 
--Conf est composer  de: //configuration
+-Conf <=> Configuration est composer  de:
 	routes:
-		va associer les URI a une action a faire decrite dans app/constrollers
+		va associer les URL a une action a faire decrite dans app/Homeconstrollers
 	application.conf
 		utilise  le  format HOCON permet de specifier les option serveur (adresse port) et autre plus d'info sur https://www.playframework.com/documentation/2.8.x/ConfigFile
 	logback.xml:
-		fichier xml qui permet de metre en forme les Log, qui server a avoire un feedback pour le programeur
+		fichier xml qui permet de metre en forme les Log, qui server a avoire un feedback pour le programeur en  passant  par  la cli.
+
+enrésumer Conf est un  répertoire qui   serra utiliser occasionellment  pour  ajouter desroute dans routes.
+
 Qestion 3:
--lib  //lib
-	librairie a  utiliser importer 
+-lib:
+	librairie externe  a l'app  a importer
+en  résumer rarement utiliser
+
 Question 4:
--public // public  ressource
-	composer  de image, js,  css sont les resource utiliser par le serveur  web
+-public <=> public  ressource:
+	composer des image et  média, fichier javascript,  css stylesheet
+
+en  résumer sont les resource utiliser par le serveur  web !
+
 Question 5:
--test dossier avec  des fonction a  tester
+-test dossier avec  des fonction a  tester experimentale 
 
-question 6 : dans le  dossier target\classe plus precisement .\TD1\target\scala-2.13\classes
+en  résumer utilisation  avancer..
 
-question 7: pour  des exemple  de  caractere non  reconu sont : tabulation entrer { @
+
+question 6 : dans le  dossier target\classe plus precisement => .\TD1\target\scala-2.13\classes
+
+question 7: pour  des exemple  de  caractere non  reconu sont : "}", "{", "@"  qui sont les  balise/délimiteur du  langage
 
 Question 8: la  route emprunter sera "controllers.HomeController.index"
 
-Question 9:  l'aspect statique veux dire que index contien uniquement le contenus est que donc le contenus étant de la donnée il ne va  pas changer
+Question 9:  l'aspect statique veux dire que le contenu de change pas.
 
-Question  10: la méthode render fait appel au template main.scala.html dans lequelle il va injecter le contenu de index.scala.html
+Question  10: la méthode render fait appel au template main.scala.html dans lequelle il va injecter le contenu de la  page  qui  est situer avant  .render() par exemple pour wxiews.html.index.render() il va injecter  index dans  main.
 
-pour la  question  1 a 5
+auto  évaluation:
+
+réponses écrite 4pts car ma magnier de m'exprimer fait des  embiguiter  est  danse le  doute on  retire les  point
+controler vue  3 j'ai  manger donc ces bon
+html 2 j'ai  modifier j'ai eux la flm de faire pointer sur  un stylesheet
+css 3  j'ai  fait uen  nav  bar de cssshool
+hyperlien  dans la  baar  3
+code  bien  écrit  3 car on  a  pas fait  de  truc complex don  ya  pas d'erreur (je  crois)
+le  git la moitier des  commit  du  projet  ces moi donc je  gere donc 2pts
+auto évaluation 0.75 au  cas  ou
+
+pour les  question  1 a 5
 si  ce que je dit n'es pas bien:
 
 ├── app                      → Application sources
