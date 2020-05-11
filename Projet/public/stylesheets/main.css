@@ -567,8 +567,7 @@ margin-right:auto;
 float:left;
 clear:none;
 width:20%;
-border: solid rgba(225,225,225,1);
-border-width: 0 1px 1px 0px;
+border-left: 1px solid rgba(225,225,225,1);
 }
 
 #wsdb_sidebar_left_margin {
