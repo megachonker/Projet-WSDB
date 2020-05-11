@@ -1,11 +1,13 @@
 package controllers;
 
-import models.*;
-
-import play.data.*;
-import javax.inject.Inject;
+import models.*; // utiliser la classe User.java 
 
 import play.mvc.*;
+import play.data.*; //permetre play d'utiliser des data
+
+import javax.inject.Inject; // utiliser des  formulaire 
+//import wiews.html.*;// pas  besoin ?
+import java.util.List; //  gestion  liste/ tableaux
 
 
 
