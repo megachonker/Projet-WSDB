@@ -771,10 +771,12 @@ text-decoration:none;
 }
 
 #wsdb_content {
-margin-left:15px;
+padding-left:15px;
 float:left;
 width:78%;
 clear:none;
+min-height: 33vw;
+ border-left: 1px solid rgba(225,225,225,1);
 }
 
 #nav {
@@ -1168,11 +1170,6 @@ padding-right:0;
 padding-left:0;
 padding-right:0;
 }
-}
-
-#wsdb_content_and_sidebar_container {
-width:auto!important;
-margin:0 auto;
 }
 
 .back-to-top {
