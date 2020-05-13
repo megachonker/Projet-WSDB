@@ -5,8 +5,10 @@
 # Route référant au différante page:
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
-GET     /profile                    controllers.HomeController.profile(formulaire : Request )
-GET     /login                    	controllers.HomeController.login()
+GET     /profile                    controllers.HomeController.login(formulaire : Request )
+POST     /profile                    controllers.HomeController.profile(formulaire : Request )
+GET     /login                    	controllers.HomeController.login(formulaire : Request)
+POST     /login                    	controllers.HomeController.login(formulaire : Request)
 
 
 # Route Pour  les  médiat Public
