@@ -1,17 +1,12 @@
-@(userForm: Form[User])
+@(userForm: Form[User])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 @main("Login") {
 <h2>Login</h2>
 @helper.form(action = routes.HomeController.profile()){
+    @helper.CSRF.formField
     <h3>pseudo</h3>
-    <input name="pseudo" placeholder="[a-Z 0-8]"/> 
+    @helper.inputText(userForm("pseudo"))
     <h3>password</h3>
-    <input name="password"  placeholder="MAJ+NUMx2 min7"/>
+    @helper.inputText(userForm("password"))
     <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/> 
 }
 }
-//comment on  demande  a  avoir  du  POST car ces moche   
-// normalemnet (arobase)helper.inputText(userForm("pseudo")) mais erreur  inconu...  A la ligne  6 et 8
-
-
-//    helper.inputText(userForm("pseudo"))
-//    helper.inputText(userForm("password"))
