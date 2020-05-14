@@ -2,27 +2,3 @@
  * CSS des autres pages du site
  * Projet WSDB
  */
-
-.footertexteblanc {
-margin:.5em 0!important;
-font-size:1.143em!important;
-color:rgba(255,255,255,1)!important;
-}
-
-.footercoordonnees,.footerreseauxs {
-margin:.5em 0!important;
-font-weight:700!important;
-font-size:1.143em!important;
-color:rgba(255,255,255,1)!important;
-}
-
-.footertitre {
-margin:10px 0!important;
-font-family:'Oswald','Arial'!important;
-font-size:1.714em!important;
-color:rgba(33,184,254,1)!important;
-}
-
-.parafooter {
-margin:2em 0 0!important;
-}
