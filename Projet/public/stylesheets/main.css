@@ -2,3 +2,152 @@
  * CSS des autres pages du site
  * Projet WSDB
  */
+/*!
+ * CSS des autres pages du site
+ * Projet WSDB
+ */
+.wsdb_contact{
+    padding: 30px 10px 30px 10px;
+}
+
+.wsdb_contact_cg {
+    width: 33vw;
+    display: flex;
+    float: left;
+    margin-right: 150px;
+}
+
+.wsdb_contact_cd {
+    width: 30vw;
+    display: flex;
+}
+
+.wsdb_contact_cd_content {
+    width: 100%;
+}
+
+.titrecontact{
+    font-family:'Oswald','Arial';
+    color:rgba(78,78,78,1);
+    font-size: 2.5em;
+}
+
+.paracontact{
+    font-family:'Rosario';
+    color:rgba(78,78,78,1);
+    margin:0.4em 0em 1.4em 0em;
+    line-height:1.5;
+}
+
+.paracontactcoordo{
+    font-family:'Lato';
+    color:rgba(78,78,78,1);
+    margin-bottom: 0em;
+    line-height:1.5;
+    font-weight: 700;
+}
+
+.paracontactcoordo2{
+    font-family:'Lato';
+    color:rgba(78,78,78,1);
+    line-height:1.5;
+    font-weight: 700;
+    margin: 0.2em 0 0 2.9em;
+}
+
+.image_contact{
+    float:left;
+    overflow:hidden;
+    margin:0em 1.4em 0em 0em;
+}
+
+#contactform, .paracontactform, .contactboite {
+    float:left;
+    width:100%;
+}
+
+.paracontactform{
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    color: #4E4E4E;
+    text-shadow: none;
+    text-align: left;
+    text-decoration: none;
+    padding-right: 15px;
+    margin-top: 10px;
+}
+
+.form-group:before, .form-group:after{
+    content: " ";
+    display: table;
+    margin-bottom: 5px;
+}
+
+.form-group:after{
+    clear: both;
+}
+
+.contactboite {
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid rgba(204,204,204,1);
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 400;
+    color: #343434;
+    text-align: left;
+    text-decoration: none;
+    background: rgba(255,255,255,1);
+    background-clip: padding-box;
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.contactbtn{
+    background-color: #21B8FE;
+    background: rgba(33,184,254,1);
+    background-clip: padding-box;
+    color: #FFFFFF;
+    border-color: #08B0FE;
+    overflow: hidden;
+    position: relative;
+    display: table-cell;
+}
+
+.contactbtn input[type="file"]{
+    cursor: inherit;
+    display: block;
+    font-size: 100px;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: inherit;
+    bottom: 100%;
+    outline: none !important;
+}
+
+.contactenvoie{
+    margin-left:33.33%;
+}
+
+.required:first-child:after{
+    color:red;
+    content: '*';
+    display: inline;
+}
+
+@media (min-width: 768px){
+    .contactboite {
+    width: 66.666666667%;
+}
+    .paracontactform {
+    width: 33.333333333%;
+}
+}
+
+@media (min-width: 1320px){
+}
