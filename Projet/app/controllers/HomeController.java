@@ -58,4 +58,8 @@ public class HomeController extends Controller {
         return ok(views.html.login.render(userForm, request,messagesApi.preferred(request)));
     }   
     
+     public Result contact() {
+        return ok(views.html.contact.render());
+    }
+    
 }
