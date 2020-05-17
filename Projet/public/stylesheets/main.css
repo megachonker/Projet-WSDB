@@ -2,14 +2,27 @@
  * CSS des autres pages du site
  * Projet WSDB
  */
+<<<<<<< HEAD
 /*!
  * CSS des autres pages du site
  * Projet WSDB
  */
+=======
+
+
+
+
+/* CSS DE LA PAGE DE CONTACT */
+
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .wsdb_contact{
     padding: 30px 10px 30px 10px;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS colonne de gauche */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .wsdb_contact_cg {
     width: 33vw;
     display: flex;
@@ -17,21 +30,40 @@
     margin-right: 150px;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS colonne de droite  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .wsdb_contact_cd {
     width: 30vw;
     display: flex;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS du contenu de la colonne de droite  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .wsdb_contact_cd_content {
     width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS des titres gris  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .titrecontact{
     font-family:'Oswald','Arial';
     color:rgba(78,78,78,1);
     font-size: 2.5em;
+<<<<<<< HEAD
 }
 
+=======
+    margin-bottom: 20px;
+}
+
+/*  CSS du paragraphe de la colonne de gauche  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .paracontact{
     font-family:'Rosario';
     color:rgba(78,78,78,1);
@@ -39,6 +71,10 @@
     line-height:1.5;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS du paragraphe des coordonnées de la colonne de gauche  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .paracontactcoordo{
     font-family:'Lato';
     color:rgba(78,78,78,1);
@@ -47,6 +83,10 @@
     font-weight: 700;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS des autres ligne de coordonnées de la colonne de gauche  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .paracontactcoordo2{
     font-family:'Lato';
     color:rgba(78,78,78,1);
@@ -55,17 +95,29 @@
     margin: 0.2em 0 0 2.9em;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS de l'image ping  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .image_contact{
     float:left;
     overflow:hidden;
     margin:0em 1.4em 0em 0em;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS du formulaire  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 #contactform, .paracontactform, .contactboite {
     float:left;
     width:100%;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS des label du formulaire  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .paracontactform{
     font-size: 14px;
     font-family: "Lato";
@@ -77,19 +129,35 @@
     text-decoration: none;
     padding-right: 15px;
     margin-top: 10px;
+<<<<<<< HEAD
 }
 
+=======
+    width: 33.333333333%;
+}
+
+/*  CSS permettant l'espace entre les labels du formulaire  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .form-group:before, .form-group:after{
     content: " ";
     display: table;
     margin-bottom: 5px;
 }
 
+<<<<<<< HEAD
+=======
+/*  CSS permettant l'espace entre les labels du formulaire  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .form-group:after{
     clear: both;
 }
 
+<<<<<<< HEAD
 .contactboite {
+=======
+/*  CSS des balises input du formulaire  */
+.contactboite{
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
     border-radius: 4px 4px 4px 4px;
     border: 1px solid rgba(204,204,204,1);
     font-size: 14px;
@@ -104,8 +172,15 @@
     width: 100%;
     box-sizing: border-box;
     resize: none;
+<<<<<<< HEAD
 }
 
+=======
+    width: 66.666666667%;
+}
+
+/*  CSS des boutons  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .contactbtn{
     background-color: #21B8FE;
     background: rgba(33,184,254,1);
@@ -117,6 +192,7 @@
     display: table-cell;
 }
 
+<<<<<<< HEAD
 .contactbtn input[type="file"]{
     cursor: inherit;
     display: block;
@@ -134,12 +210,23 @@
     margin-left:33.33%;
 }
 
+=======
+/*  CSS de la division contenant le bouton  */
+.btncontactenvoie{
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 35px !important;
+}
+
+/*  CSS pour la petite étoile rouge */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 .required:first-child:after{
     color:red;
     content: '*';
     display: inline;
 }
 
+<<<<<<< HEAD
 @media (min-width: 768px){
     .contactboite {
     width: 66.666666667%;
@@ -151,3 +238,130 @@
 
 @media (min-width: 1320px){
 }
+=======
+/*  CSS pour les titres bleus de pages showcontactform et listemsgcontactform */
+.titremsgcontact{
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px !important;
+}
+
+/*  CSS pour la liste des messages de contact sur la page listemsgcontactform */
+.msgcontactliste{
+    width:fit-content;
+    border: 2px solid #21B8FE;
+    padding: 5px !important;
+    background-color: #29537C;
+    
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    margin: auto;
+    
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+/*  CSS pour la liste des messages de contact sur la page listemsgcontactform */
+.msgcliste{
+    width: 25vw;
+    min-width: 323px;
+    list-style: none;
+    text-align: justify !important;
+    padding: 0 5px 0 10px;
+}
+
+/*  CSS pour la liste des messages de contact sur la page listemsgcontactform */
+.msgcliste li{
+    text-align: center;
+}
+
+/*  CSS pour la liste des messages de contact sur la page listemsgcontactform */
+.contactmsg{
+    font-size:16px;
+    margin-top: 20px;
+}
+
+/*  CSS pour le texte des messages de contact sur la page showcontactform */
+.msg_success{
+    border: 1px solid #d7d7d7;
+    background: #21B8FE;
+    color: white;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 2px;
+}
+
+/*  CSS pour les boutons sur la page listemsgcontactform */
+.btn.contactliste{
+    background-color: white !important;
+    border: 1px solid #21B8FE !important;
+    background-clip: padding-box;
+    color: #21B8FE !important;
+    overflow: hidden;
+    position: relative;
+    display: table-cell;
+    
+    margin: 3px 0 15px 0;
+}
+
+/*  CSS pour les boutons sur la page listemsgcontactform */
+.btn.contactliste:hover{
+    background-color: #29537C !important;
+    border: 1px solid white !important;
+    background-clip: padding-box;
+    color: white !important;
+    overflow: hidden;
+    position: relative;
+    display: table-cell;
+    
+    margin: 3px 0 15px 0;
+}
+
+/*  Media-query */
+@media (max-width: 1320px) and (min-width:768px){
+    .wsdb_contact_cd, .wsdb_contact_cg {
+    width: 50vw !important;
+    margin:auto;
+    float: none;
+}
+    
+    .wsdb_contact_cd{
+        margin-top: 25px;
+    }
+    
+    .titrecontact{
+        text-align: center;
+    }
+    
+    .contactcoordo{
+        width:200px;
+        margin: auto;
+    }
+
+}
+/*  Media-query */
+@media (max-width:768px){
+    .wsdb_contact_cd, .wsdb_contact_cg {
+    width: 75vw !important;
+    margin:auto;
+    float: none;
+}
+    
+    .wsdb_contact_cd{
+        margin-top: 25px;
+    }
+    
+    .titrecontact{
+        text-align: center;
+    }
+    
+    .contactcoordo{
+        width:200px;
+        margin: auto;
+    }
+
+}
+
+/*  FIN CSS PAGE CONTACT  */
+>>>>>>> 09183d0... Ajout de la page contact et suppléments

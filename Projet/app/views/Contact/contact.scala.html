@@ -1,0 +1,106 @@
+@import play.mvc.Http.Request;
+
+@(cForm: Form[Contact], t: String)(implicit request: Request, messages: play.i18n.Messages)
+
+@main("Contact") {
+<div class="wsdb_contact">
+    
+    
+<!-- Barre de séparation bleu haut-de-l'ecran qui contiendra un message après envoi du formulaire -->
+    
+    <div id="messages_succes">
+        <p class="msg_success">
+                @t
+        </p>
+</div>
+    
+    <!-- Colonne de contenu de gauche de la page contact -->
+    
+    <div class="wsdb_contact_cg">
+        <div class="wsdb_contact_cg_content">
+            <h1 class="titrecontact">Contactez WSDB</h1>
+            
+            <p class="paracontact">Vous rencontrez un quelconque problème sur notre site ? Vous souhaitez établir un partenariat avec notre ? Pour toutes informations concernant nos jeux, les modalités de partenariat ou pour toutes autres informations, veuillez remplir le formulaire ce trouvant sur cette page afin que nous puissions éclaircir vos questionnements le plus rapidement que possible !</p>
+            
+            <div class="contactcoordo">
+                
+            <p class="image_contact"><img class="wsdb_uniform" style="max-height:32px;max-width:22px;" src="images/59.png"></p>
+                
+            <p class="paracontactcoordo">34 rue du Grillenbreit</p>
+            
+             <p class="paracontactcoordo2">68000 - COLMAR</p>
+            
+             <p class="paracontactcoordo2">+33 3 89 20 23 58</p>
+            
+                <p class="paracontactcoordo2">contact(at)wsdb.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Colonne de contenu de droite de la page contact -->
+    
+    <div class="wsdb_contact_cd">
+        <div class="wsdb_contact_cd_content">
+            
+            <h1 class="titrecontact">Formulaire de Contact</h1>
+            
+            <!-- Div de formulaire -->
+            <div class="contactformdiv">
+                
+                <!-- Début du formulaire de contact -->
+                
+                @helper.form(action = routes.Contactapp.resultatcontactform()) {
+                @helper.CSRF.formField
+                <form id="contactform" role="form" method="post" action="#">
+                    
+                    
+                <div class="form-group">
+                        <label class="paracontactform control-label required">Nom</label>
+                        @helper.inputText(cForm("pseudo"),'_showConstraints->false,'_label ->null)
+                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
+                
+                    
+                <div class="form-group">
+                        <label class="paracontactform control-label required">Email</label>
+                    @helper.inputText(cForm("mail"),'_showConstraints->false,'_label ->null)
+                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
+                
+                    
+                <div class="form-group">
+                        <label class="paracontactform control-label required">Objet</label>
+                    @helper.inputText(cForm("objet"),'_showConstraints->false,'_label ->null)
+                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
+                
+                    
+                <div class="form-group">
+                        <label class="paracontactform control-label required">Message</label>
+                    @helper.inputText(cForm("message"),'_showConstraints->false,'_label ->null)
+                        <textarea class="contactboite comment" name="message" rows="4"></textarea></div>
+                
+                    
+                <div class="form-group">
+                    <div class="contactenvoie">
+                        <div class="btncontactenvoie">
+                        <input type="submit" class="contactbtn btn btn-md btn-primary" id="submitform" name="submit" value="Send Message">
+                        </div>
+                        </div>
+                    </div>
+                </form>
+                }
+                <!-- Fin du formulaire de contact -->
+                
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <!-- Barre de séparation bleu bas-de-l'ecran -->
+    
+    <div id="messages_succes">
+        <p class="msg_success">      
+        </p>         
+    </div>
+    
+</div>
+}

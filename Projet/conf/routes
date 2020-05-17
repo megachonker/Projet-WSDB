@@ -6,10 +6,23 @@
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
 GET     /profile                    controllers.HomeController.login(formulaire : Request )
+<<<<<<< HEAD
 POST     /profile                   controllers.HomeController.profile(formulaire : Request )
 GET     /login                    	controllers.HomeController.login(formulaire : Request)
 POST     /login                    	controllers.HomeController.login(formulaire : Request)
 GET     /contact                    controllers.HomeController.contact
+=======
+POST    /profile                    controllers.HomeController.profile(formulaire : Request )
+GET     /login                    	controllers.HomeController.login(formulaire : Request)
+POST    /login                    	controllers.HomeController.login(formulaire : Request)
+
+
+GET     /contact                    controllers.Contactapp.contact(request: Request)
+GET     /showcontactform/:id        controllers.Contactapp.showcontactform(id: Long) 
+GET     /listemsgformcontact        controllers.Contactapp.listemsgformcontact()
+
+# POST    /deletecontactform/:id               controllers.Contactapp.deletecontactform(id: Long) 
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
 
 
 # Route Pour  les  médiat Public
@@ -17,4 +30,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /images/*file               controllers.Assets.at(path="/public/images", file)
 GET     /javascripts/*file          controllers.Assets.at(path="/public/javascripts", file)
 
+<<<<<<< HEAD
 #Faire des  post çaserait plus  safe
+=======
+#Faire des  post çaserait plus  safe
+>>>>>>> 09183d0... Ajout de la page contact et suppléments
