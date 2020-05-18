@@ -18,20 +18,24 @@ import views.html.*;
 import java.util.List;
 >>>>>>> 09183d0... Ajout de la page contact et suppléments
 
-import play.i18n.MessagesApi;
+
 
 public class HomeController extends Controller {
 <<<<<<< HEAD
     //on veux ce  baser  sur  des  formulère
+<<<<<<< HEAD
 =======
     
     //On veut se baser sur un formulaire
 >>>>>>> 09183d0... Ajout de la page contact et suppléments
     @Inject 
     FormFactory formFactory;
+=======
+    @Inject FormFactory formFactory;
+>>>>>>> parent of 499c0fe... ajout de @helper propre
     Form<User> userForm;
-    MessagesApi messagesApi;
 
+<<<<<<< HEAD
     
     @Inject
     public HomeController(FormFactory formFactory, MessagesApi messagesApi){
@@ -40,6 +44,8 @@ public class HomeController extends Controller {
     }
     
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 499c0fe... ajout de @helper propre
     //main page
 =======
     //Page d'accueil
@@ -51,12 +57,13 @@ public class HomeController extends Controller {
     public Result profile(Http.Request request) {
 <<<<<<< HEAD
         //on déclare userForm avec une valleur  sinonça   fait crash 
-        //userForm = formFactory.form(User.class);
+        userForm = formFactory.form(User.class);
         //si  il   n'y  a   pas  de  soucis on va  convertire  la requete en  formulaire
         Form<User> formulaireRecus = userForm.bindFromRequest(request); 
         //on  cherche si  le  formulaire a  des erreur  voir User.java
         if (formulaireRecus.hasErrors()) {
             //si  il y a  une erreur allor on renvoit le  precedant  formulaire
+<<<<<<< HEAD
 =======
         //on déclare userForm avec une valleur  sinon ça   fait crash 
         //userForm = formFactory.form(User.class);
@@ -71,6 +78,11 @@ public class HomeController extends Controller {
         else{
             
 <<<<<<< HEAD
+=======
+            return badRequest(views.html.login.render(userForm)); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire 
+        }
+        else{
+>>>>>>> parent of 499c0fe... ajout de @helper propre
             //si  tout ce passe  bien allor on  va crée un  object  user qui a  les data  du formulaire
             User userProfils = formulaireRecus.get();
             //on  balance  un  ok avec  un get
@@ -85,12 +97,16 @@ public class HomeController extends Controller {
 
     }
 
+<<<<<<< HEAD
     public Result login(Http.Request request) {
 <<<<<<< HEAD
+=======
+    public Result login() {
+>>>>>>> parent of 499c0fe... ajout de @helper propre
         //on crée  un formulaire a  partire de User
         userForm = formFactory.form(User.class);
         //on envoit le formulaire dans login
-        return ok(views.html.login.render(userForm, request,messagesApi.preferred(request)));
+        return ok(views.html.login.render(userForm));
     }   
     
      public Result contact() {
