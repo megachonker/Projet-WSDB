@@ -19,10 +19,15 @@ import java.util.List;
 >>>>>>> 09183d0... Ajout de la page contact et suppléments
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 499c0fe... ajout de @helper propre
 
 public class HomeController extends Controller {
 <<<<<<< HEAD
     //on veux ce  baser  sur  des  formulère
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     
@@ -46,6 +51,11 @@ public class HomeController extends Controller {
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 499c0fe... ajout de @helper propre
+=======
+    @Inject FormFactory formFactory;
+    Form<User> userForm;
+
+>>>>>>> parent of 499c0fe... ajout de @helper propre
     //main page
 =======
     //Page d'accueil
@@ -63,6 +73,7 @@ public class HomeController extends Controller {
         //on  cherche si  le  formulaire a  des erreur  voir User.java
         if (formulaireRecus.hasErrors()) {
             //si  il y a  une erreur allor on renvoit le  precedant  formulaire
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         //on déclare userForm avec une valleur  sinon ça   fait crash 
@@ -83,6 +94,11 @@ public class HomeController extends Controller {
         }
         else{
 >>>>>>> parent of 499c0fe... ajout de @helper propre
+=======
+            return badRequest(views.html.login.render(userForm)); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire 
+        }
+        else{
+>>>>>>> parent of 499c0fe... ajout de @helper propre
             //si  tout ce passe  bien allor on  va crée un  object  user qui a  les data  du formulaire
             User userProfils = formulaireRecus.get();
             //on  balance  un  ok avec  un get
@@ -98,8 +114,12 @@ public class HomeController extends Controller {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Result login(Http.Request request) {
 <<<<<<< HEAD
+=======
+    public Result login() {
+>>>>>>> parent of 499c0fe... ajout de @helper propre
 =======
     public Result login() {
 >>>>>>> parent of 499c0fe... ajout de @helper propre
