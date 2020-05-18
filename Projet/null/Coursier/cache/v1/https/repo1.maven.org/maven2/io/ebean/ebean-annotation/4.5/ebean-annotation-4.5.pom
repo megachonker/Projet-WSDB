@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.ebean</groupId>
+  <artifactId>ebean-annotation</artifactId>
+  <version>4.5</version>
+
+  <parent>
+    <groupId>org.avaje</groupId>
+    <artifactId>java8-parent</artifactId>
+    <version>1.3</version>
+  </parent>
+
+  <scm>
+    <developerConnection>scm:git:git@github.com:ebean-orm/ebean-annotation.git</developerConnection>
+    <tag>ebean-annotation-4.5</tag>
+  </scm>
+
+  <dependencies>
+
+    <!-- provided scope for EbeanDDL validation group marker -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+

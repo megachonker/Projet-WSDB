@@ -1,9 +1,5 @@
 package models;
-<<<<<<< HEAD
-//import play.api.data.*;  //  usless
-=======
 import play.api.data.*;
->>>>>>> 09183d0... Ajout de la page contact et suppléments
 import play.libs.Files.TemporaryFile;
 import play.mvc.Http.MultipartFormData.FilePart;
 import play.data.validation.Constraints.* ;
@@ -16,14 +12,13 @@ public class User {
     
 	private String pseudo;
     @Required
-<<<<<<< HEAD
-    @Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "kikko detected")//MDP quiu  contien au moin un  chifre est une  majuscule   est qui va  entre  8 et 32 caractere 
-=======
     @Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "kikko detected")//MDP qui contient au moins un chiffre et une majuscule et qui va entre 8 et 32 caracteres
->>>>>>> 09183d0... Ajout de la page contact et suppléments
     
     private String password; 
     
+        public User(){
+            
+        }
     
       public void setPassword(String password) {
         this.password = password;

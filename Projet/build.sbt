@@ -15,11 +15,12 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
     ),
   )
 
-scalaVersion := "2.13.2"
+
+scalaVersion := "2.13.1"
 
 libraryDependencies += guice
 
 
 //pour persistance
 //lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
-//lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+
