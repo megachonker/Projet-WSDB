@@ -1,0 +1,11 @@
+@(liste:  List[User])
+
+@main("Liste Utilisateur") {
+<h2>@liste.size() Joueur  en tout et "metre joueur co"</h2>
+
+    <ul>
+        @for(p <- liste ) {
+                  <li>@p.getPseudo <--> @p.id </li>
+        }
+    </ul>
+}
