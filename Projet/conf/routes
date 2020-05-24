@@ -5,11 +5,21 @@
 # Route référant au différante page:
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
-GET     /profile                    controllers.HomeController.login(formulaire : Request )
-POST    /profile                    controllers.HomeController.profile(formulaire : Request )
-GET     /login                    	controllers.HomeController.login(formulaire : Request)
-POST    /login                    	controllers.HomeController.login(formulaire : Request)
 
+#partie User
+
+GET     /profile                    controllers.Userapp.login(formulaire : Request )
+POST    /profile                    controllers.Userapp.profile(formulaire : Request )
+GET     /login                    	controllers.Userapp.login(formulaire : Request)
+POST    /login                    	controllers.Userapp.login(formulaire : Request)
+
+	#gestion user
+
+GET		/userlist					controllers.Userapp.userlist()
+GET		/userflush					controllers.Userapp.flush()
+GET		/delete/:id					controllers.Userapp.delete(id : Long)
+
+#partie Contacte
 
 GET     /contact                    controllers.Contactapp.contact(request: Request)
 GET     /showcontactform/:id        controllers.Contactapp.showcontactform(id: Long) 
@@ -24,5 +34,3 @@ POST    /resultatcontactform/       controllers.Contactapp.resultatcontactform(r
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /images/*file               controllers.Assets.at(path="/public/images", file)
 GET     /javascripts/*file          controllers.Assets.at(path="/public/javascripts", file)
-
-#Faire des  post çaserait plus  safe
