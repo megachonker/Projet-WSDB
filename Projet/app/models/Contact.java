@@ -1,9 +1,9 @@
 package models;
-import play.data.validation.Constraints.*;
 import io.ebean.*;
-import play.data.validation.*;
-import javax.persistence.*;
 import java.util.*;
+import javax.persistence.*;
+import play.data.validation.*;
+import play.data.validation.Constraints.*;
 
 
 @Entity
@@ -27,9 +27,9 @@ public class Contact extends Model{
     
     @Required
     @Email
-    //@Pattern(
-        //value = "^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$",
-       // message = "Adresse mail non valide.")
+    @Pattern(
+        value = "^[[:ascii:]]+\\@[[:ascii:]]+\\.[[:ascii:]]+$",//je comprend pas  pk ça   marche pas  
+        message = "Adresse mail non valide.")
     public String mail ;
     
      @Required
