@@ -27,9 +27,6 @@ public class Contact extends Model{
     
     @Required
     @Email
-    @Pattern(
-        value = "^[[:ascii:]]+\\@[[:ascii:]]+\\.[[:ascii:]]+$",//je comprend pas  pk ça   marche pas  
-        message = "Adresse mail non valide.")
     public String mail ;
     
      @Required
