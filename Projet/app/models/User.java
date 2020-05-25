@@ -20,6 +20,8 @@ public class User extends Model{
     public static Finder<Long, User> find = new Finder<Long,User>(User.class);
     
     
+    
+    
     //definition des Prérequis  par champ
     
     @Required
@@ -55,5 +57,9 @@ public class User extends Model{
 
     public String getPseudo() {
         return pseudo;
+    }
+    
+    public String toString() {
+        return "pseudo: " + pseudo+ "identifiant: "+id;
     }
   }

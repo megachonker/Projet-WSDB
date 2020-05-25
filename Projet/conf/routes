@@ -19,6 +19,8 @@ GET		/userlist					controllers.Userapp.userlist()
 GET		/userflush					controllers.Userapp.flush()
 GET		/delete/:id					controllers.Userapp.delete(id : Long)
 
+
+
 #partie Contacte
 
 GET     /contact                    controllers.Contactapp.contact(request: Request)
