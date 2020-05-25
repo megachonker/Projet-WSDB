@@ -1,6 +1,9 @@
-@()
+@import play.mvc.Http.Request;
+
+@(jeuxform : Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Jeux") {
-<h1>Game</h1>
-<p>page ou l'interface  graphique user player sera</p>
+@helper.CSRF.formField
+@helper.form(action = routes.Jeux.game()) {
+    }
 }

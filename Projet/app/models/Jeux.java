@@ -20,12 +20,12 @@ public class Jeux extends Model{
     @Id
     public long id;
     
-    public static Finder<Long, User> find = new Finder<Long,User>(Jeux.class);
+    public static Finder<Long, Jeux> find = new Finder<Long,Jeux>(Jeux.class);
     
-    ArrayList<boolean> coupJ1 = new ArrayList<boolean>();
-    ArrayList<boolean> coupJ2 = new ArrayList<boolean>();
-    ArrayList<boolean> resutatJ1 = new ArrayList<boolean>();
-    ArrayList<boolean> resutatJ2 = new ArrayList<boolean>();
+    ArrayList<Boolean> coupJ1 = new ArrayList<Boolean>();
+    ArrayList<Boolean> coupJ2 = new ArrayList<Boolean>();
+    ArrayList<Boolean> resutatJ1 = new ArrayList<Boolean>();
+    ArrayList<Boolean> resutatJ2 = new ArrayList<Boolean>();
 
 	private User user1;
     private User user2;
@@ -34,7 +34,7 @@ public class Jeux extends Model{
 
     private String password; 
     
-    public Jeux(User user1 ,User user1, String noms){
+    public Jeux(User user1 ,User user2, String noms){
         this.user1 = user1;
         this.user2 = user2;
         this.noms = noms;
@@ -91,18 +91,18 @@ public class Jeux extends Model{
             else {
                 return "joueur 2 a déja jouer";
             }
-        return
+        return "fonction retour avec  erreur";
         }
 
         //on  incrémente le coup
         if(coupJ2.size() == coupJ2.size()){
-            tour = coupJ1.size();
+            int tour = coupJ1.size();
             if (coupJ1.get(tour) & coupJ2.get(tour)) {
                 if(coupJ1.get(tour) == true){
-                    return "les joueur on tout les deux dit la véritée"
+                    return "les joueur on tout les deux dit la véritée";
                 }
                 else{
-                    return "les joueur ou tout les deux dit le mensonge"
+                    return "les joueur ou tout les deux dit le mensonge";
                 }
             }
             else{
@@ -113,16 +113,16 @@ public class Jeux extends Model{
                     return "le joeur 2  a dit la veriter le joeur 1 a mentis";
                 }
             }
-            return "tour terminer avec erreur ducoup"
         }
+        return "ces la hesss";
     }
 
     //dumping des score
     public String resumerJoueur(){
         String  message = "";
-        for ( String j1: coupJ1 ) {
+        for ( Boolean j1: coupJ1 ) {
             message += "joueur 1" + String.valueOf(j1);
-            for ( String j2: coupJ2 ) {
+            for ( Boolean j2: coupJ2 ) {
                 message += "joueur 2" + String.valueOf(j2) ; 
             }
         message += "\n";

@@ -17,9 +17,11 @@ POST    /login                    	controllers.Userapp.login(formulaire : Reques
 
 GET		/userlist					controllers.Userapp.userlist()
 GET		/userflush					controllers.Userapp.flush()
-GET		/delete/:id					controllers.Userapp.delete(id : Long)
+GET     /delete/:id					controllers.Userapp.delete(id : Long)
 
+#partie Jeux
 
+GET     /makejeux                   controllers.Jeux.formulaireactionloby(formulaire : Request)
 
 #partie Contacte
 

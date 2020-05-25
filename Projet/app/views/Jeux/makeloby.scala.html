@@ -1,11 +1,10 @@
 @import play.mvc.Http.Request;
 
-@(cForm: Form[Contact], t: String)(implicit request: Request, messages: play.i18n.Messages)
+@(jeuxform: Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("crée un loby") {
-
-
 @helper.form(action = routes.Contactapp.resultatcontactform()) {
                 @helper.CSRF.formField
-}
+
+    }
 }
