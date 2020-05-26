@@ -2,13 +2,7 @@ package controllers;
 
 //CLEANER !!
 
-import models.*;
 import play.mvc.*;
-import play.data.*;
-import views.html.*;
-import java.util.List;
-import javax.inject.Inject;
-import play.i18n.MessagesApi;
 
 
 public class HomeController extends Controller {
@@ -19,6 +13,17 @@ public class HomeController extends Controller {
     public Result index() {
         return ok(views.html.index.render());
     }
-    
-    
+
+//    public Result setcookie(Http.Request request) {
+//        return redirect("/")
+//                .addingToSession(request, "connected", "user@gmail.com");
+//    }
+//
+//    public Result getcookie(Http.Request request) {
+//        return request
+//                .session()
+//                .get("connected")
+//                .map(user -> ok("Hello " + user))
+//                .orElseGet(() -> unauthorized("Oops, you are not connected"));
+//    }
 }
