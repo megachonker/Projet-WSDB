@@ -19,7 +19,7 @@ public class Userapp extends Controller {
     MessagesApi messagesApi;
     Form<User> userForm;
 
-    
+
     @Inject
     public Userapp(FormFactory formFactory, MessagesApi messagesApi){
         this.userForm = formFactory.form(User.class);
@@ -30,15 +30,21 @@ public class Userapp extends Controller {
     public Result index() {
         return ok(views.html.index.render());
     }
-    
+
+
+    //profile  est embigue il permet de loader la page profile est verifie les formuler de register
     public Result profile(Http.Request request) {
-        //on déclare userForm avec une valleur  sinon ça   fait crash 
+        //on déclare userForm avec une valleur  sinon ça   fait crash
         //si  il   n'y  a   pas  de  soucis on va  convertire  la requete en  formulaire
-        Form<User> formulaireRecus = userForm.bindFromRequest(request); 
+        Form<User> formulaireRecus = userForm.bindFromRequest(request);
         //On  vérifie si  le  formulaire a  des erreur  voir User.java
         if (formulaireRecus.hasErrors()) {
-            //S'il y a  une erreur alors on renvoit le formulaire
-            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire 
+            if(request.session().get("session").isPresent()){//verification si kookies
+                User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
+                return ok(views.html.User.profile.render(userProfils));
+            }
+            //S'il y a  une erreur alors on renvoit le formulaire ou pas de  formulaire
+            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
         }
         else{
 
@@ -47,16 +53,17 @@ public class Userapp extends Controller {
             //on va  sauvgarder le les data dans  la  base de  donnée
             userProfils.save();
             //Oon  balance un ok avec un get
-            return ok(views.html.User.profile.render(userProfils));   
+            return ok(views.html.User.profile.render(userProfils));
             //redirect("userliste");
         }
 
     }
 
+
     public Result login(Http.Request request) {
         //On créé un formulaire a  partire de User
         userForm = formFactory.form(User.class);
-        //On envoit le formulaire dans login
+        //On envoit le formulaire dans checklogin
         return ok(views.html.User.login.render(userForm, request,messagesApi.preferred(request)));
     }
 
@@ -71,7 +78,8 @@ public class Userapp extends Controller {
             for(User truc : u) {
                 if (truc.getPseudo().equals(userProfils.getPseudo())){
                     if(truc.getPassword().equals(userProfils.getPassword())){
-                        return ok(views.html.User.profile.render(userProfils));
+                        return ok(views.html.User.profile.render(userProfils))
+                                .addingToSession(request, "session", String.valueOf(truc.id));//on ajoute un kookie qui a pour id de session l'id de l'user en sachant que le mieux ces un truc  random
                     }
                 }
             }
