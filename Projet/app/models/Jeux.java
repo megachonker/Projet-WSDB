@@ -32,7 +32,7 @@ public class Jeux extends Model{
     private String noms;
     //verifier si pas  existant dans la  bd  ?
 
-    private String password; 
+    private String password;  //sale avec mdp ?
     
     public Jeux(User user1 ,User user2, String noms){
         this.user1 = user1;
