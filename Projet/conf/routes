@@ -21,7 +21,9 @@ GET     /delete/:id					controllers.Userapp.delete(id : Long)
 
 #partie Jeux
 
-GET     /makejeux                   controllers.Jeux.formulaireactionloby(formulaire : Request)
+
+GET     /newgame                    controllers.Jeuxapp.newgame(formulaire : Request)
+POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
 
 #partie Contacte
 
