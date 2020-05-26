@@ -26,20 +26,20 @@ public class Contactapp extends Controller {
     
     //Page de contact
     public Result contact(Http.Request request) {
-        return ok(views.html.Contact.contact.render(contactForm, null, request, messagesApi.preferred(request)));
+        return ok(views.html.Contact.contact.render(contactForm, request, messagesApi.preferred(request)));
 } 
     //Page après envoi formulaire
     public Result resultatcontactform(Http.Request request) {
         Form<Contact> cForm = contactForm.bindFromRequest(request);
             //Si erreur réafficher la page contact avec les messages d'erreur
             if (cForm.hasErrors()) {
-                return badRequest(views.html.Contact.contact.render(cForm, null, request, messagesApi.preferred(request)));
+                return badRequest(views.html.Contact.contact.render(cForm, request, messagesApi.preferred(request)));
             }
             //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
             else{
                 Contact a = cForm.get();
                 a.save();
-                return ok(views.html.Contact.contact.render(cForm, "Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !", request, messagesApi.preferred(request)));  
+                return ok(views.html.Contact.submission.render());  
             }
     }
     
@@ -55,11 +55,24 @@ public class Contactapp extends Controller {
         return ok(views.html.Contact.showcontactform.render(a)) ;
     }
     
-    //Suppression d'un message de contact de la base de données ENCORE CASSEE
-    //public Result deletecontactform(Long id) {
-      //  Contact a = Person.find.byId(id) ;
-      //  a.delete();
-      //  return ok(routes.Contactapp.deletecontactform(id)) ;
-   // } 
+    //Suppression d'un message de contact de la base de données
+    public Result deletecontactform(Long id) {
+       Contact a = Contact.find.byId(id) ;
+        a.delete();
+        return redirect(routes.Contactapp.listemsgformcontact()) ;
+    } 
+      
+    //Suppression de tous les messages de contact
+    public Result flush() {
+        List<Contact> liste = Contact.find.all();
+        for(Contact c : liste) {
+            c.delete();
+        }
+        return redirect(routes.Contactapp.listemsgformcontact());
+    }
+    
+    public Result submission() {
+        return ok(views.html.Contact.submission.render()) ;
+    }
     
 }
