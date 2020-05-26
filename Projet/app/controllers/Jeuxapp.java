@@ -24,13 +24,31 @@ public class Jeuxapp extends Controller {
         this.messagesApi = messagesApi;
     }
 
+//    public long verrifuser(){
+//        Jeux loby = Jeux.find.byId(id); //voir si  le loby existe pas erreur?
+//        return id;
+//    }
 
+    public Result joinloby(long id){
+        Jeux loby = Jeux.find.byId(id); //voir si  le loby existe pas erreur?
+        long idvisiteur  = 1;//verrifuser();
+        if(idvisiteur  == (loby.getUser1().id)){  //EQUALSE !!
+            return ok("joueur 1 admis");
+        }
+        else if(idvisiteur  == (loby.getUser2().id)){
+            return ok("joueur 2 admis");
+        }
+        else{
+            return ok("joueur non admi");
+        }
 
-    public Result newgame(Http.Request request) {
-//        User joueur1 = User.find.byId(idjoueur1);
-//        User joueur2 = User.find.byId(idjoueur2);
-        return ok();
     }
+
+//    public Result newgame(Http.Request request) {
+////        User joueur1 = User.find.byId(idjoueur1);
+////        User joueur2 = User.find.byId(idjoueur2);
+//        return ok();
+//    }
 
     //création d'une partie
 //    public Result newgame(Long idjoueur1,Long idjoueur2) {
