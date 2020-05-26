@@ -5,7 +5,7 @@
 
     <ul>
         @for(p <- liste ) {
-                  <li>@p.getPseudo <--> @p.id </li>
+                  <li>@p.getPseudo <--> @p.id <--> mdp @p.getPassword</li>
         }
     </ul>
 }
