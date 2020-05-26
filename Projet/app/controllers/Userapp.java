@@ -44,7 +44,8 @@ public class Userapp extends Controller {
                 return ok(views.html.User.profile.render(userProfils));
             }
             //S'il y a  une erreur alors on renvoit le formulaire ou pas de  formulaire
-            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
+            return redirect("/login");
+//            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
         }
         else{
 
