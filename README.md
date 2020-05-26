@@ -18,4 +18,4 @@ __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki)__
 
 
 ## Prérequis:
-java  liberika  => [Lien JDK](https://bell-sw.com/pages/java-13.0.1/
+java  liberika  => [Lien JDK](https://bell-sw.com/pages/java-13.0.1/)
