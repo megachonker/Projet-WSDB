@@ -13,7 +13,8 @@ import javax.persistence.*;
 public class User extends Model{
     
     private static final long serialVersionUID= 1L;
-    
+    private ArrayList<int> points = new ArrayList<int>; // permetrait de stocker temporairement les points/score pendant une competition...
+	
     @Id
     public long id;
     
@@ -62,4 +63,19 @@ public class User extends Model{
     public String toString() {
         return "pseudo: " + pseudo+ "identifiant: "+id;
     }
-  }
+	public void setPointZero(){
+		points.clear();
+	}
+	
+	public void setPoint(int n){
+		points.add(n);
+	}
+	
+	public String SommePoints(){
+		int pts = 0;
+		for ( String p: points ) {
+		   pts += p;
+		}
+		return pts;
+	  }
+}
