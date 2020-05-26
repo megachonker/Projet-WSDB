@@ -204,24 +204,23 @@
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:before, .form-group:after{
+.form-group:before, .form-group:after, .login-grou:before, .login-group:after{
     content: " ";
     display: table;
     margin-bottom: 5px;
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:after{
+.form-group:after, .login-group:after{
     clear: both;
 }
 
 /*  CSS des balises input du formulaire  */
-.contactboite{
+.contactboite, .loginboite{
     border-radius: 4px 4px 4px 4px;
     border: 1px solid rgba(204,204,204,1);
     font-size: 14px;
     font-family: "Lato";
-    font-weight: 400;
     color: #343434;
     text-align: left;
     text-decoration: none;
@@ -304,7 +303,7 @@
 }
 
 /*  CSS pour le texte des messages de contact sur la page showcontactform */
-.msg_success{
+.b_bleue{
     border: 1px solid #d7d7d7;
     background: #21B8FE;
     color: white;
@@ -337,6 +336,13 @@
     display: table-cell;
     
     margin: 3px 0 15px 0;
+}
+
+#flush{
+    margin: auto;
+    margin-top:10px !important;
+    width: auto;
+    text-align: center;
 }
 
 /*  Media-query */
@@ -385,3 +391,64 @@
 }
 
 /*  FIN CSS PAGE CONTACT  */
+
+/*  CSS PAGE REDIRECTION  */
+
+.redirec_texte{
+    font-size:2em !important;
+    font-weight:700;
+    color:rgba(105,105,105,1);
+    text-align: center !important;
+}
+
+/*  FIN CSS PAGE REDIRECTION  */
+
+/*  CSS PAGE LOGIN  */
+
+/*  CSS pour l'entitre */
+.wsdb_login_entitre{
+    margin-top: 25px;
+    text-align: center;
+}
+
+/*  CSS pour le titre */
+.wsdb_login_titre{
+    width: 33.333333%;
+    text-align: left;
+    margin-top: 0px;
+    padding-right: 15px;
+    float:left;
+    min-width:95px;
+}
+
+/*  CSS pour les input&label */
+.login-group{
+    margin-top: 35px;
+}
+
+/*  CSS pour l'encadre bleu */
+.wsdb_login_encadre{
+    width: 70%;
+    margin:auto;
+    border: 10px outset rgba(33,184,254,1);
+    padding: 5px 27px 27px 27px;
+    min-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*  CSS pour le bouton */
+.loginbtn {
+    background-color: #21B8FE;
+    background: rgba(33,184,254,1);
+    background-clip: padding-box;
+    color: #FFFFFF;
+    border-color: #08B0FE;
+    overflow: hidden;
+    position: relative;
+    display: table-cell;
+    font-size: 18px !important;
+    margin-bottom: -25px !important;
+}
+
+/*  FIN CSS PAGE LOGIN  */
