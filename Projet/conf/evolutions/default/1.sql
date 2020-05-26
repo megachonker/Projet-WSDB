@@ -12,6 +12,13 @@ create table contact (
   constraint pk_contact primary key (id)
 );
 
+create table jeux (
+  id                            bigint auto_increment not null,
+  noms                          varchar(255),
+  password                      varchar(255),
+  constraint pk_jeux primary key (id)
+);
+
 create table user (
   id                            bigint auto_increment not null,
   pseudo                        varchar(255),
@@ -23,6 +30,8 @@ create table user (
 # --- !Downs
 
 drop table if exists contact;
+
+drop table if exists jeux;
 
 drop table if exists user;
 
