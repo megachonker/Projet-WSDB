@@ -3,7 +3,8 @@
 @(jeuxform : Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Jeux") {
+@helper.form(action = routes.Jeuxapp.resultatnewgame()){
 @helper.CSRF.formField
-@helper.form(action = routes.Jeux.game()) {
-    }
+
+}
 }

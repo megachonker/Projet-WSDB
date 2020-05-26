@@ -3,7 +3,7 @@
 @(jeuxform: Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("crée un loby") {
-@helper.form(action = routes.Contactapp.resultatcontactform()) {
+@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
                 @helper.CSRF.formField
 
     }
