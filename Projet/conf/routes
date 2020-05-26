@@ -13,6 +13,8 @@ POST    /profile                    controllers.Userapp.profile(formulaire : Req
 GET     /login                    	controllers.Userapp.login(formulaire : Request)
 POST    /login                    	controllers.Userapp.login(formulaire : Request)
 
+GET     /register                   controllers.Userapp.register(formulaire : Request)
+POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Request)
 	#gestion user
 
 GET		/userlist					controllers.Userapp.userlist()
