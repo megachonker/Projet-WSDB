@@ -2,12 +2,13 @@
 
 @main("Login") {
 <h2>Login</h2>
-@helper.form(action = routes.Userapp.profile()){
+@helper.form(action = routes.Userapp.checklogin()){
     @helper.CSRF.formField
     <h3>pseudo</h3>
     @helper.inputText(userForm("pseudo"))
     <h3>password</h3>
     @helper.inputText(userForm("password"))
-    <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/> 
+    <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/>
 }
+<a href="/register">Crée un compte</a>
 }
