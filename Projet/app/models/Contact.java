@@ -32,7 +32,7 @@ public class Contact extends Model{
      @Required
      @Pattern(
         value = "^[A-Za-z0-9]{2,}",
-        message = "L'objet de votre demande doit zvoir au minimum 2 caractères.")
+        message = "L'objet de votre demande doit avoir au minimum 2 caractères.")
     public String objet ;
     
     @Required
