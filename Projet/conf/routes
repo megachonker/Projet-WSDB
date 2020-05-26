@@ -11,7 +11,7 @@ GET     /index                      controllers.HomeController.index
 #GET     /set                        controllers.HomeController.setcookie(formulaire : Request)
 #GET     /get                        controllers.HomeController.getcookie(formulaire : Request)
 
-#partie User
+#Partie User
 
 #chercher une redirection de  profile si rien
 GET     /profile                    controllers.Userapp.profile(formulaire : Request )
@@ -28,22 +28,25 @@ GET		/userlist					controllers.Userapp.userlist()
 GET		/userflush					controllers.Userapp.flush()
 GET     /delete/:id					controllers.Userapp.delete(id : Long)
 
-#partie Jeux
+#Partie Jeux
 
 GET     /joinloby/:id               controllers.Jeuxapp.joinloby(id : Long)
 #GET     /newgame                    controllers.Jeuxapp.newgame(formulaire : Request)
 POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
 
-#partie Contacte
+#Partie contact
 
 GET     /contact                    controllers.Contactapp.contact(request: Request)
 GET     /showcontactform/:id        controllers.Contactapp.showcontactform(id: Long) 
+GET     /deletecontactform/:id      controllers.Contactapp.deletecontactform(id: Long)
 GET     /listemsgformcontact        controllers.Contactapp.listemsgformcontact()
 
-POST    /resultatcontactform/       controllers.Contactapp.resultatcontactform(request: Request)
+GET	/flush					        controllers.Contactapp.flush()
 
-# POST    /deletecontactform/:id               controllers.Contactapp.deletecontactform(id: Long) 
+POST    /resultatcontactform        controllers.Contactapp.resultatcontactform(request: Request)
 
+POST    /submission                 controllers.Contactapp.submission()
+ 
 
 # Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
