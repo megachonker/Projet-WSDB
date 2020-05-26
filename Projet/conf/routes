@@ -6,15 +6,22 @@
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
 
+#test cookie
+
+#GET     /set                        controllers.HomeController.setcookie(formulaire : Request)
+#GET     /get                        controllers.HomeController.getcookie(formulaire : Request)
+
 #partie User
 
-GET     /profile                    controllers.Userapp.login(formulaire : Request )
+#chercher une redirection de  profile si rien
+GET     /profile                    controllers.Userapp.profile(formulaire : Request )
 POST    /profile                    controllers.Userapp.profile(formulaire : Request )
 GET     /login                    	controllers.Userapp.login(formulaire : Request)
 POST    /login                    	controllers.Userapp.login(formulaire : Request)
 
 GET     /register                   controllers.Userapp.register(formulaire : Request)
 POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Request)
+
 	#gestion user
 
 GET		/userlist					controllers.Userapp.userlist()
@@ -23,8 +30,8 @@ GET     /delete/:id					controllers.Userapp.delete(id : Long)
 
 #partie Jeux
 
-
-GET     /newgame                    controllers.Jeuxapp.newgame(formulaire : Request)
+GET     /joinloby/:id               controllers.Jeuxapp.joinloby(id : Long)
+#GET     /newgame                    controllers.Jeuxapp.newgame(formulaire : Request)
 POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
 
 #partie Contacte
