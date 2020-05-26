@@ -41,7 +41,7 @@ public class Userapp extends Controller {
             return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire 
         }
         else{
-            
+
             //Si tout ce passe bien alors on va créer un object user qui a les data du formulaire
             User userProfils = formulaireRecus.get();
             //on va  sauvgarder le les data dans  la  base de  donnée
@@ -58,8 +58,40 @@ public class Userapp extends Controller {
         userForm = formFactory.form(User.class);
         //On envoit le formulaire dans login
         return ok(views.html.User.login.render(userForm, request,messagesApi.preferred(request)));
-    } 
-    
+    }
+
+    public Result checklogin(Http.Request request) {
+        Form<User> formulaireRecus = userForm.bindFromRequest(request);
+        if (formulaireRecus.hasErrors()) {
+            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
+        }
+        else{
+            User userProfils = formulaireRecus.get();
+            List<User> u = User.find.all(); // type inference works here!
+            for(User truc : u) {
+                if (truc.getPseudo().equals(userProfils.getPseudo())){
+                    if(truc.getPassword().equals(userProfils.getPassword())){
+                        return ok(views.html.User.profile.render(userProfils));
+                    }
+                }
+            }
+            return ok(views.html.User.login.render(userForm, request,messagesApi.preferred(request)));
+            //return ok(views.html.User.profile.render(userProfils));
+            //redirect("userliste");
+        }
+
+    }
+
+
+
+    public Result register(Http.Request request) {
+        //On créé un formulaire a  partire de User
+        userForm = formFactory.form(User.class);
+        //On envoit le formulaire dans login
+        return ok(views.html.User.register.render(userForm, request,messagesApi.preferred(request)));
+    }
+
+
     public Result userlist() {
         List<User> liste = User.find.all();
         return ok(views.html.User.liste.render(liste));
