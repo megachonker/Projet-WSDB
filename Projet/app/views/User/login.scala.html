@@ -1,14 +1,43 @@
 @(userForm: Form[User])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Login") {
-<h2>Login</h2>
+<div class="wsdb_login">
+    
+<h1 class="wsdb_login_entitre">Connectez-vous</h1>
+    
+    <div class="wsdb_login_encadre">
+        
 @helper.form(action = routes.Userapp.checklogin()){
     @helper.CSRF.formField
-    <h3>pseudo</h3>
-    @helper.inputText(userForm("pseudo"))
-    <h3>password</h3>
-    @helper.inputText(userForm("password"))
-    <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/>
+        
+        <div class="login-group">
+            <h3 class="wsdb_login_titre">Pseudo</h3>
+        @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        </div>
+        
+        <div class="login-group">    
+           <h3 class="wsdb_login_titre">Password</h3>
+    @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        </div>
+        
+        <div class="login-group">
+            <div class="btncontactenvoie">
+                <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Se connecter"/> 
+            </div>
+        </div>
+        
 }
-<a href="/register">Crée un compte</a>
+        
+    </div>
+    
+    <h1 class="wsdb_login_entitre">Pas encore de compte ? Créez-en un !</h1>
+    <div class="login-group">
+            <div class="btncontactenvoie">
+                <a href="/register">
+                <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Créer un compte"/> 
+                </a>
+            </div>
+        </div>
+    
+</div>
 }
