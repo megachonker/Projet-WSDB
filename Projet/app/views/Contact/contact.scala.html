@@ -1,6 +1,6 @@
 @import play.mvc.Http.Request;
 
-@(cForm: Form[Contact], t: String)(implicit request: Request, messages: play.i18n.Messages)
+@(cForm: Form[Contact])(implicit request: Request, messages: play.i18n.Messages)
 
 @main("Contact") {
 <div class="wsdb_contact">
@@ -8,9 +8,8 @@
     
 <!-- Barre de séparation bleu haut-de-l'ecran qui contiendra un message après envoi du formulaire -->
     
-    <div id="messages_succes">
-        <p class="msg_success">
-                @t
+    <div id="barre_bleue">
+        <p class="b_bleue">
         </p>
 </div>
     
@@ -56,32 +55,31 @@
                     
                 <div class="form-group">
                         <label class="paracontactform control-label required">Nom</label>
-                        @helper.inputText(cForm("pseudo"),'_showConstraints->false,'_label ->null)
-                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
+                        @helper.inputText(cForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+                        </div>
                 
                     
                 <div class="form-group">
                         <label class="paracontactform control-label required">Email</label>
-                    @helper.inputText(cForm("mail"),'_showConstraints->false,'_label ->null)
-                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
-                
+                    @helper.inputText(cForm("mail"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+                </div>
                     
                 <div class="form-group">
                         <label class="paracontactform control-label required">Objet</label>
-                    @helper.inputText(cForm("objet"),'_showConstraints->false,'_label ->null)
-                        <input type="text" class="contactboite required" data-vali="novalidation" name="name"></div>
-                
+                    @helper.inputText(cForm("objet"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+                </div>
                     
                 <div class="form-group">
                         <label class="paracontactform control-label required">Message</label>
-                    @helper.inputText(cForm("message"),'_showConstraints->false,'_label ->null)
-                        <textarea class="contactboite comment" name="message" rows="4"></textarea></div>
-                
+                    @helper.inputText(cForm("message"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+                </div>
                     
                 <div class="form-group">
                     <div class="contactenvoie">
                         <div class="btncontactenvoie">
                         <input type="submit" class="contactbtn btn btn-md btn-primary" id="submitform" name="submit" value="Send Message">
+                            
+
                         </div>
                         </div>
                     </div>
@@ -97,8 +95,8 @@
     
     <!-- Barre de séparation bleu bas-de-l'ecran -->
     
-    <div id="messages_succes">
-        <p class="msg_success">      
+    <div id="barre_bleue">
+        <p class="b_bleue">      
         </p>         
     </div>
     
