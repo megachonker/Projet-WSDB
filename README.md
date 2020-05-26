@@ -15,3 +15,7 @@ __Parmis ces deux choix il devra trouver la  meilleure [stratégie](https://fr.w
 ## La maquette  temporaire:
 
 __[Lien  Wiki](https://github.com/thirax/Projet-WSDB/wiki)__
+
+
+## Prérequis:
+java  liberika  => [Lien JDK](https://bell-sw.com/pages/java-13.0.1/)
