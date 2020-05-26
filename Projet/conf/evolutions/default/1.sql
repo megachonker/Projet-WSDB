@@ -21,6 +21,7 @@ create table jeux (
 
 create table user (
   id                            bigint auto_increment not null,
+  status                        boolean default false not null,
   pseudo                        varchar(255),
   password                      varchar(255),
   constraint pk_user primary key (id)
