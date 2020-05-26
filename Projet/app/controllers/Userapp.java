@@ -43,9 +43,12 @@ public class Userapp extends Controller {
                 User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
                 return ok(views.html.User.profile.render(userProfils));
             }
+            if(formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(password,[error.required],[]), ValidationError(pseudo,[error.required],[])])")||
+               formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(pseudo,[error.required],[]), ValidationError(password,[error.required],[])])")){//si le formulaire est vide
+                return redirect("/login");
+            }
             //S'il y a  une erreur alors on renvoit le formulaire ou pas de  formulaire
-            return redirect("/login");
-//            return badRequest(views.html.User.login.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
+            return badRequest(views.html.User.register.render(formulaireRecus, request,messagesApi.preferred(request))); //marche pas,  on a  un renvoit  de  page  maispas   de  formulaire
         }
         else{
 
