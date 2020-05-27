@@ -43,6 +43,7 @@ public class Userapp extends Controller {
                 User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
                 return ok(views.html.User.profile.render(userProfils));
             }
+            //on verrrifie  si  le  formulaire est  vide
             if(formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(password,[error.required],[]), ValidationError(pseudo,[error.required],[])])")||
                formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(pseudo,[error.required],[]), ValidationError(password,[error.required],[])])")){//si le formulaire est vide
                 return redirect("/login");
@@ -126,17 +127,17 @@ public class Userapp extends Controller {
         return ok("tout le monde est mort / Suprimer");
     }
     
-    public Result updateuser(Long id, Http.Request request) {
-        User u = User.find.byId(id) ;
+    public Result updateuser(Http.Request request) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
         Form <User> uForm = formFactory.form(User.class) ;
         uForm = uForm.fill(u);
         return ok(views.html.User.updateuser.render(u, uForm, request, messagesApi.preferred(request))) ;
     }
     
-    public Result updateuserform(Long id, Http.Request request) {
+    public Result updateuserform(Http.Request request) {
         final Form<User> uForm = userForm.bindFromRequest(request);
         User u = uForm.get();
-        u.setId(id);
+        u.setId(Long.parseLong((request.session().get("session").get())));
         u.update();
         return redirect(routes.Userapp.profile());
     }
