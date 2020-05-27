@@ -43,6 +43,14 @@ public class User extends Model{
 
     //Déclaration accesseur  est Seter
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long iden) {
+        this.id = iden;
+    }
+	
     //faire status connecter  deconecter
 
 
