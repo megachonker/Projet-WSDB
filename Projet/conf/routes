@@ -9,7 +9,7 @@ GET     /index                      controllers.HomeController.index
 #test cookie
 
 #GET     /set                       controllers.HomeController.setcookie(formulaire : Request)
-#GET     /get                       controllers.HomeController.getcookie(formulaire : Request)
+GET     /get                       controllers.HomeController.getcookie(formulaire : Request)
 
 #Partie User
 
@@ -22,8 +22,10 @@ POST    /login                      controllers.Userapp.login(formulaire : Reque
 GET     /register                   controllers.Userapp.register(formulaire : Request)
 POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Request)
 
-GET /updateuser/:id                 controllers.Userapp.updateuser(id: Long, request: Request) 
-POST /updateuserform                controllers.Userapp.updateuserform(id: Long, request: Request)
+GET     /unlog                      controllers.Userapp.unlog(formulaire:Request)
+
+GET /updateuser                     controllers.Userapp.updateuser(request: Request)
+POST /updateuserform                controllers.Userapp.updateuserform(request: Request)
 
 	#gestion user
 
