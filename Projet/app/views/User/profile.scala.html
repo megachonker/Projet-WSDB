@@ -1,6 +1,53 @@
 @(userProfils : User)
 
-@main("Profile") {
-<h1>Profiles</h1>
-<p>Bienvenu  @userProfils.getPseudo ton mdp est  @userProfils.getPassword() </p>
+@main("Profil") {
+<div class="wsdb_login">
+    
+<h1 class="wsdb_login_entitre">Profil de @userProfils.getPseudo et @userProfils.getPassword et @userProfils.getId</h1>
+    
+    <div class="wsdb_login_encadre">
+        
+        
+        <div class="login-group">
+            <h3 class="wsdb_profil_titre">Vos statistiques:</h3>
+                <article class="wsdb_profil_stats">
+            <p class="wsdb_profil_stats_info">Nombres de parties jouées:</p>
+            <p class="wsdb_profil_stats_chiffre">XXXXX parties</p>
+                    
+            <p class="wsdb_profil_stats_info">Nombres de parties gagnées:</p>
+            <p class="wsdb_profil_stats_chiffre">XXXXX parties</p>
+            
+            <p class="wsdb_profil_stats_info">Nombres de parties perdues:</p>
+            <p class="wsdb_profil_stats_chiffre">XXXXX parties</p>
+                    
+            </article>
+        </div>
+        
+        <div class="profil-group">
+            <div class="btnprofil">
+            <div class="btncontactenvoie profil bis">
+                <a href="/unlog">
+                <button class="loginbtn btn btn-md btn-primary">Se déconnecter
+                    </button>
+                </a> 
+            </div>
+            
+        
+            <div class="btncontactenvoie profil bis">
+                <a href="/updateuser/@userProfils.getId">
+                <button class="loginbtn btn btn-md btn-primary">Modifier
+                    </button>
+                </a> 
+            </div>
+        
+            <div class="btncontactenvoie profil">
+                <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Clé admin ????"/> 
+            </div>
+        
+            </div>
+        </div>
+    </div>
+    
+</div>
+
 }
