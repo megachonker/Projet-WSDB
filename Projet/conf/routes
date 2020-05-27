@@ -8,25 +8,28 @@ GET     /index                      controllers.HomeController.index
 
 #test cookie
 
-#GET     /set                        controllers.HomeController.setcookie(formulaire : Request)
-#GET     /get                        controllers.HomeController.getcookie(formulaire : Request)
+#GET     /set                       controllers.HomeController.setcookie(formulaire : Request)
+#GET     /get                       controllers.HomeController.getcookie(formulaire : Request)
 
 #Partie User
 
-#chercher une redirection de  profile si rien
+#Chercher une redirection de  profile si rien
 GET     /profile                    controllers.Userapp.profile(formulaire : Request )
 POST    /profile                    controllers.Userapp.profile(formulaire : Request )
-GET     /login                    	controllers.Userapp.login(formulaire : Request)
-POST    /login                    	controllers.Userapp.login(formulaire : Request)
+GET     /login                      controllers.Userapp.login(formulaire : Request)
+POST    /login                      controllers.Userapp.login(formulaire : Request)
 
 GET     /register                   controllers.Userapp.register(formulaire : Request)
 POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Request)
+
+GET /updateuser/:id                 controllers.Userapp.updateuser(id: Long, request: Request) 
+POST /updateuserform                controllers.Userapp.updateuserform(id: Long, request: Request)
 
 	#gestion user
 
 GET		/userlist					controllers.Userapp.userlist()
 GET		/userflush					controllers.Userapp.flush()
-GET     /delete/:id					controllers.Userapp.delete(id : Long)
+GET             /delete/:id					controllers.Userapp.delete(id : Long)
 
 #Partie Jeux
 
