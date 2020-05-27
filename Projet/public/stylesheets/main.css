@@ -204,14 +204,14 @@
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:before, .form-group:after, .login-grou:before, .login-group:after{
+.form-group:before, .form-group:after, .login-grou:before, .login-group:after, .register-grou:before, .register-group:after{
     content: " ";
     display: table;
     margin-bottom: 5px;
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:after, .login-group:after{
+.form-group:after, .login-group:after, .register-group:after{
     clear: both;
 }
 
@@ -403,16 +403,16 @@
 
 /*  FIN CSS PAGE REDIRECTION  */
 
-/*  CSS PAGE LOGIN  */
+/*  CSS PAGE LOGIN et REGISTER */
 
 /*  CSS pour l'entitre */
-.wsdb_login_entitre{
+.wsdb_login_entitre, .wsdb_register_entitre{
     margin-top: 25px;
     text-align: center;
 }
 
 /*  CSS pour le titre */
-.wsdb_login_titre{
+.wsdb_login_titre, .wsdb_register_titre{
     width: 33.333333%;
     text-align: left;
     margin-top: 0px;
@@ -422,12 +422,12 @@
 }
 
 /*  CSS pour les input&label */
-.login-group{
+.login-group, .register-group{
     margin-top: 35px;
 }
 
 /*  CSS pour l'encadre bleu */
-.wsdb_login_encadre{
+.wsdb_login_encadre, .wsdb_register_encadre{
     width: 70%;
     margin:auto;
     border: 10px outset rgba(33,184,254,1);
@@ -438,7 +438,7 @@
 }
 
 /*  CSS pour le bouton */
-.loginbtn {
+.loginbtn, .registerbtn {
     background-color: #21B8FE;
     background: rgba(33,184,254,1);
     background-clip: padding-box;
@@ -451,4 +451,75 @@
     margin-bottom: -25px !important;
 }
 
-/*  FIN CSS PAGE LOGIN  */
+/*  FIN CSS PAGE LOGIN et REGISTER */
+
+/*  CSS PAGE PROFIL */
+
+.wsdb_profil_titre{
+    text-align: center;
+    font-size:22px;
+}
+
+.wsdb_profil_stats{
+    width:420px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+.wsdb_profil_stats_info, .wsdb_profil_stats_chiffre  {
+    text-align: left;
+    float: left;
+    font-size: 17px;
+}
+.wsdb_profil_stats_info{
+    color: #21B8fE;
+    width: 250px;
+}
+
+.wsdb_profil_stats_chiffre  {
+    width: 120px;
+}
+
+.profil-group{
+    width: 100%;
+}
+
+.btnprofil {
+    height: 35px;
+    margin: auto;
+    margin-top: 50px;
+    width: fit-content;
+}
+
+.btncontactenvoie.profil{
+    float: left;
+
+}
+
+.btncontactenvoie.profil.bis{
+        margin-right: 15px;
+}
+
+/*  Media-query */
+@media only screen and (max-width:920px){
+    .wsdb_contact_cd, .wsdb_contact_cg {
+    width: 75vw !important;
+    margin:auto;
+    float: none;
+}
+    
+    .wsdb_contact_cd{
+        margin-top: 25px;
+    }
+    
+    .titrecontact{
+        text-align: center;
+    }
+    
+    .contactcoordo{
+        width:200px;
+        margin: auto;
+    }
+
+}
