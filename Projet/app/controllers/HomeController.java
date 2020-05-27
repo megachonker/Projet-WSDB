@@ -19,11 +19,7 @@ public class HomeController extends Controller {
 //                .addingToSession(request, "connected", "user@gmail.com");
 //    }
 //
-//    public Result getcookie(Http.Request request) {
-//        return request
-//                .session()
-//                .get("connected")
-//                .map(user -> ok("Hello " + user))
-//                .orElseGet(() -> unauthorized("Oops, you are not connected"));
-//    }
+    public Result getcookie(Http.Request request) {
+        return ok(request.session().get("session").get());
+    }
 }
