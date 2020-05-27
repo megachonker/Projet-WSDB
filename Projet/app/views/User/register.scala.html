@@ -1,13 +1,34 @@
 @(userForm: Form[User])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
-@main("Register") {
-<h2>Register</h2>
+@main("Login") {
+<div class="wsdb_register">
+    
+<h1 class="wsdb_register_entitre">Enregistrez-vous</h1>
+    
+    <div class="wsdb_register_encadre">
+        
 @helper.form(action = routes.Userapp.profile()){
     @helper.CSRF.formField
-    <h3>pseudo</h3>
-    @helper.inputText(userForm("pseudo"))
-    <h3>password</h3>
-    @helper.inputText(userForm("password"))
-    <input type="submit"  value="MARCHE-PUTAIN"  style="display: block"/> 
+        
+        <div class="register-group">
+            <h3 class="wsdb_register_titre">Pseudo</h3>
+        @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        </div>
+        
+        <div class="register-group">    
+           <h3 class="wsdb_register_titre">Password</h3>
+    @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        </div>
+        
+        <div class="register-group">
+            <div class="btncontactenvoie">
+                <input class="registerbtn btn btn-md btn-primary" type="submit"  value="Enregistrer"/> 
+            </div>
+        </div>
+        
 }
+        
+    </div>
+    
+</div>
 }
