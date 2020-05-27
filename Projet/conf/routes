@@ -18,11 +18,12 @@ GET     /profile                    controllers.Userapp.profile(formulaire : Req
 POST    /profile                    controllers.Userapp.profile(formulaire : Request )
 GET     /login                      controllers.Userapp.login(formulaire : Request)
 POST    /login                      controllers.Userapp.login(formulaire : Request)
+GET     /unlog                      controllers.Userapp.unlog(formulaire:Request)
 
 GET     /register                   controllers.Userapp.register(formulaire : Request)
 POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Request)
 
-GET /updateuser/:id                 controllers.Userapp.updateuser(id: Long, request: Request) 
+GET  /updateuser/:id                controllers.Userapp.updateuser(id: Long, request: Request) 
 POST /updateuserform                controllers.Userapp.updateuserform(id: Long, request: Request)
 
 	#gestion user
