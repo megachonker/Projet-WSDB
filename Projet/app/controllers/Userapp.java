@@ -94,7 +94,10 @@ public class Userapp extends Controller {
 
     }
 
-
+    //Déconnexion
+    public Result unlog(Http.Request request) {
+        return ok(views.html.User.unlog.render()).withNewSession();
+}
 
     public Result register(Http.Request request) {
         //On créé un formulaire a  partire de User
@@ -123,6 +126,19 @@ public class Userapp extends Controller {
         return ok("tout le monde est mort / Suprimer");
     }
     
+    public Result updateuser(Long id, Http.Request request) {
+        User u = User.find.byId(id) ;
+        Form <User> uForm = formFactory.form(User.class) ;
+        uForm = uForm.fill(u);
+        return ok(views.html.User.updateuser.render(u, uForm, request, messagesApi.preferred(request))) ;
+    }
     
+    public Result updateuserform(Long id, Http.Request request) {
+        final Form<User> uForm = userForm.bindFromRequest(request);
+        User u = uForm.get();
+        u.setId(id);
+        u.update();
+        return redirect(routes.Userapp.profile());
+    }
     
 }
