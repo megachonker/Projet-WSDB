@@ -14,7 +14,11 @@ create table contact (
 
 create table jeux (
   id                            bigint auto_increment not null,
+  pseudo1                       varchar(255),
+  pseudo2                       varchar(255),
   noms                          varchar(255),
+  user1                         integer not null,
+  user2                         integer not null,
   password                      varchar(255),
   constraint pk_jeux primary key (id)
 );
