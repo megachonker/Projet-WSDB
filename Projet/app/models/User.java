@@ -1,13 +1,9 @@
 package models;
-import play.api.data.*;
-import play.data.validation.*;
-import play.data.validation.Constraints.* ;
-//import play.libs.Files.TemporaryFile;
-//import play.mvc.Http.MultipartFormData.FilePart;
 
 import io.ebean.*;
 import java.util.*;
 import javax.persistence.*;
+import play.data.validation.Constraints.* ;
 
 @Entity
 public class User extends Model{
