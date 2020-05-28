@@ -1,0 +1,15 @@
+@(liste:  List[Jeux])
+
+@main("Liste des Loby") {
+<h2>@liste.size() loby en ligne</h2>
+
+    <ul>
+        @for(p <- liste ) {
+            <li><h3>noms: @p.getNoms, id: @p.id</h3></li>
+            <ul>
+                <li>@p.getPseudo1, id: @p.getUser1()</li>
+                <li>@p.getPseudo2, id: @p.getUser2()</li>
+            </ul>
+        }
+    </ul>
+}
