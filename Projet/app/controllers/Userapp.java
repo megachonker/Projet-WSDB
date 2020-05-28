@@ -140,4 +140,9 @@ public class Userapp extends Controller {
         return redirect(routes.Userapp.profile());
     }
     
+    public Result nbjoueur() {
+        List<User> liste = User.find.all();
+        return ok(views.html.Var.nbjoueur.render(liste));
+    }
+    
 }
