@@ -248,6 +248,8 @@
 /*  CSS de la division contenant le bouton  */
 .btncontactenvoie{
     width: fit-content;
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
     margin: auto;
     margin-bottom: 35px !important;
 }
@@ -262,6 +264,8 @@
 /*  CSS pour les titres bleus de pages showcontactform et listemsgcontactform */
 .titremsgcontact{
     width: fit-content;
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
     margin: auto;
     margin-top: 10px !important;
 }
@@ -269,6 +273,8 @@
 /*  CSS pour la liste des messages de contact sur la page listemsgcontactform */
 .msgcontactliste{
     width:fit-content;
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
     border: 2px solid #21B8FE;
     padding: 5px !important;
     background-color: #29537C;
@@ -490,6 +496,8 @@
     margin: auto;
     margin-top: 50px;
     width: fit-content;
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
 }
 
 .btncontactenvoie.profil{
