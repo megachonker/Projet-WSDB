@@ -5,6 +5,9 @@
 @main("crée un loby") {
 @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
                 @helper.CSRF.formField
-
-    }
+                @helper.inputText(jeuxform("noms"))
+                @helper.inputText(jeuxform("pseudo1"))
+                @helper.inputText(jeuxform("pseudo2"))
+                <input type="submit"  value="crée ta game"/>
+            }
 }
