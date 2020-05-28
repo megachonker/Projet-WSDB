@@ -41,6 +41,11 @@ a:active,a:hover {
     outline: 0
 }
 
+iframe {
+    border: none;
+    width: 100%;
+}
+
 .dropdown-menu,.wsdb_menu_items li ul.child li a {
     text-align: left
 }
