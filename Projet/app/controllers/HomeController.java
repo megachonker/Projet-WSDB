@@ -1,9 +1,6 @@
 package controllers;
 
-//CLEANER !!
-
 import play.mvc.*;
-
 
 public class HomeController extends Controller {
     
@@ -14,11 +11,6 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
-//    public Result setcookie(Http.Request request) {
-//        return redirect("/")
-//                .addingToSession(request, "connected", "user@gmail.com");
-//    }
-//
     public Result getcookie(Http.Request request) {
         return ok(request.session().get("session").get());
     }
