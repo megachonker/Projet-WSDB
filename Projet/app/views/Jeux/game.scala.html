@@ -1,10 +1,37 @@
 @import play.mvc.Http.Request;
 
-@(jeuxform : Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
+@(who : String ,objeux : Jeux, objuser : User)(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Jeux") {
-@helper.form(action = routes.Jeuxapp.resultatnewgame()){
-@helper.CSRF.formField
+    <h2>@who :</h2>
+
+
+
+
+
+<script type="text/javascript">
+var count = 10;
+var redirect = "/index";
+var message =  "A TOI DE JOUER WIWI ";
+function countDown(){
+    var timer = document.getElementById("timer");
+    if(count > 0){
+        count--;
+message+=message;
+        timer.innerHTML = "<h1>"+message+"</h1>";
+
+        setTimeout("countDown()", 500);
+    }else{
+        window.location.href = redirect;
+    }
+}
+
+</script>
+<span id="timer">
+<script type="text/javascript">countDown();</script>
+</span>
+    @helper.form(action = routes.Jeuxapp.checkactionloby()){
+    @helper.CSRF.formField
 
 }
 }
