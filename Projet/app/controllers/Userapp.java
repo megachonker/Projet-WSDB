@@ -82,8 +82,7 @@ public class Userapp extends Controller {
             for(User truc : u) {
                 if (truc.getPseudo().equals(userProfils.getPseudo())){
                     if(truc.getPassword().equals(userProfils.getPassword())){
-                        return ok(views.html.User.profile.render(userProfils))
-                                .addingToSession(request, "session", String.valueOf(truc.id));//on ajoute un kookie qui a pour id de session l'id de l'user en sachant que le mieux ces un truc  random
+                        return redirect("/profile").addingToSession(request, "session", String.valueOf(truc.id));//on ajoute un kookie qui a pour id de session l'id de l'user en sachant que le mieux ces un truc  random
                     }
                 }
             }
