@@ -60,6 +60,9 @@ POST    /resultatcontactform        controllers.Contactapp.resultatcontactform(r
 
 POST    /submission                 controllers.Contactapp.submission()
  
+# Route pour les var
+
+GET		/nbjoueur					controllers.Userapp.nbjoueur()
 
 # Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
