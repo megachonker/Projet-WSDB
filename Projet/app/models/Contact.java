@@ -1,15 +1,12 @@
 package models;
-import io.ebean.*;
-import java.util.*;
-import javax.persistence.*;
-import play.data.validation.*;
-import play.data.validation.Constraints.*;
 
+import io.ebean.*;
+import javax.persistence.*;
+import play.data.validation.Constraints.*;
 
 @Entity
 public class Contact extends Model{
-    
-    
+
     private static final long serialVersionUID= 1L;
     
     @Id
