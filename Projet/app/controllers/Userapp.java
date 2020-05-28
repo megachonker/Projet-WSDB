@@ -3,12 +3,9 @@ package controllers;
 import models.*;
 import play.mvc.*;
 import play.data.*;
-import views.html.*;
 import java.util.List;
 import javax.inject.Inject;
 import play.i18n.MessagesApi;
-
-
 
 public class Userapp extends Controller {
     
@@ -59,6 +56,8 @@ public class Userapp extends Controller {
             userProfils.save();
             //Oon  balance un ok avec un get
             return ok(views.html.User.profile.render(userProfils));
+                                            //.addingToSession(request, "session", String.valueOf(truc.id));//on ajoute un kookie qui a pour id de session l'id de l'user en sachant que le mieux ces un truc  random
+
             //redirect("userliste");
         }
 
