@@ -22,11 +22,9 @@ public class Jeux extends Model{
     ArrayList<Boolean> resutatJ1 = new ArrayList<Boolean>();
     ArrayList<Boolean> resutatJ2 = new ArrayList<Boolean>();
 
-    @Required
     @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
 	private String pseudo1;
 
-    @Required
     @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
     private String pseudo2;
     @Required
