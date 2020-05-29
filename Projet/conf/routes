@@ -36,6 +36,7 @@ GET     /delete/:id					controllers.Userapp.delete(id : Long)
 
 #Partie Jeux
 
+GET     /lobyjoin                   controllers.Jeuxapp.joinlobyAffichage(id:Long)
 GET     /lobyjoin/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
 GET     /joinloby/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
 GET     /lobynew                    controllers.Jeuxapp.newgame(formulaire : Request)
@@ -45,8 +46,9 @@ GET     /lobycreate                    controllers.Jeuxapp.newgame(formulaire : 
 
 GET     /lobylist                   controllers.Jeuxapp.lobyliste()
 POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
-GET     /lobyflush                  controllers.Jeuxapp.flush()
+GET     /lobyflush                     controllers.Jeuxapp.flush()
 GET     /checkactionloby            controllers.Jeuxapp.checkactionloby(formulaire : Request)
+
 #Partie contact
 
 GET     /contact                    controllers.Contactapp.contact(request: Request)
