@@ -1,11 +1,15 @@
 @(liste:  List[User])
 
 @main("Liste Utilisateur") {
-<h2>@liste.size() Joueur  en tout et "metre joueur co"</h2>
+<h1 class="titremsgcontact">Liste des @liste.size() joueurs inscrit sur le site</h1> 
+<div class="msgcontactliste"><ul class="msgcliste">
+  @for(p <- liste) {
+            <li>@p.getPseudo - @p.getId -  @p.getGrade</br> 
+    <a href="/updateuseradmin/@p.id"><button class="btn contactliste">Modifier</button></a>
+    <a href="/delete/@p.id"><button class="btn contactliste">Suppr</button></a></li> }
+</ul> 
 
-    <ul>
-        @for(p <- liste ) {
-                  <li>@p.getPseudo <--> @p.id <--> mdp @p.getPassword</li>
-        }
-    </ul>
+<div id="flush"><a href="/userflush"><button class="btn contactliste">Effacer toute la base de joueurs</button></a></div>
+
+</div>
 }
