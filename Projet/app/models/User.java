@@ -31,8 +31,13 @@ public class User extends Model{
     @Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "kikko detected")//au moins un chiffre et une majuscule et qui va entre 8 et 32 caracteres
     private String password;
 
-        public User(){
+    //Grade de l'utilisateur
+    @Required
+    private String grade;
 
+    //Constructeur par défaut où chaque nouvelle personne inscrite aura le grade joueur
+    public User(){
+            this.grade = "Joueur";
         }
 
 
@@ -45,6 +50,14 @@ public class User extends Model{
 
     public void setId(long iden) {
         this.id = iden;
+    }
+	
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 	
     //faire status connecter  deconecter
