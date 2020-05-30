@@ -20,23 +20,23 @@ public class Contact extends Model{
      @Pattern(
         value = "^[A-Za-z0-9]{1,24}$",
         message = "Pseudo non valide.")
-    public String pseudo ;
+    private String pseudo ;
     
     @Required
     @Email
-    public String mail ;
+    private String mail ;
     
      @Required
      @Pattern(
         value = "^[A-Za-z0-9]{2,}",
         message = "L'objet de votre demande doit avoir au minimum 2 caractères.")
-    public String objet ;
+    private String objet ;
     
     @Required
      @Pattern(
         value = "^[A-Za-z0-9]{2,}",
         message = "Le message doit avoir au minimum 2 caractères.")
-    public String message ;
+    private String message ;
     
     public Contact(){
     }
