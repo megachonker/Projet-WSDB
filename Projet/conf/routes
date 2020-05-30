@@ -8,8 +8,8 @@ GET     /index                      controllers.HomeController.index
 
 #test cookie
 
-#GET     /set                       controllers.HomeController.setcookie(formulaire : Request)
-GET     /get                       controllers.HomeController.getcookie(formulaire : Request)
+#GET    /set                        controllers.HomeController.setcookie(formulaire : Request)
+GET     /get                        controllers.HomeController.getcookie(formulaire : Request)
 
 #Partie User
 
@@ -25,14 +25,18 @@ POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Re
 
 GET     /unlog                      controllers.Userapp.unlog(formulaire:Request)
 
-GET     /updateuser                     controllers.Userapp.updateuser(request: Request)
-POST    /updateuserform                controllers.Userapp.updateuserform(request: Request)
 
-	#gestion user
+#Gestion user
 
-GET		/userlist					controllers.Userapp.userlist()
-GET		/userflush					controllers.Userapp.flush()
-GET     /delete/:id					controllers.Userapp.delete(id : Long)
+GET	/userlist		    controllers.Userapp.userlist()
+GET	/userflush		    controllers.Userapp.flush()
+GET     /delete/:id		    controllers.Userapp.delete(id : Long)
+
+GET     /updateuser                 controllers.Userapp.updateuser(request: Request)
+POST    /updateuserform             controllers.Userapp.updateuserform(request: Request)
+
+GET     /updateuseradmin/:id        controllers.Userapp.updateuseradmin(id: Long, request: Request)
+POST    /updateuseradminform        controllers.Userapp.updateuseradminform(id: Long, request: Request)
 
 #Partie Jeux
 
@@ -40,13 +44,13 @@ GET     /lobyjoin                   controllers.Jeuxapp.joinlobyAffichage(id:Lon
 GET     /lobyjoin/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
 GET     /joinloby/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
 GET     /lobynew                    controllers.Jeuxapp.newgame(formulaire : Request)
-GET     /lobycreate                    controllers.Jeuxapp.newgame(formulaire : Request)
+GET     /lobycreate                 controllers.Jeuxapp.newgame(formulaire : Request)
 
-    #administration jeux
+#Administration jeux
 
 GET     /lobylist                   controllers.Jeuxapp.lobyliste()
 POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
-GET     /lobyflush                     controllers.Jeuxapp.flush()
+GET     /lobyflush                  controllers.Jeuxapp.flush()
 GET     /checkactionloby            controllers.Jeuxapp.checkactionloby(formulaire : Request)
 
 #Partie contact
@@ -56,7 +60,7 @@ GET     /showcontactform/:id        controllers.Contactapp.showcontactform(id: L
 GET     /deletecontactform/:id      controllers.Contactapp.deletecontactform(id: Long)
 GET     /listemsgformcontact        controllers.Contactapp.listemsgformcontact()
 
-GET	/flush					        controllers.Contactapp.flush()
+GET	/flush			    controllers.Contactapp.flush()
 
 POST    /resultatcontactform        controllers.Contactapp.resultatcontactform(request: Request)
 
@@ -64,7 +68,7 @@ POST    /submission                 controllers.Contactapp.submission()
  
 # Route pour les var
 
-GET		/nbjoueur					controllers.Userapp.nbjoueur()
+GET		/nbjoueur	    controllers.Userapp.nbjoueur()
 
 # Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
