@@ -3,7 +3,7 @@
 <h1 class="titremsgcontact">Liste des @liste.size() messages de contact</h1> 
 <div class="msgcontactliste"><ul class="msgcliste">
   @for(a <- liste) {
-            <li>@a.pseudo - @a.mail -  @a.objet</br><a href="showcontactform/@a.id"><button class="btn contactliste">Voir</button></a> <a href="deletecontactform/@a.id"><button class="btn contactliste">Suppr</button></a></li> }
+            <li>@a.getPseudo - @a.getMail -  @a.getObjet</br><a href="showcontactform/@a.id"><button class="btn contactliste">Voir</button></a> <a href="deletecontactform/@a.id"><button class="btn contactliste">Suppr</button></a></li> }
 </ul> 
 
 <div id="flush"><a href="/flush"><button class="btn contactliste">Tout effacer</button></a></div>
