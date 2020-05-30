@@ -1,0 +1,43 @@
+@import play.mvc.Http.Request;
+
+@(u:User, userForm: Form[User])(implicit request: play.mvc.Http.Request, messages: play.i18n.Messages)
+
+@main("Test") {
+<div class="wsdb_register">
+    
+<h1 class="wsdb_register_entitre">Modifier votre profil</h1>
+    
+    <div class="wsdb_register_encadre">
+        
+@helper.form(action = routes.Userapp.updateuseradminform(u.getId)){
+    @helper.CSRF.formField
+        
+        <div class="register-group">
+            <h3 class="wsdb_register_titre">Pseudo</h3>
+        @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        </div>
+        
+        <div class="register-group">    
+           <h3 class="wsdb_register_titre">Password</h3>
+    @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        </div>
+        
+        <div class="register-group">    
+           <h3 class="wsdb_register_titre">Grade</h3>
+    @helper.select(field = userForm("grade"),
+                   options = Seq("Joueur" -> "Joueur",
+                                 "Administrateur" -> "Administrateur"), '_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        </div>
+        
+        <div class="register-group">
+            <div class="btncontactenvoie">
+                <input class="registerbtn btn btn-md btn-primary" type="submit"  value="Enregistrer"/> 
+            </div>
+        </div>
+        
+}
+        
+    </div>
+    
+</div>
+}
