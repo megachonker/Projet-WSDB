@@ -1,5 +1,5 @@
  @(a: Contact)
 @main("Visionnage d'un message de contact") {
-<h2 class="titremsgcontact"> @a.pseudo - @a.mail -  @a.objet </h2> 
-<p class="contactmsg">@a.message</p>
+<h2 class="titremsgcontact"> @a.getPseudo - @a.getMail -  @a.getObjet </h2> 
+<p class="contactmsg">@a.getMessage</p>
 }
