@@ -145,4 +145,20 @@ public class Userapp extends Controller {
         return ok(views.html.Var.nbjoueur.render(liste));
     }
     
+    //Formulaire de modification de profil pour les administrateurs
+    public Result updateuseradmin(Long id, Http.Request request) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+        Form <User> uForm = formFactory.form(User.class) ;
+        uForm = uForm.fill(u);
+        return ok(views.html.User.updateuseradmin.render(u, uForm, request, messagesApi.preferred(request))) ;
+    }
+    
+    //Envoi du formulaire de modification de profil pour les administrateurs
+    public Result updateuseradminform(Long id, Http.Request request) {
+        final Form<User> uForm = userForm.bindFromRequest(request);
+        User u = uForm.get();
+        u.setId(Long.parseLong((request.session().get("session").get())));
+        u.update();
+        return redirect(routes.Userapp.userlist());
+    }
 }
