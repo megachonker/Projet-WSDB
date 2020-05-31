@@ -96,8 +96,7 @@ POST    /submission                 controllers.Contactapp.submission()
 
 # Route pour les var
 
-GET		/nbjoueur	        controllers.Userapp.nbjoueur()
-GET		/nbmatchencours	    controllers.Jeuxapp.nbmatchencours()
+GET		/getstat/	        controllers.HomeController.getstat(valeur)
 
 
 

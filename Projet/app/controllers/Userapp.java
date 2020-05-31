@@ -135,10 +135,8 @@ public class Userapp extends Controller {
         return redirect(routes.Userapp.profile());
     }
     
-    //???
-    public Result nbjoueur() {
-        List<User> liste = User.find.all();
-        return ok(views.html.Var.nbjoueur.render(liste));
+    public static int getnbjoueur() {
+        return User.find.all().size();
     }
     
     //Formulaire de modification de profil pour les administrateurs

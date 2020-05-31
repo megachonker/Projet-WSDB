@@ -94,7 +94,7 @@ public class Jeuxapp extends Controller {
         return ok("views.html.Jeux.");
 
     }
-    
+
         public Result joinloby(Http.Request request,long id){ //join loby verrifi que l'utilisateur peut renter  mais est aussi la  main du game
 
         long idvisiteur  = Long.parseLong((request.session().get("session").get()));//avec le cookie on   cherche l'id de  l'user
@@ -144,9 +144,8 @@ public class Jeuxapp extends Controller {
         }
         return ok(views.html.messagetempo.render("supression base donnée des jeux"));
     }
- public Result nbmatchencours() {
-        List<Jeux> liste = Jeux.find.all();
-        return ok(views.html.Var.nbmatchencours.render(liste));
+ public static int getmatchencours() {
+        return Jeux.find.all().size();
     }
 }
 
