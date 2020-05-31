@@ -1,81 +1,75 @@
-package controllers;
+package models;
 
-import models.*;
-import play.mvc.*;
-import play.data.*;
-import java.util.List;
-import javax.inject.Inject;
-import play.i18n.MessagesApi; 
+import io.ebean.*;
+import javax.persistence.*;
+import play.data.validation.Constraints.*;
 
+@Entity
+public class Contact extends Model{
 
-public class Contactapp extends Controller {
+    private static final long serialVersionUID= 1L;
     
-    //Création de formulaire
+    @Id
+    public long id;
     
-    @Inject 
-    FormFactory formFactory;
-    MessagesApi messagesApi;
-    Form <Contact> contactForm;
+    public static Finder<Long, Contact> find = new Finder<Long,Contact>(Contact.class);
     
-    @Inject 
-    public Contactapp(FormFactory formFactory, MessagesApi messagesApi){
-        this.contactForm = formFactory.form(Contact.class);
-        this.messagesApi = messagesApi;
+    
+    
+     @Required
+     @Pattern(
+        value = "^[A-Za-z0-9]{1,24}$",
+        message = "Pseudo non valide.")
+    private String pseudo ;
+    
+    @Required
+    @Email
+    private String mail ;
+    
+     @Required
+     @Pattern(
+        value = "^[A-Za-z0-9]{2,}",
+        message = "L'objet de votre demande doit avoir au minimum 2 caractères.")
+    private String objet ;
+    
+    @Required
+     @Pattern(
+        value = "^[A-Za-z0-9]{2,}",
+        message = "Le message doit avoir au minimum 2 caractères.")
+    private String message ;
+    
+    public Contact(){
     }
     
-    //Page de contact
-    public Result contact(Http.Request request) {
-        return ok(views.html.Contact.contact.render(contactForm, request, messagesApi.preferred(request)));
-} 
-    //Page après envoi formulaire
-    public Result resultatcontactform(Http.Request request) {
-        Form<Contact> cForm = contactForm.bindFromRequest(request);
-            //Si erreur réafficher la page contact avec les messages d'erreur
-            if (cForm.hasErrors()) {
-                return badRequest(views.html.Contact.contact.render(cForm, request, messagesApi.preferred(request)));
-            }
-            //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
-            else{
-                Contact a = cForm.get();
-                a.save();
-                return ok(views.html.Contact.submission.render());  
-            }
+    public String getPseudo(){
+        return this.pseudo;
     }
     
-    //Page de la liste des message de contact qui sont stockées
-    public Result listemsgformcontact(Http.Request request){
-        User u = User.find.byId(Long.parseLong((request.session().get("session").get())));
-        List<Contact> liste = Contact.find.all();
-        return ok(views.html.Contact.listemsgformcontact.render(u, liste));
+    public void setPseudo(String p){
+        this.pseudo = p;
     }
     
-    //Page pour lire un message de contact
-    public Result showcontactform(Http.Request request, Long id) {
-        User u = User.find.byId(Long.parseLong((request.session().get("session").get())));
-        List<Contact> liste = Contact.find.all();
-        Contact a = Contact.find.byId(id) ;
-        return ok(views.html.Contact.showcontactform.render(u, a)) ;
+       public String getMail(){
+        return this.mail;
     }
     
-    //Suppression d'un message de contact de la base de données
-    public Result deletecontactform(Long id) {
-       Contact a = Contact.find.byId(id) ;
-        a.delete();
-        return redirect(routes.Contactapp.listemsgformcontact()) ;
-    } 
-      
-    //Suppression de tous les messages de contact
-    public Result flush() {
-        List<Contact> liste = Contact.find.all();
-        for(Contact c : liste) {
-            c.delete();
-        }
-        return redirect(routes.Contactapp.listemsgformcontact());
+    public void setMail(String em){
+        this.mail = em;
     }
     
-    //Page de redirection après envoi  
-    public Result submission() {
-        return ok(views.html.Contact.submission.render()) ;
+    public String getObjet(){
+        return this.objet;
     }
     
+    public void setObjet(String o){
+        this.objet = o;
+    }
+    
+    public String getMessage(){
+        return this.message;
+    }
+    
+    public void setMessage(String me){
+        this.message = me;
+    }
 }
