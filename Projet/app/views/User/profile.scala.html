@@ -40,9 +40,13 @@
                 </a> 
             </div>
         
+                @if(userProfils.getGrade.equalsIgnoreCase("Administrateur")){
             <div class="btncontactenvoie profil">
-                <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Clé admin ????"/> 
+                <a href="/panneladmin">
+                <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Panneau d'administration"/> 
+                </a>
             </div>
+                }
         
             </div>
         </div>
