@@ -73,6 +73,7 @@ public class Contactapp extends Controller {
         return redirect(routes.Contactapp.listemsgformcontact());
     }
     
+    //Page de redirection après envoi  
     public Result submission() {
         return ok(views.html.Contact.submission.render()) ;
     }
