@@ -74,6 +74,7 @@ POST    /submission                 controllers.Contactapp.submission()
 # Route pour les var
 
 GET		/nbjoueur	    controllers.Userapp.nbjoueur()
+GET		/nbmatchencours	    controllers.Jeuxapp.nbmatchencours()
 
 # Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
