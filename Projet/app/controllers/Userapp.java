@@ -22,12 +22,6 @@ public class Userapp extends Controller {
         this.userForm = formFactory.form(User.class);
         this.messagesApi = messagesApi;
     }
-    
-    //Page d'accueil
-    public Result index() {
-        return ok(views.html.index.render());
-    }
-
 
     //Profil  est ambigu, il permet de charger la page profil et vérifie les formulaires d'enregistrement
     public Result profile(Http.Request request) {
@@ -36,7 +30,7 @@ public class Userapp extends Controller {
         Form<User> formulaireRecus = userForm.bindFromRequest(request);
         //On  vérifie si  le  formulaire à  des erreur  voir User.java
         if (formulaireRecus.hasErrors()) {
-            if(request.session().get("session").isPresent()){//verification si kookies
+            if(request.session().get("session").isPresent()){//verification si l'id de  l'user  concord avec  la bd
                 User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
                 return ok(views.html.User.profile.render(userProfils));
             }
@@ -53,11 +47,8 @@ public class Userapp extends Controller {
             User userProfils = formulaireRecus.get();
             //On va  sauvegarder les données dans  la  base de donnée
             userProfils.save();
-            //On  balance un ok avec un get
-            return ok(views.html.User.profile.render(userProfils));
-            //.addingToSession(request, "session", String.valueOf(truc.id));//On ajoute un dookie qui a pour id de session l'id de l'user en sachant que le mieux c'est un truc aléatoire
-            
-            //redirect("userliste");
+            //Puis on redirige
+            return redirect("/profile");
         }
 
     }
