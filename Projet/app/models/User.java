@@ -16,30 +16,23 @@ public class User extends Model{
     
     public static Finder<Long, User> find = new Finder<Long,User>(User.class);
 
-
-    private boolean status;//True = Admin False = normal
-
-
-
     //Définition des pré-requis
     @Required
-    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "Pseudo non valable")
+    //@Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "Pseudo non valable")
 	private String pseudo;
 
     //Vérification si pas existant dans la bd  ?
     @Required
-    @Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "Mot de passe pas assez fort")//Au moins un chiffre, une majuscule et qui va entre 8 et 32 caractères
+    //@Pattern(value = "^(?=.{8,})(?=.*[A-Z]+)(?=.*[0-9]+).*",    message = "Mot de passe pas assez fort")//Au moins un chiffre, une majuscule et qui va entre 8 et 32 caractères
     private String password;
 
     //Grade de l'utilisateur
-    @Required
     private String grade;
 
     //Constructeur par défaut où chaque nouvelle personne inscrite aura le grade joueur
     public User(){
             this.grade = "Joueur";
         }
-
 
 
     //Liste des getters et setters
@@ -60,15 +53,6 @@ public class User extends Model{
 
     public void setGrade(String grade) {
         this.grade = grade;
-    }
-
-    //Liste des getters et setters pour le statut    
-    public boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 
     //Liste des getters et setters pour le mot de passe    
