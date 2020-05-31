@@ -9,7 +9,7 @@ import play.data.validation.Constraints.* ;
 public class User extends Model{
     
     private static final long serialVersionUID= 1L;
-    private ArrayList<Integer> points = new ArrayList<Integer>(); // Permetrait de stocker temporairement les points/score pendant un match
+    private final ArrayList<Integer> points = new ArrayList<Integer>(); // Permetrait de stocker temporairement les points/score pendant un match
 	
     @Id
     public long id;
