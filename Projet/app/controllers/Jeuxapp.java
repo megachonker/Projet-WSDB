@@ -56,25 +56,10 @@ public class Jeuxapp extends Controller {
         else{
             Jeux magame = cForm.get();
             //setUser1   peut  porter a  confusion  car  ici ces  l'id  d'user  qui est dans  les  loby
-            List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db
-
-            //verifie si les champ sont vide
-                for(User selecUser : machin) {  // on  va  lister chaque user
-
-                if (selecUser.getPseudo().equals(magame.getPseudo1())) {//si l'utilisateur qui a le droit  de rejoindre la game existe dans la bd
-                    magame.setUser1((int) selecUser.id);//on va chercher a stoquer l'identifiant de l'user demander pour  la  wheitlsliete
-                }
-                if (selecUser.getPseudo().equals(magame.getPseudo2())) {
-                    magame.setUser2((int)selecUser.id);
-                }
-            }
-            if(magame.getUser1()==0||magame.getUser2()==0||magame.getUser1()==magame.getUser2()){
-                return badRequest(views.html.Jeux.makeloby.render(cForm, request,messagesApi.preferred(request)));
-            }
-
+            List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db  
             magame.save();
-            return redirect("/");//views.html.Jeux.game.render(cForm, "Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !", request, messagesApi.preferred(request)));
-//            return redirect("/"+magame.id);//views.html.Jeux.game.render(cForm, "Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !", request, messagesApi.preferred(request)));
+            return redirect("/");
+			
         }
     }
 	
@@ -174,8 +159,7 @@ public class Jeuxapp extends Controller {
         }
         return ok(views.html.messagetempo.render("supression base donnée des jeux"));
     }
-
-    public Result nbmatchencours() {
+ public Result nbmatchencours() {
         List<Jeux> liste = Jeux.find.all();
         return ok(views.html.Var.nbmatchencours.render(liste));
     }
