@@ -5,14 +5,14 @@
 @main("crée un loby") {
 
 <h3>matche public : </h3>
-@helper.form(action = routes.Jeuxapp.resultatnewgamepublic()) {
+@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
                 @helper.CSRF.formField
                 @helper.inputText(jeuxform("noms"))
                 <input type="submit"  value="crée ta game"/>
  }
 
 <h3>matche privé : </h3>
-@helper.form(action = routes.Jeuxapp.resultatnewgameprive()) {
+@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
                 @helper.CSRF.formField
                 @helper.inputText(jeuxform("noms"))
                 @helper.inputText(jeuxform("pseudo1"))
