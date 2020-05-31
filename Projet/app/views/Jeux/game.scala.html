@@ -3,35 +3,18 @@
 @(who : String ,objeux : Jeux, objuser : User)(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Jeux") {
-    <h2>@who :</h2>
+ 
 
+<div class="wsdb_index">
+    
+    <div class="wsdb_index_content">
+           
+		<p class="wsdb_entitre">Veuilliez choisir :</p>
+            <br>
+            <p class="wsdb_index_textebis"><input type="submit" name="coo" value="Coopérer" class="contactbtn btn btn-md btn-primary">  ou  
+<input type="submit" name="tra" value="Trahire" class="contactbtn btn btn-md btn-primary"></p>
 
+</div>
+</div>
 
-
-
-<script type="text/javascript">
-var count = 10;
-var redirect = "/index";
-var message =  "A TOI DE JOUER WIWI ";
-function countDown(){
-    var timer = document.getElementById("timer");
-    if(count > 0){
-        count--;
-message+=message;
-        timer.innerHTML = "<h1>"+message+"</h1>";
-
-        setTimeout("countDown()", 500);
-    }else{
-        window.location.href = redirect;
-    }
-}
-
-</script>
-<span id="timer">
-<script type="text/javascript">countDown();</script>
-</span>
-    @helper.form(action = routes.Jeuxapp.checkactionloby()){
-    @helper.CSRF.formField
-
-}
 }
