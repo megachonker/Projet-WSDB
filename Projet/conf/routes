@@ -6,12 +6,19 @@
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
 
-#test cookie
+#Test cookie
 
 #GET    /set                        controllers.HomeController.setcookie(formulaire : Request)
 GET     /get                        controllers.HomeController.getcookie(formulaire : Request)
 
+
+
+
+
+
+
 #Partie User
+
 
 #Chercher une redirection de  profile si rien
 
@@ -26,17 +33,26 @@ POST    /checklogin                 controllers.Userapp.checklogin(formulaire:Re
 GET     /unlog                      controllers.Userapp.unlog(formulaire:Request)
 
 
+
 #Gestion user
 
-GET	/userlist		    controllers.Userapp.userlist()
-GET	/userflush		    controllers.Userapp.flush()
-GET     /delete/:id		    controllers.Userapp.delete(id : Long)
+GET	    /userlist		            controllers.Userapp.userlist()
+GET	    /userflush		            controllers.Userapp.flush()
+GET     /delete/:id		            controllers.Userapp.delete(id : Long)
 
 GET     /updateuser                 controllers.Userapp.updateuser(request: Request)
 POST    /updateuserform             controllers.Userapp.updateuserform(request: Request)
 
 GET     /updateuseradmin/:id        controllers.Userapp.updateuseradmin(id: Long, request: Request)
 POST    /updateuseradminform        controllers.Userapp.updateuseradminform(id: Long, request: Request)
+
+GET     /panneladmin                controllers.Userapp.panneladmin(request: Request)
+
+
+
+
+
+
 
 #Partie Jeux
 
@@ -49,32 +65,44 @@ GET     /lobycreate                 controllers.Jeuxapp.newgame(formulaire : Req
 #Administration jeux
 
 GET     /lobylist                   controllers.Jeuxapp.lobyliste()
-
-POST    /verifnewgame               controllers.Jeuxapp.resultatnewgamepublic(formulaire : Request)
-POST    /verifnewgame               controllers.Jeuxapp.resultatnewgameprive(formulaire : Request)
-
-
-
+POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
 GET     /lobyflush                  controllers.Jeuxapp.flush()
 GET     /checkactionloby            controllers.Jeuxapp.checkactionloby(formulaire : Request)
+
+
+
+
+
+
 
 #Partie contact
 
 GET     /contact                    controllers.Contactapp.contact(request: Request)
-GET     /showcontactform/:id        controllers.Contactapp.showcontactform(id: Long) 
+GET     /showcontactform/:id        controllers.Contactapp.showcontactform(request: Request, id: Long) 
 GET     /deletecontactform/:id      controllers.Contactapp.deletecontactform(id: Long)
-GET     /listemsgformcontact        controllers.Contactapp.listemsgformcontact()
+GET     /listemsgformcontact        controllers.Contactapp.listemsgformcontact(request: Request)
 
-GET	/flush			    controllers.Contactapp.flush()
+GET	/flush			                controllers.Contactapp.flush()
 
 POST    /resultatcontactform        controllers.Contactapp.resultatcontactform(request: Request)
 
 POST    /submission                 controllers.Contactapp.submission()
  
+
+
+
+
+
+
 # Route pour les var
 
-GET		/nbjoueur	    controllers.Userapp.nbjoueur()
+GET		/nbjoueur	        controllers.Userapp.nbjoueur()
 GET		/nbmatchencours	    controllers.Jeuxapp.nbmatchencours()
+
+
+
+
+
 
 # Route Pour  les  médiat Public
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
