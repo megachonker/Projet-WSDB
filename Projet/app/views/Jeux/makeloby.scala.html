@@ -3,7 +3,16 @@
 @(jeuxform: Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("crée un loby") {
-@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
+
+<h3>matche public : </h3>
+@helper.form(action = routes.Jeuxapp.resultatnewgamepublic()) {
+                @helper.CSRF.formField
+                @helper.inputText(jeuxform("noms"))
+                <input type="submit"  value="crée ta game"/>
+ }
+
+<h3>matche privé : </h3>
+@helper.form(action = routes.Jeuxapp.resultatnewgameprive()) {
                 @helper.CSRF.formField
                 @helper.inputText(jeuxform("noms"))
                 @helper.inputText(jeuxform("pseudo1"))
@@ -11,3 +20,4 @@
                 <input type="submit"  value="crée ta game"/>
             }
 }
+
