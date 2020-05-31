@@ -17,7 +17,7 @@ GET     /get                        controllers.HomeController.getcookie(formula
 
 
 
-#Partie User
+#Partie User#
 
 
 #Chercher une redirection de  profile si rien
@@ -54,7 +54,7 @@ GET     /panneladmin                controllers.Userapp.panneladmin(request: Req
 
 
 
-#Partie Jeux
+#Partie Jeux#
 
 GET     /lobyjoin                   controllers.Jeuxapp.joinlobyAffichage(id:Long)
 GET     /lobyjoin/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
