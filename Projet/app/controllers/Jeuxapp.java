@@ -23,17 +23,15 @@ public class Jeuxapp extends Controller {
         this.messagesApi = messagesApi;
     }
 
-//    public long verrifuser(){
-//        Jeux loby = Jeux.find.byId(id); //voir si  le loby existe pas erreur?
-//        return id;
-//    }
-
+    //On affichage de la  page pour une nouvel  partie
     public Result newgame(Http.Request request) {
         //on test que  le mec  qui crée la  game est user  id  1
+        //ici  on part du  principe  qu'on est  admin  pour  debugage
         if (true){ //((request.session().get("session").get()).equals("1")){//on verifi en fonction de l'id donc  faudra plus tard chercher dans la  bd
             return ok(views.html.Jeux.makeloby.render(jeuxForm,request, messagesApi.preferred(request)));
         }
         else {
+            //message derreur qui  redirige ver page type
             return ok(views.html.messagetempo.render("Vous n'ète pas admin ===> Dégage !"));
         }
     }
@@ -44,9 +42,9 @@ public class Jeuxapp extends Controller {
     }
 
 
-    //Page après envoi formulaire
-
-    public Result resultatnewgamepublic(Http.Request request) {
+    //Page a la récéption du formulaire
+    public Result resultatnewgame(Http.Request request) {
+        //on  remplie le formulaire
         Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
         //Si erreur réafficher la page contact avec les messages d'erreur
         if (cForm.hasErrors()) {
@@ -54,34 +52,22 @@ public class Jeuxapp extends Controller {
         }
         //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
         else{
+            //on transmet les variable du formulaire dans  jeux
             Jeux magame = cForm.get();
-            //setUser1   peut  porter a  confusion  car  ici ces  l'id  d'user  qui est dans  les  loby
-            List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db  
-            magame.save();
-            return redirect("/");
-			
-        }
-    }
-	
- public Result resultatnewgameprive(Http.Request request) {
-        Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
-        //Si erreur réafficher la page contact avec les messages d'erreur
-        if (cForm.hasErrors()) {
-            return badRequest("ERROR bad request ;:"+cForm.toString());//views.html.Jeux.game.render(cForm, null, request, messagesApi.preferred(request)));
-        }
-        //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
-        else{
-            Jeux magame = cForm.get();
-            //setUser1   peut  porter a  confusion  car  ici ces  l'id  d'user  qui est dans  les  loby
-            List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db
 
-            //verifie si les champ sont vide
+            //setUser1   peut  porter a  confusion  car  ici ces  l'id  d'user  qui est dans  les  loby
+
+            //On va  dumper tout la base de donnée dans une liste car les requette ne fonctionne pas
+            List<User> machin = User.find.all();
+
+                //verifie si les champ sont vide
             if(magame.getPseudo1().equals("")){//DANGEUREUX  TROUVER  MIEUX
                 magame.setUser1(1001);
             }
             if(magame.getPseudo2().equals("")){
                 magame.setUser2(1002);
             }
+
             for(User selecUser : machin) {  // on  va  lister chaque user
 
                 if (selecUser.getPseudo().equals(magame.getPseudo1())) {//si l'utilisateur qui a le droit  de rejoindre la game existe dans la bd
@@ -108,8 +94,7 @@ public class Jeuxapp extends Controller {
         return ok("views.html.Jeux.");
 
     }
-
-
+    
         public Result joinloby(Http.Request request,long id){ //join loby verrifi que l'utilisateur peut renter  mais est aussi la  main du game
 
         long idvisiteur  = Long.parseLong((request.session().get("session").get()));//avec le cookie on   cherche l'id de  l'user
