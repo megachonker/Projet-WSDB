@@ -49,7 +49,12 @@ GET     /lobycreate                 controllers.Jeuxapp.newgame(formulaire : Req
 #Administration jeux
 
 GET     /lobylist                   controllers.Jeuxapp.lobyliste()
-POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
+
+POST    /verifnewgame               controllers.Jeuxapp.resultatnewgamepublic(formulaire : Request)
+POST    /verifnewgame               controllers.Jeuxapp.resultatnewgameprive(formulaire : Request)
+
+
+
 GET     /lobyflush                  controllers.Jeuxapp.flush()
 GET     /checkactionloby            controllers.Jeuxapp.checkactionloby(formulaire : Request)
 
