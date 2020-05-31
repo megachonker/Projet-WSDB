@@ -30,7 +30,7 @@ public class Jeuxapp extends Controller {
 
     public Result newgame(Http.Request request) {
         //on test que  le mec  qui crée la  game est user  id  1
-        if ((request.session().get("session").get()).equals("1")){//on verifi en fonction de l'id donc  faudra plus tard chercher dans la  bd
+        if (true){ //((request.session().get("session").get()).equals("1")){//on verifi en fonction de l'id donc  faudra plus tard chercher dans la  bd
             return ok(views.html.Jeux.makeloby.render(jeuxForm,request, messagesApi.preferred(request)));
         }
         else {
@@ -46,7 +46,39 @@ public class Jeuxapp extends Controller {
 
     //Page après envoi formulaire
 
-    public Result resultatnewgame(Http.Request request) {
+    public Result resultatnewgamepublic(Http.Request request) {
+        Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
+        //Si erreur réafficher la page contact avec les messages d'erreur
+        if (cForm.hasErrors()) {
+            return badRequest("ERROR bad request ;:"+cForm.toString());//views.html.Jeux.game.render(cForm, null, request, messagesApi.preferred(request)));
+        }
+        //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
+        else{
+            Jeux magame = cForm.get();
+            //setUser1   peut  porter a  confusion  car  ici ces  l'id  d'user  qui est dans  les  loby
+            List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db
+
+            //verifie si les champ sont vide
+                for(User selecUser : machin) {  // on  va  lister chaque user
+
+                if (selecUser.getPseudo().equals(magame.getPseudo1())) {//si l'utilisateur qui a le droit  de rejoindre la game existe dans la bd
+                    magame.setUser1((int) selecUser.id);//on va chercher a stoquer l'identifiant de l'user demander pour  la  wheitlsliete
+                }
+                if (selecUser.getPseudo().equals(magame.getPseudo2())) {
+                    magame.setUser2((int)selecUser.id);
+                }
+            }
+            if(magame.getUser1()==0||magame.getUser2()==0||magame.getUser1()==magame.getUser2()){
+                return badRequest(views.html.Jeux.makeloby.render(cForm, request,messagesApi.preferred(request)));
+            }
+
+            magame.save();
+            return redirect("/");//views.html.Jeux.game.render(cForm, "Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !", request, messagesApi.preferred(request)));
+//            return redirect("/"+magame.id);//views.html.Jeux.game.render(cForm, "Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !", request, messagesApi.preferred(request)));
+        }
+    }
+	
+ public Result resultatnewgameprive(Http.Request request) {
         Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
         //Si erreur réafficher la page contact avec les messages d'erreur
         if (cForm.hasErrors()) {
@@ -144,3 +176,4 @@ public class Jeuxapp extends Controller {
     }
 
 }
+
