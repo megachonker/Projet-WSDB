@@ -62,24 +62,9 @@ public class Jeux extends Model{
         this.pseudo2 = pseudo2;
     }
 
-    public Jeux(){//String pseudo1, String pseudo2, String noms){
-//        //ces triste de faire comme ça mais scala ces de la merde ;:)
-//        // user de type  user ne marche pas
-//        List<User> machin = User.find.all(); // une  l iste qui dump tout les user  de la db
-//        for(User selecUser : machin) {  // on  va  lister chaque user
-//            if (selecUser.getPseudo().equals(pseudo1)) {//si l'utilisateur qui a le droit  de rejoindre la game existe dans la bd
-//                user1 = (int) selecUser.id;//on va chercher a stoquer l'identifiant de l'user demander pour  la  wheitlsliete
-//            } else if (selecUser.getPseudo().equals(pseudo2)) {
-//                user2 = (int) selecUser.id;
-//            }
-//            else {
-//                user2 = 2;
-//                user1 = 1;
-//            }
-//        }
-//        //SI USER2  OU 1 VIDE FAIRE UNE ERREUR  !:
-//
-//        this.noms = noms;
+    public Jeux(){
+        pseudo1="";
+        pseudo2="";
     }
 
 
