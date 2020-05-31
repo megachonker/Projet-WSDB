@@ -344,6 +344,7 @@
     margin: 3px 0 15px 0;
 }
 
+/* Bouton suppression */ 
 #flush{
     margin: auto;
     margin-top:10px !important;
@@ -412,7 +413,7 @@
 /*  CSS PAGE LOGIN et REGISTER */
 
 /*  CSS pour l'entitre */
-.wsdb_login_entitre, .wsdb_register_entitre{
+.wsdb_login_entitre, .wsdb_register_entitre, .wsdb_admin_entitre{
     margin-top: 25px;
     text-align: center;
 }
@@ -461,36 +462,43 @@
 
 /*  CSS PAGE PROFIL */
 
+/*  CSS pour le titre */
 .wsdb_profil_titre{
     text-align: center;
     font-size:22px;
 }
 
+/*  CSS pour titre statistiques */
 .wsdb_profil_stats{
     width:420px;
     margin: auto;
     margin-top: 50px;
 }
 
-
+/*  CSS pour texte bleu statistique */
 .wsdb_profil_stats_info, .wsdb_profil_stats_chiffre  {
     text-align: left;
     float: left;
     font-size: 17px;
 }
+
+/*  CSS pour texte bleu statistique */
 .wsdb_profil_stats_info{
     color: #21B8fE;
     width: 250px;
 }
 
+/*  CSS pour texte noir statistique */
 .wsdb_profil_stats_chiffre  {
     width: 120px;
 }
 
+/*  CSS pour la section bouton */
 .profil-group{
     width: 100%;
 }
 
+/*  CSS pour bouton */
 .btnprofil {
     height: 35px;
     margin: auto;
@@ -500,11 +508,13 @@
     width: -webkit-max-content; /* Chrome */
 }
 
+/*  CSS pour bouton */
 .btncontactenvoie.profil{
     float: left;
 
 }
 
+/*  CSS pour le bouton */
 .btncontactenvoie.profil.bis{
         margin-right: 15px;
 }
@@ -531,3 +541,55 @@
     }
 
 }
+
+/*  FIN CSS PAGE PROFIL */
+
+/*  CSS PAGE PANNELADMIN */
+
+/*  CSS pour l'encadré */
+ .wsdb_admin_encadre{
+    width: 80%;
+    margin:auto;
+    border: 10px outset rgba(33,184,254,1);
+    padding: 5px 27px 27px 27px;
+    min-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*  CSS pour le texte dans l'encadré */
+.admin-group{
+    margin-top: 20px;
+}
+
+/*  CSS pour les sections dans l'encadré */
+.wsdb_admin_section.bis{
+    margin-top: 30px;
+}
+
+/*  CSS pour les sections des sections dans l'encadré */
+.wsdb_admin_section_part{
+    width:42%;
+    display: inline-block;
+    text-align: center;
+}
+
+/*  CSS pour les sections des sections dans l'encadré */
+.wsdb_admin_section_part.bis{
+    margin-left:15%;
+}
+
+/*  CSS pour les titre des sections dans l'encadré */
+.wsdb_admin_section_titre  {
+    font-size: 17px;
+    color: #21B8fE;
+    width: 100%;
+}
+
+/*  CSS pour les boutons */
+.btncontactenvoie.admin{
+    margin-top: 20px;
+    width:100%;
+}
+
+/*  FIN CSS PAGE PANNELADMIN */
