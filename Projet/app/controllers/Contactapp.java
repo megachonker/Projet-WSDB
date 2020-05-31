@@ -42,16 +42,19 @@ public class Contactapp extends Controller {
             }
     }
     
-    //Page de la liste des message de contact qui sont stockées
-    public Result listemsgformcontact(){
+    //Page de la liste des message de contact qui sont stockées uniquement dispo pour les admins
+    public Result listemsgformcontact(Http.Request request){
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get())));
         List<Contact> liste = Contact.find.all();
-        return ok(views.html.Contact.listemsgformcontact.render(liste));
+        return ok(views.html.Contact.listemsgformcontact.render(u, liste));
     }
     
-    //Page pour lire un message de contact
-    public Result showcontactform(Long id) {
+    //Page pour lire un message de contact uniquement dispo pour les admins
+    public Result showcontactform(Http.Request request, Long id) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get())));
+        List<Contact> liste = Contact.find.all();
         Contact a = Contact.find.byId(id) ;
-        return ok(views.html.Contact.showcontactform.render(a)) ;
+        return ok(views.html.Contact.showcontactform.render(u, a)) ;
     }
     
     //Suppression d'un message de contact de la base de données
@@ -70,6 +73,7 @@ public class Contactapp extends Controller {
         return redirect(routes.Contactapp.listemsgformcontact());
     }
     
+    //Page de redirection après envoi  
     public Result submission() {
         return ok(views.html.Contact.submission.render()) ;
     }
