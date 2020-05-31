@@ -175,5 +175,9 @@ public class Jeuxapp extends Controller {
         return ok(views.html.messagetempo.render("supression base donnée des jeux"));
     }
 
+    public Result nbmatchencours() {
+        List<Jeux> liste = Jeux.find.all();
+        return ok(views.html.Var.nbmatchencours.render(liste));
+    }
 }
 
