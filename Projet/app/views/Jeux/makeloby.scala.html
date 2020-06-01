@@ -7,12 +7,16 @@
 <div class="wsdb_jeux_encadre">
         
     <article class="wsdb_jeux_publique">
+        
+        <h2 class="wsdb_jeux_entitre">Partie publique:</h2>
+        
         <div class="jeux-group">
-            <h2 class="wsdb_jeux_entitre">Partie publique:</h2>
-                    <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
-@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
-                @helper.CSRF.formField
-                @helper.inputText(jeuxform("noms"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+            
+            <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
+            
+            @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
+            @helper.CSRF.formField
+            @helper.inputText(jeuxform("noms"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
         
             <div class="jeux-group">
                 <div class="btncontactenvoie">
@@ -22,14 +26,15 @@
  }
                     
         </div>
+        
     </article>
     
     
     <article class="wsdb_jeux_privée">
         
+        <h2 class="wsdb_jeux_entitre">Partie privée:</h2>
+        
         <div class="jeux-group">
-            
-            <h2 class="wsdb_jeux_entitre">Partie privée:</h2>
             
             <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
             @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
@@ -57,6 +62,7 @@
             }
                     
             </article>
+    
         </div>
         
 }
