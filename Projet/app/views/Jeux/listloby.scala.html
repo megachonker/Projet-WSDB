@@ -5,12 +5,14 @@
 
     <ul>
         @for(p <- liste ) {
-            <li><h3>noms: @p.getNoms, id: @p.id</h3></li>
+            <li><h3>noms: @p.getNoms, idSalle: @p.id</h3></li>
             <ul>
-                <li>@p.getPseudo1, id: @p.getUser1()</li>
-                <li>@p.getPseudo2, id: @p.getUser2()</li>
+				<li>@{if (p.getUser1() > 0  ) ("Joureur :"+p.getPseudo1 +", id:"+p.getUser1) else "libre"  }</li>
+               
+                <li>@{if (p.getUser2() > 0  ) ("Joureur :"+p.getPseudo2 +", id:"+p.getUser2) else "libre"  }</li>
             </ul>
 			<a href="joinloby/@p.id"><button class="btnformliste">y aller</button></a>
         }
     </ul>
 }
+
