@@ -96,7 +96,7 @@ POST    /resultatcontactform        controllers.Contactapp.resultatcontactform(r
 
 # Route pour les var
 
-GET		/getstat	        controllers.HomeController.getstat(valeur)
+GET		/getstat/	        controllers.HomeController.getstat(valeur)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
