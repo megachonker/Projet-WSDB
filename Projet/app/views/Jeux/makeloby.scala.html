@@ -2,22 +2,62 @@
 
 @(jeuxform: Form[Jeux])(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
-@main("crée un loby") {
+@main("Créer un lobby") {
 
-<h3>matche public : </h3>
+<div class="wsdb_jeux_encadre">
+        
+    <article class="wsdb_jeux_publique">
+        <div class="jeux-group">
+            <h2 class="wsdb_jeux_entitre">Partie publique:</h2>
+                    <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
 @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
                 @helper.CSRF.formField
-                @helper.inputText(jeuxform("noms"))
-                <input type="submit"  value="crée ta game"/>
+                @helper.inputText(jeuxform("noms"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        
+            <div class="jeux-group">
+                <div class="btncontactenvoie">
+                    <input class="jeuxbtn btn btn-md btn-primary" type="submit"  value="Créer la partie"/> 
+                </div>
+            </div>
  }
-
-<h3>matche privé : </h3>
-@helper.form(action = routes.Jeuxapp.resultatnewgame()) {
-                @helper.CSRF.formField
-                @helper.inputText(jeuxform("noms"))
-                @helper.inputText(jeuxform("pseudo1"))
-                @helper.inputText(jeuxform("pseudo2"))
-                <input type="submit"  value="crée ta game"/>
+                    
+        </div>
+    </article>
+    
+    
+    <article class="wsdb_jeux_privée">
+        
+        <div class="jeux-group">
+            
+            <h2 class="wsdb_jeux_entitre">Partie privée:</h2>
+            
+            <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
+            @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
+            @helper.CSRF.formField
+            @helper.inputText(jeuxform("noms"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        </div>
+        
+        
+        <div class="jeux-group">
+            <h3 class="wsdb_login_titre">Pseudo du joueur 1:</h3>
+            @helper.inputText(jeuxform("pseudo1"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        </div>
+                    
+        <div class="jeux-group">
+            <h3 class="wsdb_login_titre">Pseudo du joueur 2:</h3>
+            @helper.inputText(jeuxform("pseudo1"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+        </div>
+        
+            <div class="jeux-group">
+                <div class="btncontactenvoie">
+                    <input class="jeuxbtn btn btn-md btn-primary" type="submit"  value="Créer la partie"/> 
+                </div>
+            </div>
+        
             }
+                    
+            </article>
+        </div>
+        
 }
 
