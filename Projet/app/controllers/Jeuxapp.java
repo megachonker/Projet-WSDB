@@ -16,7 +16,9 @@ public class Jeuxapp extends Controller {
     FormFactory formFactory;
     MessagesApi messagesApi;
     Form<Jeux> jeuxForm;
-
+	
+	int n=-1;
+	
     @Inject
     public Jeuxapp(FormFactory formFactory, MessagesApi messagesApi){
         this.jeuxForm = formFactory.form(Jeux.class);
@@ -61,11 +63,11 @@ public class Jeuxapp extends Controller {
             List<User> machin = User.find.all();
 
                 //verifie si les champ sont vide
-            if(magame.getPseudo1().equals("")){//DANGEUREUX  TROUVER  MIEUX
-                magame.setUser1(1001);
+            if(magame.getPseudo1().equals("")){
+                magame.setUser1(n--);
             }
             if(magame.getPseudo2().equals("")){
-                magame.setUser2(1002);
+                magame.setUser2(n--);
             }
 
             for(User selecUser : machin) {  // on  va  lister chaque user
@@ -103,7 +105,7 @@ public class Jeuxapp extends Controller {
         User actualuser = User.find.byId(idvisiteur);// j'isole la  classe user
 //        return ok(""+loby.toString());
 
-        if(loby.getUser1()==1001 && (int)idvisiteur!=loby.getUser2()){ // es  id de  place libre
+        if(loby.getUser1()<0 && (int)idvisiteur!=loby.getUser2()){ // es  id de  place libre
 
             loby.id =  id;
             loby.setUser1((int)idvisiteur);//peut  etre   erreur ?
@@ -111,7 +113,7 @@ public class Jeuxapp extends Controller {
             loby.update();//2foix en  double peut opti
             return ok(views.html.Jeux.game.render("joueur 1",loby, actualuser, request, messagesApi.preferred(request)));
         }
-        else if(loby.getUser2()==1002 && loby.getUser1()!=(int)idvisiteur){
+        else if(loby.getUser2()<0 && loby.getUser1()!=(int)idvisiteur){
             loby.setUser2((int)idvisiteur);//peut  etre   erreur ?
             loby.setPseudo2(actualuser.getPseudo());
             loby.update();
@@ -148,4 +150,5 @@ public class Jeuxapp extends Controller {
         return Jeux.find.all().size();
     }
 }
+
 
