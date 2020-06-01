@@ -9,6 +9,8 @@
     
     <div class="wsdb_register_encadre">
         
+        <!-- Formulaire de modification de profil pour les administrateurs avec bouton d'enregistrement des modifications -->
+        
 @helper.form(action = routes.Userapp.updateuseradminform(u.getId)){
     @helper.CSRF.formField
         
@@ -21,6 +23,9 @@
            <h3 class="wsdb_register_titre">Password</h3>
     @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
         </div>
+        
+        
+        <!-- Partie supplémentaire par rapport au formulaire de changement de profil pour les utilisateurs où nous offrons la permission à l'administrateur de choisir les grades des utilisateurs -->
         
         <div class="register-group">    
            <h3 class="wsdb_register_titre">Grade</h3>

@@ -38,7 +38,7 @@ public class Contactapp extends Controller {
             else{
                 Contact a = cForm.get();
                 a.save();
-                return ok(views.html.Contact.submission.render());  
+                return ok(views.html.messagetempo.render("Votre requête nous a bien été transmise et sera traitée dès que possible. Merci !"));  
             }
     }
     
@@ -71,11 +71,6 @@ public class Contactapp extends Controller {
             c.delete();
         }
         return redirect(routes.Contactapp.listemsgformcontact());
-    }
-    
-    //Page de redirection après envoi  
-    public Result submission() {
-        return ok(views.html.Contact.submission.render()) ;
     }
     
 }

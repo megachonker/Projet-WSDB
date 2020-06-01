@@ -85,7 +85,7 @@ public class Userapp extends Controller {
 
     //Déconnexion en créant une nouvelle session vierge
     public Result unlog(Http.Request request) {
-        return ok(views.html.User.unlog.render()).withNewSession();
+        return ok(views.html.messagetempo.render("Session en cours de déconnexion... À très bientôt ! ♥")).withNewSession();
 }
 
     //Page d'enregistrement
@@ -97,9 +97,10 @@ public class Userapp extends Controller {
     }
 
     //Rendu de la liste des joueurs
-    public Result userlist() {
+    public Result userlist(Http.Request request) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
         List<User> liste = User.find.all();
-        return ok(views.html.User.liste.render(liste));
+        return ok(views.html.User.liste.render(u, liste));
     } 
     
     //Suppression d'un utilisateur avec redirection sur la liste des joueurs

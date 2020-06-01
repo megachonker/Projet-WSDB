@@ -1,6 +1,12 @@
-@(liste:  List[User])
+@(u: User, liste:  List[User])
 
 @main("Liste Utilisateur") {
+
+<!-- Si l'utilisateur à la grade "Administrateur" on affiche le contenu de la page -->
+    @if(u.getGrade.equalsIgnoreCase("Administrateur")){
+
+    <!-- Contenu de la page qui sera généré par une boucle for qui recherche tous les joueurs dans la BDD -->
+
 <h1 class="titremsgcontact">Liste des @liste.size() joueurs inscrit sur le site</h1> 
 <div class="msgcontactliste"><ul class="msgcliste">
   @for(p <- liste) {
@@ -12,4 +18,10 @@
 <div id="flush"><a href="/userflush"><button class="btn contactliste">Effacer toute la base de joueurs</button></a></div>
 
 </div>
+
+<!-- Si l'utilisateur n'a pas le grade "Administrateur" on le redirige vers une autre page -->
+
+}else{
+<script>window.location='@routes.HomeController.messagetempo("Test")';</script>
+}
 }

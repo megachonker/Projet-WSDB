@@ -30,6 +30,10 @@ public class HomeController extends Controller {
         return ok("Error bad request "+valeur);
     }
 
+    //Page de redirection
+    public Result messagetempo(String t){
+        return ok(views.html.messagetempo.render(t));
+    }
 
 }
 

@@ -1,38 +1,17 @@
-@(u: User, a: Contact)
+ @(u: User, a: Contact)
 @main("Visionnage d'un message de contact") {
 
-@if(u.getGrade.equalsIgnoreCase("Administrateur")){
-<h2 class="titremsgcontact"> @a.getPseudo - @a.getMail -  @a.getObjet </h2>
+<!-- Si l'utilisateur à la grade "Administrateur" on affiche le contenu de la page -->
+    @if(u.getGrade.equalsIgnoreCase("Administrateur")){
+
+    <!-- Contenu de la page -->
+
+<h2 class="titremsgcontact"> @a.getPseudo - @a.getMail -  @a.getObjet </h2> 
 <p class="contactmsg">@a.getMessage</p>
+
+<!-- Si l'utilisateur n'a pas le grade "Administrateur" on le redirige vers une autre page -->
+
 }else{
-<div class="wsdb_index">
-
-    <script type="text/javascript">
-var count = 4;
-var redirect = "/index";
-
-function countDown(){
-    var timer = document.getElementById("timer");
-    if(count > 0){
-        count--;
-        timer.innerHTML = "Vous allez être redirigé dans "+count+" secondes...";
-        setTimeout("countDown()", 1000);
-    }else{
-        window.location.href = redirect;
+<script>window.location='@routes.HomeController.messagetempo("Test")';</script>
     }
-}
-
-</script>
-
-
-    <div class="redirec_texte">
-        Vous n'avez pas la permission d'être ici !
-        <br>
-
-        <span id="timer">
-<script type="text/javascript">countDown();</script>
-</span>
-    </div>
-</div>
-}
 }

@@ -2,9 +2,12 @@
 
 @main("Profil") {
 <div class="wsdb_login">
+
+<!-- Entitre de la page de profil où on affiche le pseudo du joueur -->
     
-<h1 class="wsdb_login_entitre">Profil de @userProfils.getPseudo et @userProfils.getPassword et @userProfils.id</h1>
+<h1 class="wsdb_login_entitre">Profil de @userProfils.getPseudo et @userProfils.getPassword - @userProfils.getId</h1>
     
+    <!-- Partie encadré où on affiche les statistiques du joueurs ainsi que des boutons -->
     <div class="wsdb_login_encadre">
         
         
@@ -40,6 +43,7 @@
                 </a> 
             </div>
         
+                <!-- On vérifié que le joueur possède le grade "Administrateur" afin qu'il puisse accéder au panneau d'administration -->
                 @if(userProfils.getGrade.equalsIgnoreCase("Administrateur")){
             <div class="btncontactenvoie profil">
                 <a href="/panneladmin">

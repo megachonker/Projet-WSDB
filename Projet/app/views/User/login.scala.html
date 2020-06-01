@@ -3,9 +3,13 @@
 @main("Login") {
 <div class="wsdb_login">
     
+            <!-- Partie connexion avec bouton de connexion -->
+    
 <h1 class="wsdb_login_entitre">Connectez-vous</h1>
     
     <div class="wsdb_login_encadre">
+        
+        <!-- Formulaire de connexion -->
         
 @helper.form(action = routes.Userapp.checklogin()){
     @helper.CSRF.formField
@@ -27,8 +31,9 @@
         </div>
         
 }
-        
     </div>
+    
+            <!-- Partie enregistrement avec bouton de redirection -->
     
     <h1 class="wsdb_login_entitre">Pas encore de compte ? Créez-en un !</h1>
     <div class="login-group">
