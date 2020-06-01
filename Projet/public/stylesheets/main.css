@@ -204,14 +204,14 @@
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:before, .form-group:after, .login-grou:before, .login-group:after, .register-grou:before, .register-group:after{
+.form-group:before, .form-group:after, .login-group:before, .login-group:after, .register-grou:before, .register-group:after, .jeux-group:before, .jeux-group:after{
     content: " ";
     display: table;
     margin-bottom: 5px;
 }
 
 /*  CSS permettant l'espace entre les labels du formulaire  */
-.form-group:after, .login-group:after, .register-group:after{
+.form-group:after, .login-group:after, .register-group:after, .jeux-group:after{
     clear: both;
 }
 
@@ -413,13 +413,13 @@
 /*  CSS PAGE LOGIN et REGISTER */
 
 /*  CSS pour l'entitre */
-.wsdb_login_entitre, .wsdb_register_entitre, .wsdb_admin_entitre{
+.wsdb_login_entitre, .wsdb_register_entitre, .wsdb_admin_entitre, .wsdb_jeux_entitre{
     margin-top: 25px;
     text-align: center;
 }
 
 /*  CSS pour le titre */
-.wsdb_login_titre, .wsdb_register_titre{
+.wsdb_login_titre, .wsdb_register_titre, .wsdb_jeux_titre{
     width: 33.333333%;
     text-align: left;
     margin-top: 0px;
@@ -445,7 +445,7 @@
 }
 
 /*  CSS pour le bouton */
-.loginbtn, .registerbtn {
+.loginbtn, .registerbtn, .jeuxbtn{
     background-color: #21B8FE;
     background: rgba(33,184,254,1);
     background-clip: padding-box;
@@ -593,3 +593,27 @@
 }
 
 /*  FIN CSS PAGE PANNELADMIN */
+
+/*  CSS PAGE MAKELOBBY */
+
+/*  CSS pour l'encadre bleu */
+.wsdb_jeux_encadre{
+    width: 90%;
+    margin:auto;
+    border: 10px outset rgba(33,184,254,1);
+    padding: 5px 27px 27px 27px;
+    min-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*  CSS pour le gros titre */
+.wsdb_jeux_entitre{
+    margin-bottom: 30px;
+    text-decoration: underline
+}
+
+/*  CSS pour le bouton */
+.jeuxbtn{
+    margin-top: 25px;
+}
