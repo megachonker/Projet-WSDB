@@ -47,8 +47,16 @@ a:active,a:hover {
 }
 
 iframe {
+	width: 10px;
+	padding: none;
     border: none;
     width: 100%;
+	
+}
+
+#var{
+	width: 25px;
+	margin: 0 auto;
 }
 
 .dropdown-menu,.wsdb_menu_items li ul.child li a {
