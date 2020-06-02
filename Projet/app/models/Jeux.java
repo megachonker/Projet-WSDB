@@ -120,8 +120,8 @@ public class Jeux extends Model{
 
         //on  incrémente le coup
         if(coupJ2.size() == coupJ1.size()){
-            int tour = coupJ1.size();
-            if (coupJ1.get(tour) & coupJ2.get(tour)) {
+            int tour = coupJ1.size()-1;
+            if (coupJ1.get(tour) == coupJ2.get(tour)) {
                 if(coupJ1.get(tour) == true){
                     return "les joueur on tout les deux dit la véritée";
                 }
