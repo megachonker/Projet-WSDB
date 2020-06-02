@@ -138,6 +138,10 @@ public class Jeuxapp extends Controller {
         return ok("action valide");
     }
 
+//    public Result checkactionloby(Http.Request request) {
+//        jeuxForm = formFactory.form(Jeux.class);
+//        return redirect(/);
+//    }
 
     public Result flush() {
         List<Jeux> u = Jeux.find.all(); // type inference works here!
