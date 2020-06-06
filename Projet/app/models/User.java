@@ -75,7 +75,7 @@ public class User extends Model{
     
     //Méthode toString   
     public String toString() {
-        return "pseudo: " + pseudo+ "identifiant: "+id;
+        return "pseudo: " + pseudo+ ", identifiant: "+id;
     }
     
     //Réinitilise les points
