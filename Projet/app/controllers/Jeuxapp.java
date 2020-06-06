@@ -155,13 +155,10 @@ public class Jeuxapp extends Controller {
         return Jeux.find.all().size();
     }
 	
-	public Result coop() {
-        return ok(views.html.messagetempo.render("bouton qui réagie pour coopérer"));
+	public Result jouer(String pseudo,Boolean value) {
+        return ok(views.html.messagetempo.render(pseudo+" "+value));
     }
 	
-	public Result tra() {
-        return ok(views.html.messagetempo.render("bouton qui réagie pour trahire"));
-    }
 }
 
 
