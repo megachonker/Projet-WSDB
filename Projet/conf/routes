@@ -64,7 +64,8 @@ GET     /joinloby/:id               controllers.Jeuxapp.joinloby(formulaire : Re
 GET     /lobynew                    controllers.Jeuxapp.newgame(formulaire : Request)
 GET     /lobycreate                 controllers.Jeuxapp.newgame(formulaire : Request)
 
-GET     /jouer				              		controllers.Jeuxapp.jouer()
+GET     /coop				              		controllers.Jeuxapp.coop()
+GET     /tra				              		controllers.Jeuxapp.tra()
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
