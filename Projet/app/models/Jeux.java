@@ -98,9 +98,9 @@ public class Jeux extends Model{
 //        return "noms salle: "+noms+" sont id :"+ id+"\n"+listUser();
 //    }
     
-    public String jouercoup(int joueur, boolean valeur){
+    public String jouercoup(String joueur, boolean valeur){
         //verification des coups
-        if (joueur ==1 ) {
+        if (joueur.equals(pseudo1) ) {
             if(coupJ1.size()+1 == coupJ1.size()){
                 coupJ1.add(valeur);
             }
