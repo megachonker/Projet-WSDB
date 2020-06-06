@@ -1,6 +1,6 @@
 @import play.mvc.Http.Request;
 
-@(who : String ,objeux : Jeux, objuser : User)(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
+@(who : String ,objeux : Jeux, user : User)(implicit request: play.mvc.Http.Request, messages :play.i18n.Messages)
 
 @main("Jeux") {
  
@@ -9,12 +9,17 @@
     
     <div class="wsdb_index_content">
            
-		<p class="wsdb_entitre">Veuilliez choisir :</p>
+		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
             <br>
-            <p class="wsdb_index_textebis"><input type="submit" name="coo" value="Coopérer" class="contactbtn btn btn-md btn-primary">  ou  
-<input type="submit" name="tra" value="Trahire" class="contactbtn btn btn-md btn-primary"></p>
-
-</div>
+		<p class="wsdb_index_textebis">
+			<form action="@controllers.routes.Jeuxapp.jouer()">
+			  <input type="submit" class="contactbtn btn btn-md btn-primary" value="Coopérer" />
+			</form>	
+			ou
+			<form action="@controllers.routes.Jeuxapp.jouer()">
+			  <input type="submit" class="contactbtn btn btn-md btn-primary" value="Trahir" />
+			</form>
+	</div>
 </div>
 
 }
