@@ -12,13 +12,11 @@
 		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
             <br>
 		<p class="wsdb_index_textebis">
-			<form action="@controllers.routes.Jeuxapp.coop()">
-			  <input type="submit" class="contactbtn btn btn-md btn-primary" value="Coopérer" />
-			</form>	
+			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true)';" value="Coopérer" />	
 			ou
-			<form action="@controllers.routes.Jeuxapp.tra()">
-			  <input type="submit" class="contactbtn btn btn-md btn-primary" value="Trahir" />
-			</form>
+			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,false)';" value="Trahire" />	
+		
+		
 		
 		<p><br> @who <br> @objeux <br> @user <br> pseudo1 : @objeux.getPseudo1() <br> pseudo2 : @objeux.getPseudo2() </p>
 	</div>
