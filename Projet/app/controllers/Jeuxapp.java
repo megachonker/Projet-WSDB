@@ -38,6 +38,7 @@ public class Jeuxapp extends Controller {
         }
     }
 
+	
     public Result lobyliste() {
         List<Jeux> liste = Jeux.find.all();
         return ok(listloby.render(liste));
@@ -150,8 +151,12 @@ public class Jeuxapp extends Controller {
         }
         return ok(views.html.messagetempo.render("supression base donnée des jeux"));
     }
- public static int getmatchencours() {
+ 	public static int getmatchencours() {
         return Jeux.find.all().size();
+    }
+	
+	public Result jouer() {
+        return ok(views.html.messagetempo.render("bouton qui réagie XD"));
     }
 }
 
