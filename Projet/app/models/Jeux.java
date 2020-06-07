@@ -77,8 +77,36 @@ public class Jeux extends Model{
         return pseudo2;
     }
 
+ 	public String getPointJ1() {
+		String res="";
+		for (int i : pointJ1){
+			res+=i+"";
+		}
+        return res;
+    }
+	public String getPointJ2() {
+		String res="";
+		for (int i : pointJ2){
+			res+=i+"";
+		}
+        return res;
+    }
 
-
+	public int getSommePointJ1() {
+		int res=0;
+		for (int i : pointJ1){
+			res+=i;
+		}
+        return res;
+	}
+	public int getSommePointJ2() {
+		int res=0;
+		for (int i : pointJ2){
+			res+=i;
+		}
+        return res;
+	}
+	
     //pas de seter   car pas utile
     public String getPseudo1() {
         return pseudo1;
@@ -99,18 +127,18 @@ public class Jeux extends Model{
 		String res="";
 		//verification des coups
         if (joueur.equals(pseu[0]) ) {
-            if(coupJ1.size()+1 == coupJ2.size() || coupJ1.size()+1 == coupJ2.size()+1){
-                coupJ1.add(valeur);
-				res += "Coup J1 OK / ";
-            }else{
+            if(coupJ1.size()>coupJ2.size()){
 				res += "Coup J1 déja jouer / ";
+            }else{
+				coupJ1.add(valeur);
+				res += "Coup J1 OK / ";
 			}	
         }else{
-            if(coupJ2.size()+1 == coupJ1.size() || coupJ2.size()+1 == coupJ1.size()+1){
-                coupJ2.add(valeur);
-				res += "Coup J2 OK / ";
-            }else{
+            if(coupJ2.size()>coupJ1.size()){
 				res += "Coup J2 déja jouer / ";
+            }else{
+				coupJ2.add(valeur);
+				res += "Coup J2 OK / ";
 			}
         }
 		
