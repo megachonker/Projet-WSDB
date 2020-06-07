@@ -15,7 +15,15 @@
 			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true)';" value="Coopérer" />	
 			ou
 			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,false)';" value="Trahire" />	
+		<br>
 		
+		<h2>Somme des points </h2>
+			<h3>J1: @objeux.getSommePointJ1()</h3>
+			<h3>J2: @objeux.getSommePointJ2()</h3>
+	
+		<h2>Historique des points </h2>
+			<h3>J1: @objeux.getPointJ1()</h3>
+			<h3>J2: @objeux.getPointJ2()</h3>
 	</div>
 </div>
 
