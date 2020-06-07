@@ -17,8 +17,9 @@ public class Jeux extends Model{
     //il   aurait que moi j'aurait fait un  uri
     public static Finder<Long, Jeux> find = new Finder<Long,Jeux>(Jeux.class);
     
-    ArrayList<Boolean> coupJ1 = new ArrayList<Boolean>();
-    ArrayList<Boolean> coupJ2 = new ArrayList<Boolean>();
+	static String[] pseu = new String[2];
+    static ArrayList<Boolean> coupJ1 = new ArrayList<Boolean>();
+    static ArrayList<Boolean> coupJ2 = new ArrayList<Boolean>();
     ArrayList<Boolean> resutatJ1 = new ArrayList<Boolean>();
     ArrayList<Boolean> resutatJ2 = new ArrayList<Boolean>();
 
@@ -87,58 +88,55 @@ public class Jeux extends Model{
         return noms;
     }
 
-    //plus  besoin car pas stoquer dans la bd ?
-
-
-//    public String listUser(){
-//        return user1.toString()+"\n "+ user2.toString();
-//    }
-    
-//    public String status(){
-//        return "noms salle: "+noms+" sont id :"+ id+"\n"+listUser();
-//    }
-    
-    public String jouercoup(String joueur, boolean valeur){
-        //verification des coups
-        if (joueur.equals(pseudo1) ) {
-            if(coupJ1.size()+1 == coupJ1.size()){
+	public static String jouercoup(String joueur, boolean valeur){
+		//assigniation Joueur1 et Joueur2
+		if(pseu[0]==null){
+			pseu[0]=joueur;
+		}else if(pseu[1]==null){
+			pseu[1]=joueur;
+		}
+		
+		String res="";
+		//verification des coups
+        if (joueur.equals(pseu[0]) ) {
+            if(coupJ1.size()+1 == coupJ2.size() || coupJ1.size()+1 == coupJ2.size()+1){
                 coupJ1.add(valeur);
-            }
-            else {
-                return "joueur 1 a déja jouer";
-            }
-        }
-        else{
-            if(coupJ2.size()+1 == coupJ2.size()){
+				res += "Coup J1 OK / ";
+            }else{
+				res += "Coup J1 déja jouer / ";
+			}	
+        }else{
+            if(coupJ2.size()+1 == coupJ1.size() || coupJ2.size()+1 == coupJ1.size()+1){
                 coupJ2.add(valeur);
-            }
-            else {
-                return "joueur 2 a déja jouer";
-            }
-        return "fonction retour avec  erreur";
+				res += "Coup J2 OK / ";
+            }else{
+				res += "Coup J2 déja jouer / ";
+			}
         }
-
-        //on  incrémente le coup
+		
+		//on  incrémente le coup
         if(coupJ2.size() == coupJ1.size()){
             int tour = coupJ1.size()-1;
             if (coupJ1.get(tour) == coupJ2.get(tour)) {
                 if(coupJ1.get(tour) == true){
-                    return "les joueur on tout les deux dit la véritée";
+                    res += "les 2 véritée / ";
                 }
                 else{
-                    return "les joueur ou tout les deux dit le mensonge";
+                    res += "les 2 mensonge /";
                 }
             }
             else{
                 if (coupJ1.get(tour) == true) {
-                    return "le joeur 1  a dit la veriter le joeur 2 a mentis";
+                    res += "j1 veriter, j2  mensonge / ";
                 }
                 else{
-                    return "le joeur 2  a dit la veriter le joeur 1 a mentis";
+                    res += "j2 veriter, j1  mensonge / ";
                 }
             }
-        }
-        return "ces la hesss";
+        }else{
+			res += "en attente du second joueur / ";
+		}
+        return res;
     }
 
     //dumping des score
