@@ -98,7 +98,7 @@ public class Jeuxapp extends Controller {
 
     }
 
-        public Result joinloby(Http.Request request,long id){ //join loby verrifi que l'utilisateur peut renter  mais est aussi la  main du game
+	public Result joinloby(Http.Request request,long id){ //join loby verrifi que l'utilisateur peut renter  mais est aussi la  main du game
 
         long idvisiteur  = Long.parseLong((request.session().get("session").get()));//avec le cookie on   cherche l'id de  l'user
 
@@ -155,9 +155,11 @@ public class Jeuxapp extends Controller {
         return Jeux.find.all().size();
     }
 	
+
 	public Result jouer(String pseudo,Boolean value) {
-		String res = Jeux.jouercoup(pseudo,value);
-        return ok(views.html.messagetempo.render(res));
+		
+        return ok(views.html.messagetempo.render(Jeux.jouercoup(pseudo,value)));
+		
     }
 	
 }
