@@ -156,6 +156,7 @@ public class Jeuxapp extends Controller {
     }
 	
 	public Result jouer(String pseudo,Boolean value) {
+		//Jeux.jouercoup(pseudo,value);
         return ok(views.html.messagetempo.render(pseudo+" "+value));
     }
 	
