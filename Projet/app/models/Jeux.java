@@ -20,8 +20,8 @@ public class Jeux extends Model{
 	static String[] pseu = new String[2];
     static ArrayList<Boolean> coupJ1 = new ArrayList<Boolean>();
     static ArrayList<Boolean> coupJ2 = new ArrayList<Boolean>();
-    ArrayList<Boolean> resutatJ1 = new ArrayList<Boolean>();
-    ArrayList<Boolean> resutatJ2 = new ArrayList<Boolean>();
+    static ArrayList<Integer> pointJ1 = new ArrayList<Integer>();
+    static ArrayList<Integer> pointJ2 = new ArrayList<Integer>();
 
     @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
 	private String pseudo1;
@@ -119,18 +119,26 @@ public class Jeux extends Model{
             int tour = coupJ1.size()-1;
             if (coupJ1.get(tour) == coupJ2.get(tour)) {
                 if(coupJ1.get(tour) == true){
-                    res += "les 2 véritée / ";
+                    res += "les 2 coop (3,3) / ";
+					pointJ1.add(3);
+					pointJ2.add(3);
                 }
                 else{
-                    res += "les 2 mensonge /";
+                    res += "les 2 trahie (1,1)/";
+					pointJ1.add(1);
+					pointJ2.add(1);
                 }
             }
             else{
                 if (coupJ1.get(tour) == true) {
-                    res += "j1 veriter, j2  mensonge / ";
+                    res += "j1 coop, j2  trahie (0,5) / ";
+					pointJ1.add(0);
+					pointJ2.add(5);
                 }
                 else{
-                    res += "j2 veriter, j1  mensonge / ";
+                    res += "j1 trahie, j2  coop (5,0) / ";
+					pointJ1.add(0);
+					pointJ2.add(5);
                 }
             }
         }else{
