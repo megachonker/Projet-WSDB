@@ -3,41 +3,15 @@
  * Créé à partir de TemplateToaster
  * Projet WSDB
  */
+
+/* Début du CSS généré automatiquement par TemplateToaster */
+
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-size: 10px;
-    -webkit-tap-highlight-color: transparent
-}
-
-table {
-border: medium solid #6495ed;
-border-collapse: collapse;
-}
-
-th {
-border: thin solid #6495ed;
-padding: 5px;
-background-color: #D0E3FA;
-background-image: url(sky.jpg);
-}
-
-td {
-border: thin solid #6495ed;
-padding: 5px;
-text-align: center;
-background-color: #ffffff;
-}
-.dropdown-menu>li>a,body {
-    line-height: 1.42;
-    color: #333
-}
-
-.dropdown-menu,.wsdb_menu_items li ul.child li a,body {
-    font-size: 14px;
-    background-color: #fff;
-    background-clip: padding-box
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -57,93 +31,6 @@ a {
 
 a:active,a:hover {
     outline: 0
-}
-
-.footertitre.redirec_contact:hover {
-    color: white !important;
-    transition: all .5s ease-in-out;
-}
-
-iframe {
-	width: 10px;
-	padding: none;
-    border: none;
-    width: 100%;
-	
-}
-
-#var{
-	width: 25px;
-	margin: 0 auto;
-}
-
-.dropdown-menu,.wsdb_menu_items li ul.child li a {
-    text-align: left
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    list-style: none;
-    border: 1px solid #000;
-    border-radius: 0;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175)
-}
-
-.dropdown-menu>li>a {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: 400;
-    white-space: nowrap
-}
-
-.wsdb_menu_items li ul.child li a {
-    display: block;
-    font-family: "Lato","Arial";
-    font-weight: 400;
-    font-style: normal;
-    color: #333;
-    text-shadow: none;
-    text-decoration: none;
-    text-transform: none;
-    min-width: 158px;
-    border-radius: 0 0 0 0;
-    border: solid transparent;
-    border-width: 0;
-    box-shadow: none;
-    line-height: 30px;
-    background: #fff
-}
-
-@media only screen and (max-width:767px) {
-    .open>.child {
-        display: block
-    }
-
-    .open .dropdown-menu {
-        position: static;
-        float: none;
-        width: auto;
-        margin-top: 0;
-        background-color: transparent;
-        border: 0;
-        box-shadow: none
-    }
-}
-
-.navbar-nav .dropdown-menu>li:hover>a {
-    background-color: #eee;
-    background: #eee;
-    background-clip: padding-box
 }
 
 @media print {
@@ -1412,7 +1299,7 @@ footer #wsdb_footer_designed_by_links span,footer#wsdb_footer #wsdb_footer_desig
     float: left;
     width: 78%;
     clear: none;
-    min-height: 40vw;
+    min-height: 44vw;
     border-left: 1px solid #e1e1e1
 }
 
@@ -2432,16 +2319,23 @@ nav#wsdb_menu #nav-expander:active .icon-bar,nav#wsdb_menu #nav-expander:focus .
     transition: all .5s ease-in-out
 }
 
+/* Fin du CSS généré automatiquement par TemplateToaster */
+
+/* CSS du pied de page */
+
+/* CSS du texte du pied de page */
 .footercoordonnees,.footerreseauxs,.footertexteblanc {
     margin: .5em 0!important;
     font-size: 1.143em!important;
     color: #fff!important
 }
 
+/* CSS du texte du pied de page */
 .footercoordonnees,.footerreseauxs {
     font-weight: 700!important
 }
 
+/* CSS du titre du pied de page */
 .footertitre {
     margin: 10px 0!important;
     font-family: 'Oswald','Arial'!important;
@@ -2449,6 +2343,119 @@ nav#wsdb_menu #nav-expander:active .icon-bar,nav#wsdb_menu #nav-expander:focus .
     color: #21b8fe!important
 }
 
+/* CSS du paragraphe du pied de page */
 .parafooter {
     margin: 2em 0 0!important
 }
+
+/* Fin du CSS du pied de page */
+
+/* CSS du field is required */
+dd.error {
+    margin-left: 33.33%;
+}
+
+/* CSS du paragraphe du pied de page */
+.footertitre.redirec_contact:hover {
+    color: white !important;
+    transition: all .5s ease-in-out;
+}
+
+/* CSS du iframe */
+iframe {
+	width: 10px;
+	padding: none;
+    border: none;
+    width: 100%;
+	
+}
+
+/* CSS du var */
+#var{
+	width: 25px;
+	margin: 0 auto;
+}
+
+/* Début du CSS du menu hamburger */
+
+.dropdown-menu>li>a,body {
+    line-height: 1.42;
+    color: #333
+}
+
+.dropdown-menu,.wsdb_menu_items li ul.child li a,body {
+    font-size: 14px;
+    background-color: #fff;
+    background-clip: padding-box
+}
+
+.dropdown-menu,.wsdb_menu_items li ul.child li a {
+    text-align: left
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    border: 1px solid #000;
+    border-radius: 0;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175)
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    white-space: nowrap
+}
+
+.wsdb_menu_items li ul.child li a {
+    display: block;
+    font-family: "Lato","Arial";
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    text-shadow: none;
+    text-decoration: none;
+    text-transform: none;
+    min-width: 158px;
+    border-radius: 0 0 0 0;
+    border: solid transparent;
+    border-width: 0;
+    box-shadow: none;
+    line-height: 30px;
+    background: #fff
+}
+
+@media only screen and (max-width:767px) {
+    .open>.child {
+        display: block
+    }
+
+    .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none
+    }
+}
+
+.navbar-nav .dropdown-menu>li:hover>a {
+    background-color: #eee;
+    background: #eee;
+    background-clip: padding-box
+}
+
+/* Fin du CSS du menu hamburger */
