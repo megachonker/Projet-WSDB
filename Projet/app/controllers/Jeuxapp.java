@@ -156,9 +156,9 @@ public class Jeuxapp extends Controller {
     }
 	
 
-	public Result jouer(String pseudo,Boolean value) {
-		
-        return ok(views.html.messagetempo.render(Jeux.jouercoup(pseudo,value)));
+	public Result jouer(String pseudo,Boolean value,long id) {
+        Jeux.jouercoup(pseudo,value);
+        return redirect("/lobyjoin/"+id);
 		
     }
 	

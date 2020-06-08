@@ -12,9 +12,9 @@
 		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
             <br>
 		<p class="wsdb_index_textebis">
-			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true)';" value="Coopérer" />	
+			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true,objeux.id)';" value="Coopérer" />
 			ou
-			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,false)';" value="Trahire" />	
+			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,false,objeux.id)';" value="Trahire" />
 		<br>
 		
 		<h2>Somme des points </h2>
