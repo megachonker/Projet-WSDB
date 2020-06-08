@@ -1,18 +1,39 @@
 @(liste:  List[Jeux])
 
 @main("Liste des Loby") {
-<h2>@liste.size() loby en ligne</h2>
+<h1 class="wsdb_register_entitre">@liste.size() salons en ligne.</h1>
 
-    <ul>
-        @for(p <- liste ) {
-            <li><h3>noms: @p.getNoms, idSalle: @p.id</h3></li>
-            <ul>
-				<li>@{if (p.getUser1() > 0  ) ("Joureur :"+p.getPseudo1 +", id:"+p.getUser1) else "libre"  }</li>
+<div class="wsdb_liste_salon">
+
+    @for(p <- liste ) {
+              
+            <div class="wsdb_salon_encadre">
+
+                <h2 class="wsdb_salon_entitre">@p.id - Nom: @p.getNoms</h2>
+
+        <article class="salon-group">
+            
+				<div class="wsdb_salon_joueur">@{if (p.getUser1() > 0  ) ("Joureur :"+p.getPseudo1 +", id:"+p.getUser1) else "Libre"  }
+            
+                <p class="wsdb_salon_versus">VS</p>
                
-                <li>@{if (p.getUser2() > 0  ) ("Joureur :"+p.getPseudo2 +", id:"+p.getUser2) else "libre"  }</li>
-            </ul>
-			<a href="joinloby/@p.id"><button class="btnformliste">y aller</button></a>
-        }
-    </ul>
-}
+                @{if (p.getUser2() > 0  ) ("Joureur :"+p.getPseudo2 +", id:"+p.getUser2) else "Libre"  }
+            
+                </div>
+        
+            <div class="btncontactenvoie">
+        
+        <a href="joinloby/@p.id"><button class="jeuxbtn btn btn-md btn-primary">Rejoindre</button></a>
+                
+        
+    </div>
+        
+    </article>
+    
+</div>
+              
+              }
 
+</div>
+
+}
