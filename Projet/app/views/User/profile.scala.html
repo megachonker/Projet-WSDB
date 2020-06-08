@@ -26,7 +26,7 @@
             </article>
         </div>
         
-        <div class="profil-group">
+        <div class="profil-group bis">
             <div class="btnprofil">
             <div class="btncontactenvoie profil bis">
                 <a href="/unlog">
@@ -36,22 +36,16 @@
             </div>
             
         
-            <div class="btncontactenvoie profil bis">
+            <div class="btncontactenvoie profil bis second">
                 <a href="/updateuser">
                 <button class="loginbtn btn btn-md btn-primary">Modifier
                     </button>
                 </a> 
             </div>
 				
-			<div class="btncontactenvoie profil bis">
-                <a href="/lobylist">
-                <button class="loginbtn btn btn-md btn-primary">Liste des jeux
-                    </button>
-                </a> 
-            </div>
-        
                 <!-- On vérifié que le joueur possède le grade "Administrateur" afin qu'il puisse accéder au panneau d'administration -->
                 @if(userProfils.getGrade.equalsIgnoreCase("Administrateur")){
+                </br>
             <div class="btncontactenvoie profil">
                 <a href="/panneladmin">
                 <input class="loginbtn btn btn-md btn-primary" type="submit"  value="Panneau d'administration"/> 
