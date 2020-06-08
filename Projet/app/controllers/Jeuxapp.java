@@ -101,6 +101,15 @@ public class Jeuxapp extends Controller {
 
 	public Result joinloby(Http.Request request,long id){ //join loby verrifi que l'utilisateur peut renter  mais est aussi la  main du game
 
+        if (request.session().get("session").isEmpty()){
+//
+//            return ok(views.html.messagetempo.render("Session en cours de déconnexion... À très bientôt ! ♥")).withNewSession();
+//            return redirect("/anonymisation");
+            User actualuser = new User("guest");
+            actualuser.save();
+//            return ok("fait").addingToSession(request, "session", String.valueOf(actualuser.id));
+            return redirect("/lobyjoin/"+id).addingToSession(request, "session", String.valueOf(actualuser.id));
+        }
         long idvisiteur  = Long.parseLong((request.session().get("session").get()));//avec le cookie on   cherche l'id de  l'user
 
         Jeux loby = Jeux.find.byId(id); //cherche le loby dans la bd en fonction de l'uri

@@ -17,7 +17,6 @@ public class HomeController extends Controller {
     }
 
 
-
     public Result getstat(String valeur) {
 
         if (valeur.equals("nbjoueur")){

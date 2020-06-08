@@ -30,9 +30,19 @@ public class User extends Model{
     private String grade;
 
     //Constructeur par défaut où chaque nouvelle personne inscrite aura le grade joueur
+    public User(String state){
+        if(state == "guest"){
+            this.grade = "guest";
+            this.id = (int)(Math.random() * ((9999999 - 1000) + 1)) + 1000;
+            this.pseudo = "guest "+id;
+            this.password = "";
+        }
+    }
+
     public User(){
             this.grade = "Joueur";
         }
+
 
 
     //Liste des getters et setters
