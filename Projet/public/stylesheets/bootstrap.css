@@ -616,7 +616,6 @@ tbody.collapse.in {
 
     .nav.wsdb_menu_items li ul.child {
         right: 0;
-        top: 90px
     }
 
     span {
@@ -2435,6 +2434,22 @@ iframe {
     line-height: 30px;
     background: #fff
 }
+
+@media only screen and (max-width:1024px) and (min-width:767px) {
+    .open>.child {
+        display: block
+    }
+
+    .open .dropdown-menu {
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none
+    }
+}
+
 
 @media only screen and (max-width:767px) {
     .open>.child {
