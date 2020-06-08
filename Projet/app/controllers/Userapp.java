@@ -48,7 +48,7 @@ public class Userapp extends Controller {
             //On va  sauvegarder les données dans  la  base de donnée
             userProfils.save();
             //Puis on redirige
-            return redirect("/profile");
+            return redirect("/login");
         }
 
     }
