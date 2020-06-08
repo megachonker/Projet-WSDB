@@ -51,7 +51,8 @@ public class Jeuxapp extends Controller {
         Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
         //Si erreur réafficher la page contact avec les messages d'erreur
         if (cForm.hasErrors()) {
-            return badRequest("ERROR bad request ;:"+cForm.toString());//views.html.Jeux.game.render(cForm, null, request, messagesApi.preferred(request)));
+            return badRequest(views.html.Jeux.makeloby.render(cForm, request,messagesApi.preferred(request))); //Marche pas,  on a  un renvoie  de  page  mais pas   de  formulaire
+//            return badRequest("ERROR bad request ;:"+cForm.toString());//views.html.Jeux.game.render(cForm, null, request, messagesApi.preferred(request)));
         }
         //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
         else{
