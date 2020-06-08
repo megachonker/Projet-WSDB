@@ -11,6 +11,24 @@ html {
     -webkit-tap-highlight-color: transparent
 }
 
+table {
+border: medium solid #6495ed;
+border-collapse: collapse;
+}
+
+th {
+border: thin solid #6495ed;
+padding: 5px;
+background-color: #D0E3FA;
+background-image: url(sky.jpg);
+}
+
+td {
+border: thin solid #6495ed;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+}
 .dropdown-menu>li>a,body {
     line-height: 1.42;
     color: #333
