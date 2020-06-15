@@ -2347,6 +2347,28 @@ nav#wsdb_menu #nav-expander:active .icon-bar,nav#wsdb_menu #nav-expander:focus .
     margin: 2em 0 0!important
 }
 
+/* CSS du paragraphe du pied de page */
+.carte {
+    border: 5px outset #21B8FE !important;
+}
+
+@media only screen and (max-width:1199px) and (min-width:767px) {
+    .carte {
+    width:90%;
+    margin-left:9%
+    }
+    
+    .footercellcolumn4 > .html_content > .parafooter > .footertitre{
+    margin-left:9% !important;  
+    }
+}
+
+@media only screen and (max-width:767px){
+.parafooter >  p, .footertitre {
+    text-align: center !important;
+}
+}
+
 /* Fin du CSS du pied de page */
 
 /* CSS du field is required */
