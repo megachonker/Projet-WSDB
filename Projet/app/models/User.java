@@ -28,17 +28,21 @@ public class User extends Model{
 
     //Grade de l'utilisateur
     private String grade;
+    
+    //Grade de l'utilisateur
+    private int statut;
 
-    //Constructeur par défaut où chaque nouvelle personne inscrite aura le grade joueur
+    //Constructeur par défaut pour Guest
     public User(String state){
         if(state == "guest"){
-            this.grade = "guest";
+            this.grade = "Guest";
             this.id = (int)(Math.random() * ((9999999 - 1000) + 1)) + 1000;
-            this.pseudo = "guest "+id;
+            this.pseudo = "Guest "+id;
             this.password = "";
         }
     }
 
+    //Constructeur par défaut où chaque nouvelle personne inscrite aura le grade joueur
     public User(){
             this.grade = "Joueur";
         }
@@ -83,6 +87,15 @@ public class User extends Model{
         return pseudo;
     }
     
+    //Liste des getters et setters pour le statut    
+    public void setStatut(int st) {
+        this.statut = st;
+    }
+
+    public int getStatut() {
+        return statut;
+    }
+    
     //Méthode toString   
     public String toString() {
         return "pseudo: " + pseudo+ ", identifiant: "+id;
@@ -106,4 +119,5 @@ public class User extends Model{
 		}
 		return pts;
 	  }
+    
 }
