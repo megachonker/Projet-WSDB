@@ -25,6 +25,9 @@ public class HomeController extends Controller {
         if (valeur.equals("nbmatch")){
             return ok(""+Jeuxapp.getmatchencours());
         }
+        if (valeur.equals("nbjoueuronline")){
+            return ok(""+Userapp.getnbjoueuronline());
+        }
 
         return ok("Error bad request "+valeur);
     }

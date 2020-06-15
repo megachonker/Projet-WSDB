@@ -72,6 +72,7 @@ public class Userapp extends Controller {
             for(User truc : u) {
                 if (truc.getPseudo().equals(userProfils.getPseudo())){
                     if(truc.getPassword().equals(userProfils.getPassword())){
+                        truc.setStatut(1);
                         return redirect("/profile").addingToSession(request, "session", String.valueOf(truc.id));//On ajoute un cookie qui a pour id de session l'id de l'user en sachant que le mieux c'est un truc  aléatoire
                     }
                 }
@@ -85,6 +86,8 @@ public class Userapp extends Controller {
 
     //Déconnexion en créant une nouvelle session vierge
     public Result unlog(Http.Request request) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+        u.setStatut(0);
         return ok(views.html.messagetempo.render("Session en cours de déconnexion... À très bientôt ! ♥")).withNewSession();
 }
 
@@ -136,6 +139,7 @@ public class Userapp extends Controller {
         return redirect(routes.Userapp.profile());
     }
     
+    //Pour avoir le nombre de joueurs inscrit dans la sidebar
     public static int getnbjoueur() {
         return User.find.all().size();
     }
@@ -161,5 +165,22 @@ public class Userapp extends Controller {
     public Result panneladmin(Http.Request request) {
         User u = User.find.byId(Long.parseLong((request.session().get("session").get())));
         return ok(views.html.User.panneladmin.render(u));
-    }    
+    } 
+    
+    //Pour avoir le nombre de joueur connecté dans la sidebar
+    public static int getnbjoueuronline() {
+        int value = 0;
+        List<User> liste = User.find.all();
+        if (!liste.isEmpty()){
+        for (User u : liste) {
+            if(u.getGrade().equalsIgnoreCase("Administrateur") || u.getGrade().equalsIgnoreCase("Joueur")){
+                if(u.getStatut() == 1){
+                    value++;
+                }  
+            }
+        }
+        }
+        return value;
+    }
+    
 }
