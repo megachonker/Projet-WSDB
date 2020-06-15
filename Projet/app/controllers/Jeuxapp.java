@@ -30,7 +30,9 @@ public class Jeuxapp extends Controller {
         //on test que  le mec  qui crée la  game est user  id  1
         //ici  on part du  principe  qu'on est  admin  pour  debugage
         if (true){ //((request.session().get("session").get()).equals("1")){//on verifi en fonction de l'id donc  faudra plus tard chercher dans la  bd
-            return ok(views.html.Jeux.makeloby.render(jeuxForm,request, messagesApi.preferred(request)));
+            List<User> liste = User.find.all();
+            User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+            return ok(views.html.Jeux.makeloby.render(u, liste, jeuxForm,request, messagesApi.preferred(request)));
         }
         else {
             //message derreur qui  redirige ver page type
@@ -51,7 +53,9 @@ public class Jeuxapp extends Controller {
         Form<Jeux> cForm = jeuxForm.bindFromRequest(request);
         //Si erreur réafficher la page contact avec les messages d'erreur
         if (cForm.hasErrors()) {
-            return badRequest(views.html.Jeux.makeloby.render(cForm, request,messagesApi.preferred(request))); //Marche pas,  on a  un renvoie  de  page  mais pas   de  formulaire
+             List<User> liste = User.find.all();
+            User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+            return badRequest(views.html.Jeux.makeloby.render(u, liste, cForm, request,messagesApi.preferred(request))); //Marche pas,  on a  un renvoie  de  page  mais pas   de  formulaire
 //            return badRequest("ERROR bad request ;:"+cForm.toString());//views.html.Jeux.game.render(cForm, null, request, messagesApi.preferred(request)));
         }
         //Sinon afficher la page contact avec message stipulant que le message a bien été envoyé.
@@ -82,7 +86,9 @@ public class Jeuxapp extends Controller {
                 }
             }
             if(magame.getUser1()==0||magame.getUser2()==0||magame.getUser1()==magame.getUser2()){
-                return badRequest(views.html.Jeux.makeloby.render(cForm, request,messagesApi.preferred(request)));
+                List<User> liste = User.find.all();
+                User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+                return badRequest(views.html.Jeux.makeloby.render(u, liste, cForm, request,messagesApi.preferred(request)));
             }
 
             magame.save();

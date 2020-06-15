@@ -39,6 +39,7 @@ public class User extends Model{
             this.id = (int)(Math.random() * ((9999999 - 1000) + 1)) + 1000;
             this.pseudo = "Guest "+id;
             this.password = "";
+            this.statut = 0;
         }
     }
 

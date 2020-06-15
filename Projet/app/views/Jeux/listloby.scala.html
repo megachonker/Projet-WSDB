@@ -13,11 +13,11 @@
 
         <article class="salon-group">
             
-				<div class="wsdb_salon_joueur">@{if (p.getUser1() > 0  ) ("Joureur :"+p.getPseudo1 +", id:"+p.getUser1) else "Emplacement libre"  }
+				<div class="wsdb_salon_joueur">@{if (p.getUser1() > 0  ) ("Joueur: "+p.getPseudo1 +", id:"+p.getUser1) else "Emplacement libre"  }
             
                 <p class="wsdb_salon_versus">VS</p>
                
-                @{if (p.getUser2() > 0  ) ("Joureur :"+p.getPseudo2 +", id:"+p.getUser2) else "Emplacement libre"  }
+                @{if (p.getUser2() > 0  ) ("Joueur: "+p.getPseudo2 +", id:"+p.getUser2) else "Emplacement libre"  }
             
                 </div>
         

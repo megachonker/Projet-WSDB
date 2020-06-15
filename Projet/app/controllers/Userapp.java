@@ -73,6 +73,7 @@ public class Userapp extends Controller {
                 if (truc.getPseudo().equals(userProfils.getPseudo())){
                     if(truc.getPassword().equals(userProfils.getPassword())){
                         truc.setStatut(1);
+                        truc.update();
                         return redirect("/profile").addingToSession(request, "session", String.valueOf(truc.id));//On ajoute un cookie qui a pour id de session l'id de l'user en sachant que le mieux c'est un truc  aléatoire
                     }
                 }
@@ -88,6 +89,7 @@ public class Userapp extends Controller {
     public Result unlog(Http.Request request) {
         User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
         u.setStatut(0);
+        u.update();
         return ok(views.html.messagetempo.render("Session en cours de déconnexion... À très bientôt ! ♥")).withNewSession();
 }
 
