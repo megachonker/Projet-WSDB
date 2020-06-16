@@ -119,13 +119,14 @@ public class Jeux extends Model{
 	public static String jouercoup(String joueur, boolean valeur){
 	//assigniation Joueur1 et Joueur2
 	int u=0;
+	String res="";
 	while (u<10){
 		if(pseu[0]==null){
 			pseu[0]=joueur;
 		}else if(pseu[1]==null){
 			pseu[1]=joueur;
 		}
-		String res="";
+		
 		//verification des coups
 		if (joueur.equals(pseu[0]) ) {
 			if(coupJ1.size()>coupJ2.size()){
