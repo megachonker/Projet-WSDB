@@ -2521,4 +2521,45 @@ td {
     background-color: #ffffff;
 }
 
+.loginbtn.btn.btn-md.btn-primary.monsieurAlbert{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: transparent;
+    border: none;
+}
+
+.loginbtn.btn.btn-md.btn-primary.monsieurAlbert:hover{
+    border: 2px solid white !important;
+    color: white !important;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
 /* Fin du CSS du tableau de jeu */

@@ -37,6 +37,10 @@ public class HomeController extends Controller {
     public Result messagetempo(String t){
         return ok(views.html.messagetempo.render(t));
     }
+    
+    public Result pony() {
+        return ok(views.html.pony.render());
+    }
 
 }
 
