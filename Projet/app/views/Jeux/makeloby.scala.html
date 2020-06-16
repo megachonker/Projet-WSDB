@@ -58,8 +58,8 @@
                     
         <div class="jeux-group">
             <h3 class="wsdb_login_titre">Pseudo du joueur 2:</h3>
-                       @helper.input(field=jeuxform("pseudo1"),'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
-        <select id="pseudo1" name="pseudo1" @toHtmlArgs(htmlArgs)>
+                       @helper.input(field=jeuxform("pseudo2"),'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
+        <select id="pseudo2" name="pseudo2" @toHtmlArgs(htmlArgs)>
             options.map { v =>
                 @for(u <- liste){
                   <option value=@u.getPseudo >@u.getPseudo</option>
