@@ -69,26 +69,23 @@ public class Jeux extends Model{
         pseudo1="";
         pseudo2="";
     }
-
-	 public String moi(String joueur) {
-		String res="(J1)";
-		if(pseu[1]==null){
-			res="";
-		}else if (pseu[1].equals(joueur)){
-			res="(J2)";
-			}
+	
+	public String jiun() {
+		String res="Joueur 1";
+		if(pseu[0]!=null){
+			res=pseu[0];
+		}
 		return res;
     }
-	public String lui(String joueur) {
-		String res="(J1)";
-		if(pseu[1]==null){
-			res="";
-		}else if (!pseu[1].equals(joueur)){
-			res="(J2)";
-			}
+	
+	public String jideux() {
+		String res="Joueur 2";
+		if(pseu[1]!=null){
+			res=pseu[1];
+		}
 		return res;
     }
-
+	
     public void setNoms(String noms) {
         this.noms = noms;
     }
