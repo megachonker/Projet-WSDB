@@ -25,13 +25,13 @@ public class Jeux extends Model{
 	static int u=0;
 	
 
-    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
+    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "Pseudo non valide")
 	private String pseudo1;
 
-    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
+    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "Pseudo non valide")
     private String pseudo2;
     @Required
-    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
+    @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "Pseudo non valide")
     private String noms;
 
     private int user1;
@@ -117,7 +117,7 @@ public class Jeux extends Model{
     }
 
 	public String cop1() {
-		String res="N'as pas encore joué";
+		String res="N'a pas encore joué";
 		if(pointJ1.size()!=0){
 			res="Coopère";
 			if (pointJ1.get(pointJ1.size()-1) == 1 || pointJ1.get(pointJ1.size()-1) ==5){
@@ -128,7 +128,7 @@ public class Jeux extends Model{
     }
 	
 	public String cop2() {
-		String res="N'as pas encore joué";
+		String res="N'a pas encore joué";
 		if(pointJ2.size()!=0){
 			res="Coopère";
 			if (pointJ2.get(pointJ2.size()-1) == 1 || pointJ2.get(pointJ2.size()-1) ==5){
@@ -177,7 +177,7 @@ public class Jeux extends Model{
 			
 		if (joueur.equals(pseu[0]) ) {
 			if(coupJ1.size()>coupJ2.size()){
-				res += "Coup J1 déja jouer / ";
+				res += "Coup J1 déjà joué / ";
 			}else{
 				coupJ1.add(valeur);
 				res += "Coup J1 OK / ";
@@ -185,7 +185,7 @@ public class Jeux extends Model{
 			}	
 		}else{
 			if(coupJ2.size()>coupJ1.size()){
-				res += "Coup J2 déja jouer / ";
+				res += "Coup J2 déjà joué / ";
 			}else{
 				coupJ2.add(valeur);
 				res += "Coup J2 OK / ";
@@ -197,30 +197,30 @@ public class Jeux extends Model{
 			int tour = coupJ1.size()-1;
 			if (coupJ1.get(tour) == coupJ2.get(tour)) {
 				if(coupJ1.get(tour) == true){
-					res += "les 2 coop (3,3) / ";
+					res += "Les 2 coopèrent (3,3) / ";
 					pointJ1.add(3);
 					pointJ2.add(3);
 				}
 				else{
-					res += "les 2 trahie (1,1)/";
+					res += "Les 2 trahient (1,1)/";
 					pointJ1.add(1);
 					pointJ2.add(1);
 				}
 			}
 			else{
 				if (coupJ1.get(tour) == true) {
-					res += "j1 coop, j2  trahie (0,5) / ";
+					res += "J1 coopère, J2  trahie (0,5) / ";
 					pointJ1.add(0);
 					pointJ2.add(5);
 				}
 				else{
-					res += "j1 trahie, j2  coop (5,0) / ";
+					res += "J1 trahie, J2  coopère (5,0) / ";
 					pointJ1.add(5);
 					pointJ2.add(0);
 				}
 			}
 		}else{
-			res += "en attente du second joueur / ";
+			res += "En attente du second joueur / ";
 		}
 			
 		}
@@ -232,9 +232,9 @@ public class Jeux extends Model{
     public String resumerJoueur(){
         String  message = "";
         for ( Boolean j1: coupJ1 ) {
-            message += "joueur 1" + j1;
+            message += "Joueur 1" + j1;
             for ( Boolean j2: coupJ2 ) {
-                message += "joueur 2" + j2;
+                message += "Joueur 2" + j2;
             }
         message += "\n";
         }

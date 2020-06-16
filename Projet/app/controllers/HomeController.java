@@ -12,11 +12,12 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
+    //
     public Result getcookie(Http.Request request) {
         return ok(request.session().get("session").get());
     }
 
-
+    //iFrame des statistique de la sidebar
     public Result getstat(String valeur) {
 
         if (valeur.equals("nbjoueur")){

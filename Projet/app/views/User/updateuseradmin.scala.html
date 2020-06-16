@@ -11,33 +11,46 @@
         
         <!-- Formulaire de modification de profil pour les administrateurs avec bouton d'enregistrement des modifications -->
         
-@helper.form(action = routes.Userapp.updateuseradminform(u.getId)){
-    @helper.CSRF.formField
+
+        @helper.form(action = routes.Userapp.updateuseradminform(u.getId)){
+        @helper.CSRF.formField
         
         <div class="register-group">
+            
             <h3 class="wsdb_register_titre">Pseudo</h3>
-        @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
+            @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
         </div>
         
         <div class="register-group">    
-           <h3 class="wsdb_register_titre">Password</h3>
-    @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+           
+            <h3 class="wsdb_register_titre">Password</h3>
+    
+            @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
         </div>
         
         
         <!-- Partie supplémentaire par rapport au formulaire de changement de profil pour les utilisateurs où nous offrons la permission à l'administrateur de choisir les grades des utilisateurs -->
         
         <div class="register-group">    
-           <h3 class="wsdb_register_titre">Grade</h3>
-    @helper.select(field = userForm("grade"),
-                   options = Seq("Joueur" -> "Joueur",
-                                 "Administrateur" -> "Administrateur"), '_showConstraints->false,'_label ->null, 'class -> "contactboite")
+           
+            <h3 class="wsdb_register_titre">Grade</h3>
+    
+            @helper.select(field = userForm("grade"),
+            options = Seq("Joueur" -> "Joueur","Administrateur" -> "Administrateur"), '_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
         </div>
         
         <div class="register-group">
+            
             <div class="btncontactenvoie">
+                
                 <input class="registerbtn btn btn-md btn-primary" type="submit"  value="Enregistrer"/> 
+            
             </div>
+        
         </div>
         
 }

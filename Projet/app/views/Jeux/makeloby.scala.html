@@ -4,11 +4,16 @@
 
 @main("Créer un lobby") {
 
+   <!-- Division englobant le contenu de la page -->
+
 <div class="wsdb_jeux_encadre">
     
     
 <!-- Si l'utilisateur à la grade "Administrateur" on affiche le contenu de la page -->
+    
     @if(u.getGrade.equalsIgnoreCase("Administrateur")){
+    
+       <!-- Division englobant l'encadré pour créer un salon publique -->
         
     <article class="wsdb_jeux_publique">
         
@@ -17,6 +22,8 @@
         <div class="jeux-group">
             
             <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
+            
+               <!-- Formulaire demandant le nom de la partie -->
             
             @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
             @helper.CSRF.formField
@@ -34,6 +41,11 @@
     </article>
     
     
+    
+    <!-- Division englobant l'encadré pour créer un salon privé -->
+    
+    
+    
     <article class="wsdb_jeux_privée">
         
         <h2 class="wsdb_jeux_entitre">Partie privée:</h2>
@@ -41,6 +53,9 @@
         <div class="jeux-group">
             
             <h3 class="wsdb_jeux_titre">Nom de la partie:</h3>
+            
+            <!-- Formulaire de création du salon privé demandant le nom du salon et les pseudos des joueurs qui sont disponible depuis un input select -->
+            
             @helper.form(action = routes.Jeuxapp.resultatnewgame()) {
             @helper.CSRF.formField
             @helper.inputText(jeuxform("noms"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
@@ -48,46 +63,59 @@
         
         
         <div class="jeux-group">
+            
             <h3 class="wsdb_login_titre">Pseudo du joueur 1:</h3>
-            @helper.input(field=jeuxform("pseudo1"),'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
-        <select id="pseudo1" name="pseudo1" @toHtmlArgs(htmlArgs)>
+            
+            <!-- Input select pour le joueur 1 -->
+            
+            @helper.input(field=jeuxform("pseudo1"),'_showConstraints->false,'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
+            <select id="pseudo1" name="pseudo1" @toHtmlArgs(htmlArgs)>
             options.map { v =>
-            <option value="" >Emplacement libre</option>
+                <option value="" >Emplacement libre</option>
                 @for(u <- liste){
                   <option value=@u.getPseudo >@u.getPseudo</option>
                 }
             }
-        </select>
-    } 
+            </select>
+        } 
         </div>
                     
-        <div class="jeux-group">
-            <h3 class="wsdb_login_titre">Pseudo du joueur 2:</h3>
-                @helper.input(field=jeuxform("pseudo2"),'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
-            <select id="pseudo2" name="pseudo2" @toHtmlArgs(htmlArgs)>
-            options.map { v =>
-            <option value="" >Emplacement libre</option>
-                @for(u <- liste){
-                  <option value=@u.getPseudo >@u.getPseudo</option>
-                }
-            }
-        </select>
-    } 
-        </div>
-        
-            <div class="jeux-group">
-                <div class="btncontactenvoie">
-                    <input class="jeuxbtn btn btn-md btn-primary" type="submit"  value="Créer la partie"/> 
-                </div>
-            </div>
-        
-            }
-                    
-            </article>
     
+        <div class="jeux-group">
+            
+            <h3 class="wsdb_login_titre">Pseudo du joueur 2:</h3>
+            
+            <!-- Input select pour le joueur 2 -->
+            
+            @helper.input(field=jeuxform("pseudo2"),'_showConstraints->false,'_label -> "", 'class -> "contactboite required") { (id, name, value, htmlArgs) =>
+            <select id="pseudo2" name="pseudo2" @toHtmlArgs(htmlArgs)>
+                options.map { v =>
+                <option value="" >Emplacement libre</option>
+                @for(u <- liste){
+                          <option value=@u.getPseudo >@u.getPseudo</option>
+                    }
+                }
+            </select>
+        } 
         </div>
         
-}else{
+        <div class="jeux-group">
+            <div class="btncontactenvoie">
+                <input class="jeuxbtn btn btn-md btn-primary" type="submit"  value="Créer la partie"/> 
+            </div>
+        </div>
+        
+            }
+                    
+    </article>
+    
+</div>
+        
+}
+
+<!-- Si l'utilisateur n'a pas le grade "Administrateur" on le redirige vers une autre page -->
+
+else{
 <script>window.location='@routes.HomeController.messagetempo("Vous n'avez pas la permission pour accèder à cette page")';</script>
 }
 }

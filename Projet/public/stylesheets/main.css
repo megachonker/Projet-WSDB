@@ -696,7 +696,7 @@
 
 /*  CSS pour contenu */
 .wsdb_jeux_content{
-    width: 75%;
+    width: 85%;
     margin: auto;
     margin-top: 50px;
 }
@@ -725,6 +725,7 @@
 /*  CSS pour titre dans encadre */
 .titre_sommehistorique{
     text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 /*  CSS pour section tableau */
@@ -747,12 +748,13 @@
 
 /*  CSS pour grand encadre */
 .wsdb_salon_encadre.bisb{
-    margin: 0 0 50px 0 !important;
+    margin: 0 2% 50px 1% !important;
     width: -webkit-fill-available;
     width: -moz-available;
     width: fill-available;
 }
 
+/* CSS de la table de vérité */
 .wsdb_jeux_tdv{
     font-size: 20px;
     background: #D0E3FA;

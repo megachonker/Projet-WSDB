@@ -8,14 +8,31 @@
     <!-- Contenu de la page qui sera généré par une boucle for qui recherche tous les joueurs dans la BDD -->
 
 <h1 class="titremsgcontact">Liste des @liste.size() joueurs inscrit sur le site</h1> 
-<div class="msgcontactliste"><ul class="msgcliste">
-  @for(p <- liste) {
-            <li>@p.getPseudo - @p.getId -  @p.getGrade</br> 
-    <a href="/updateuseradmin/@p.id"><button class="btn contactliste">Modifier</button></a>
-    <a href="/delete/@p.id"><button class="btn contactliste">Suppr</button></a></li> }
-</ul> 
 
-<div id="flush"><a href="/userflush"><button class="btn contactliste">Effacer toute la base de joueurs</button></a></div>
+<div class="msgcontactliste">
+    
+    <ul class="msgcliste">
+    
+        @for(p <- liste) {
+            <li>@p.getPseudo - @p.getId -  @p.getGrade</br> 
+                <a href="/updateuseradmin/@p.id">
+                    <button class="btn contactliste">Modifier</button>
+                </a>
+    
+                <a href="/delete/@p.id">
+                    <button class="btn contactliste">Suppr</button>
+                </a>
+            </li>
+    
+            }
+
+    </ul> 
+
+    <div id="flush">
+        <a href="/userflush">
+            <button class="btn contactliste">Effacer toute la base de joueurs</button>
+        </a> 
+    </div>
 
 </div>
 

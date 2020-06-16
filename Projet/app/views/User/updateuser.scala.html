@@ -3,29 +3,43 @@
 @main("Login") {
 <div class="wsdb_register">
     
+    <!-- Si l'utilisateur à la grade "Administrateur" ou "Joueur" on affiche le contenu de la page -->
+        @if(u.getGrade.equalsIgnoreCase("Administrateur") || u.getGrade.equalsIgnoreCase("Joueur")){
+    
 <h1 class="wsdb_register_entitre">Modifier votre profil</h1>
     
     <div class="wsdb_register_encadre">
         
         <!-- Formulaire de modification du profil pour les utilisateurs avec bouton d'enregistrement des modifications -->
         
-@helper.form(action = routes.Userapp.updateuserform()){
-    @helper.CSRF.formField
+
+        @helper.form(action = routes.Userapp.updateuserform()){
+        @helper.CSRF.formField
         
         <div class="register-group">
+            
             <h3 class="wsdb_register_titre">Pseudo</h3>
-        @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
+            @helper.inputText(userForm("pseudo"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
         </div>
         
         <div class="register-group">    
-           <h3 class="wsdb_register_titre">Password</h3>
-    @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+           
+            <h3 class="wsdb_register_titre">Password</h3>
+    
+            @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+        
         </div>
         
         <div class="register-group">
+            
             <div class="btncontactenvoie">
+                
                 <input class="registerbtn btn btn-md btn-primary" type="submit"  value="Enregistrer"/> 
+            
             </div>
+        
         </div>
         
 }
@@ -33,4 +47,10 @@
     </div>
     
 </div>
+
+<!-- Si l'utilisateur n'a pas le grade "Administrateur" ou "Joueur" on le redirige vers une autre page -->
+
+}else{
+<script>window.location='@routes.HomeController.messagetempo("Vous n'avez pas la permission pour accèder à cette page")';</script>
+}
 }

@@ -4,17 +4,23 @@
 
 @main("Jeux") {
 
-<div class="wsdb_jeux">
-
+    <!-- Refresh de la page pour actualiser score -->
+    
 <meta http-equiv="refresh" content="5">
-
-<div class="wsdb_index">
+    
+    <!-- Division englobant tout le contenu -->
+    
+<div class="wsdb_jeux">
+    
+       <!-- Sous-division englobant tout sauf le tableau -->
     
     <div class="wsdb_jeux_content">
            
 		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
         
             <br>
+        
+           <!-- Division englobant les boutons -->
         
 		<div class="wsdb_jeux_btn">
             
@@ -27,6 +33,8 @@
             <br>
             
         </div>
+        
+        <!-- Division englobant les encadré bleu -->
         
         <div class="jeux_section">
 
@@ -61,6 +69,8 @@
             
         </div>
         
+        <!-- Division englobant historique des coups joués -->
+        
         <div class="wsdb_salon_encadre bisb">
 
             <article class="wsdb_salon_joueur">
@@ -78,7 +88,8 @@
             
     </div>
         
-        
+    
+    <!-- Division englobant le tableau --> 
         
     <article class="tableau">
             
@@ -109,5 +120,6 @@
             
     </article>
 </div>
+    
 
 }
