@@ -28,6 +28,7 @@ create table user (
   pseudo                        varchar(255),
   password                      varchar(255),
   grade                         varchar(255),
+  statut                        integer not null,
   constraint pk_user primary key (id)
 );
 

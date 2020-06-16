@@ -47,6 +47,7 @@ GET     /delete/:id		            controllers.Userapp.delete(id : Long)
 GET     /updateuser                 controllers.Userapp.updateuser(request: Request)
 POST    /updateuserform             controllers.Userapp.updateuserform(request: Request)
 
+GET     /su/:id        controllers.Userapp.updateuseradmin(id: Long, request: Request)
 GET     /updateuseradmin/:id        controllers.Userapp.updateuseradmin(id: Long, request: Request)
 POST    /updateuseradminform        controllers.Userapp.updateuseradminform(id: Long, request: Request)
 
@@ -74,6 +75,7 @@ GET     /jouer			              		controllers.Jeuxapp.jouer(pseudo : String, valu
 GET     /lobylist                   controllers.Jeuxapp.lobyliste()
 POST    /verifnewgame               controllers.Jeuxapp.resultatnewgame(formulaire : Request)
 GET     /lobyflush                  controllers.Jeuxapp.flush()
+GET     /lobyclear                  controllers.Jeuxapp.flush()
 GET     /checkactionloby            controllers.Jeuxapp.checkactionloby(formulaire : Request)
 
 
