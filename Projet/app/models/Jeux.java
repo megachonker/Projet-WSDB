@@ -22,6 +22,8 @@ public class Jeux extends Model{
     static ArrayList<Boolean> coupJ2 = new ArrayList<Boolean>();
     static ArrayList<Integer> pointJ1 = new ArrayList<Integer>();
     static ArrayList<Integer> pointJ2 = new ArrayList<Integer>();
+	static int u=0;
+	
 
     @Pattern(value = "^[A-Za-z0-9 ]{1,24}$",    message = "sale bz on  est plus en 2010")
 	private String pseudo1;
@@ -117,17 +119,20 @@ public class Jeux extends Model{
     }
 
 	public static String jouercoup(String joueur, boolean valeur){
-	//assigniation Joueur1 et Joueur2
-	int u=0;
-	String res="";
-	while (u<10){
+		//assigniation Joueur1 et Joueur2
+		
+		String res="";
+		
+		
 		if(pseu[0]==null){
 			pseu[0]=joueur;
 		}else if(pseu[1]==null){
 			pseu[1]=joueur;
 		}
-		
-		//verification des coups
+			
+			//verification des coups
+		if(u<20){
+			
 		if (joueur.equals(pseu[0]) ) {
 			if(coupJ1.size()>coupJ2.size()){
 				res += "Coup J1 déja jouer / ";
@@ -176,9 +181,9 @@ public class Jeux extends Model{
 			res += "en attente du second joueur / ";
 		}
 		}
-        return res;
-    }
-
+	
+       return res;
+	}
 
     //dumping des score
     public String resumerJoueur(){
