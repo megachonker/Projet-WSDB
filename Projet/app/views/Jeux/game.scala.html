@@ -14,7 +14,7 @@
     
     <div class="wsdb_jeux_content">
            
-		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo @objeux.moi(user.getPseudo):</p>
+		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
         
             <br>
 <<<<<<< HEAD
@@ -39,11 +39,11 @@
 
                 <h2 class="titre_sommehistorique">Somme des points </h2>
                 
-                <span class="jeux_joueur">J1:</span> <span class="score">@objeux.getSommePointJ1()</span>
+                <span class="jeux_joueur">@objeux.jiun():</span> <span class="score">@objeux.getSommePointJ1()</span>
             
                 <br>
 
-                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.getSommePointJ2()</span>
+                <span class="jeux_joueur">@objeux.jideux():</span> <span class="score">@objeux.getSommePointJ2()</span>
 
             </article>  
         </div>
@@ -53,11 +53,11 @@
             <article class="wsdb_salon_joueur">
             
                 <h2 class="titre_sommehistorique">Historique des points </h2>
-                <span class="jeux_joueur">J1:</span>  <span class="score">@objeux.getPointJ1()</span>
+                <span class="jeux_joueur">@objeux.jiun():</span>  <span class="score">@objeux.getPointJ1()</span>
             
                 <br>
             
-                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.getPointJ2()</span>
+                <span class="jeux_joueur">@objeux.jideux():</span> <span class="score">@objeux.getPointJ2()</span>
             
             </article>
         </div>
@@ -70,11 +70,11 @@
 
                 <h2 class="titre_sommehistorique">Dernier coup joué </h2>
                 
-                <span class="jeux_joueur">J1:</span> <span class="score">@objeux.cop1()</span>
+                <span class="jeux_joueur">@objeux.jiun():</span> <span class="score">@objeux.cop1()</span>
             
                 <br>
 
-                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.cop2()</span>
+                <span class="jeux_joueur">@objeux.jideux():</span> <span class="score">@objeux.cop2()</span>
 
             </article>  
         </div>
@@ -119,15 +119,15 @@
 		<br>
 		
 		<h2>Somme des points </h2>
-			<h3>J1: @objeux.getSommePointJ1()</h3>
-			<h3>J2: @objeux.getSommePointJ2()</h3>
+			<h3>@objeux.jiun(): @objeux.getSommePointJ1()</h3>
+			<h3>@objeux.jideux(): @objeux.getSommePointJ2()</h3>
 	
 		<h2>Historique des points </h2>
-			<h3>J1: @objeux.getPointJ1()</h3>
-			<h3>J2: @objeux.getPointJ2()</h3>
+			<h3>@objeux.jiun(): @objeux.getPointJ1()</h3>
+			<h3>@objeux.jideux(): @objeux.getPointJ2()</h3>
 	   	<h2>Dernier coup jouer :</h2>
-			<h3>J1: @objeux.cop1()</h3>
-			<h3>J2: @objeux.cop2()</h3>
+			<h3>@objeux.jiun(): @objeux.cop1()</h3>
+			<h3>@objeux.jideux(): @objeux.cop2()</h3>
 	</div>
 	<table>
 	   <tr>
