@@ -2500,22 +2500,25 @@ iframe {
 /* CSS du tableau de jeu */
 
 table {
-border: medium solid #6495ed;
-border-collapse: collapse;
+    border: medium solid #6495ed;
+    border-collapse: collapse;
+    width: 80% !important;
+    margin: auto;
+    margin-top: 60px;
 }
 
 th {
-border: thin solid #6495ed;
-padding: 5px;
-background-color: #D0E3FA;
-background-image: url(sky.jpg);
+    border: thin solid #6495ed;
+    padding: 5px;
+    background-color: #D0E3FA;
+    background-image: url(sky.jpg);
 }
 
 td {
-border: thin solid #6495ed;
-padding: 5px;
-text-align: center;
-background-color: #ffffff;
+    border: thin solid #6495ed;
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff;
 }
 
 /* Fin du CSS du tableau de jeu */

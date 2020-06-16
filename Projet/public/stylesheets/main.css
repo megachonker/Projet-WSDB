@@ -691,3 +691,97 @@
 }
 
 /*  FIN CSS PAGE MAKELOBBY */
+
+/* CSS PAGE JEU */
+
+/*  CSS pour contenu */
+.wsdb_jeux_content{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/*  CSS pour section bouton */
+.wsdb_jeux_btn{
+    font-size:1.20em !important;
+    color:rgba(105,105,105,1);
+    text-align: center !important;
+    margin-top: 35px;
+}
+
+/*  CSS pour texte dans les boutons */
+.contactbtn.btn.btn-md.btn-primary.jeux{
+    font-size: 22px;
+}
+
+/*  CSS pour texte ou */
+#textejeux{
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    margin: 0 8px 0 10px;
+}
+
+/*  CSS pour titre dans encadre */
+.titre_sommehistorique{
+    text-decoration: underline;
+}
+
+/*  CSS pour section tableau */
+.tableau{
+    margin-bottom: 50px;
+}
+
+/*  CSS pour texte JX */
+.jeux_joueur{
+    font-size: 20px;
+    color: #21B8FE;
+    width: max-content;
+}
+
+/*  CSS pour encadre */
+.wsdb_salon_encadre.bis{
+    margin-left: 7% !important;
+    min-height: 235px;
+}
+
+/*  CSS pour grand encadre */
+.wsdb_salon_encadre.bisb{
+    margin: 0 0 50px 0 !important;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: fill-available;
+}
+
+.wsdb_jeux_tdv{
+    font-size: 20px;
+    background: #D0E3FA;
+    font-weight: 600;
+}
+
+/*  CSS pour score */
+.score{
+    transform: translate(-50%, -50%);
+    user-select: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%,
+                rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+    background-size: 600vw 600vw;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: slide 10s linear infinite forwards;
+}
+
+/*  CSS pour transition rainbow */
+@keyframes slide {
+  0%{
+    background-position-x: 0%;
+  }
+  100%{
+    background-position-x: 600vw;
+  }
+}
+
+/* FIN CSS PAGE JEU */
