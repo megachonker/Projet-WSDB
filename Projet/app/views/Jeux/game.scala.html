@@ -4,13 +4,114 @@
 
 @main("Jeux") {
  
+<<<<<<< HEAD
+
+<div class="wsdb_jeux">
+=======
 <meta http-equiv="refresh" content="5">
 <div class="wsdb_index">
+>>>>>>> 0473e857bdce2c2a728929face8f95a426a12763
     
-    <div class="wsdb_index_content">
+    <div class="wsdb_jeux_content">
            
 		<p class="wsdb_entitre">Veuilliez choisir @user.getPseudo :</p>
+        
             <br>
+<<<<<<< HEAD
+        
+		<div class="wsdb_jeux_btn">
+            
+                <input type="submit" class="contactbtn btn btn-md btn-primary jeux" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true,objeux.id)';" value="Coopérer" />
+            
+            <span id="textejeux">  OU  </span>
+			
+                <input type="submit" class="contactbtn btn btn-md btn-primary jeux" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,false,objeux.id)';" value="Trahire" />
+            
+            <br>
+            
+        </div>
+        
+        <div class="jeux_section">
+
+        <div class="wsdb_salon_encadre bis">
+
+            <article class="wsdb_salon_joueur">
+
+                <h2 class="titre_sommehistorique">Somme des points </h2>
+                
+                <span class="jeux_joueur">J1:</span> <span class="score">@objeux.getSommePointJ1()</span>
+            
+                <br>
+
+                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.getSommePointJ2()</span>
+
+            </article>  
+        </div>
+        
+        <div class="wsdb_salon_encadre bis">
+        
+            <article class="wsdb_salon_joueur">
+            
+                <h2 class="titre_sommehistorique">Historique des points </h2>
+                <span class="jeux_joueur">J1:</span>  <span class="score">@objeux.getPointJ1()</span>
+            
+                <br>
+            
+                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.getPointJ2()</span>
+            
+            </article>
+        </div>
+            
+        </div>
+        
+        <div class="wsdb_salon_encadre bisb">
+
+            <article class="wsdb_salon_joueur">
+
+                <h2 class="titre_sommehistorique">Dernier coup joué </h2>
+                
+                <span class="jeux_joueur">J1:</span> <span class="score">@objeux.cop1()</span>
+            
+                <br>
+
+                <span class="jeux_joueur">J2:</span> <span class="score">@objeux.cop2()</span>
+
+            </article>  
+        </div>
+            
+    </div>
+        
+        
+        
+    <article class="tableau">
+            
+        <table>
+            <tr>
+                <td rowspan="2" colspan="2" class="wsdb_jeux_tdv">Table de vérité</td>
+                <th colspan="2">Joueur A</th>
+            </tr>
+            
+            <tr>
+                <td>Coopère</td>
+                <td>Trahit</td>
+            </tr>
+            
+            <tr>
+                <th rowspan="2">Joueur B</th>
+                <td>Coopère</td>
+                <td>A:3, B:3</td>
+                <td>A:5, B:0</td>
+            </tr>
+            
+            <tr>
+                <td>Trahit</td>
+                <td>A:0, B:5</td>
+                <td>A:1, B:1</td>
+            </tr>
+        </table>
+            
+    </article>
+=======
 		<p class="wsdb_index_textebis">
 			<input type="submit" class="contactbtn btn btn-md btn-primary" onclick="location.href='@controllers.routes.Jeuxapp.jouer(user.getPseudo,true,objeux.id)';" value="Coopérer" />
 			ou
@@ -50,6 +151,7 @@
 	       <td>A:1, B:1</td>
 	   </tr>
 	</table>
+>>>>>>> 0473e857bdce2c2a728929face8f95a426a12763
 </div>
 
 }
