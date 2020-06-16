@@ -80,17 +80,23 @@ public class Jeux extends Model{
     }
 
  	public String getPointJ1() {
-		String res="";
-		for (int i : pointJ1){
-			res+=i+"";
+		String res="Vide";
+		if(pointJ1.size()!=0){
+			res="";
+			for (int i : pointJ1){
+				res+=i+"";
+			}
 		}
         return res;
     }
 	
 	public String getPointJ2() {
-		String res="";
-		for (int i : pointJ2){
-			res+=i+"";
+		String res="Vide";
+		if(pointJ2.size()!=0){
+			res="";
+			for (int i : pointJ2){
+				res+=i+"";
+			}
 		}
         return res;
     }
