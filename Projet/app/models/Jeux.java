@@ -165,8 +165,8 @@ public class Jeux extends Model{
                 }
                 else{
                     res += "j1 trahie, j2  coop (5,0) / ";
-					pointJ1.add(0);
-					pointJ2.add(5);
+					pointJ1.add(5);
+					pointJ2.add(0);
                 }
             }
         }else{
