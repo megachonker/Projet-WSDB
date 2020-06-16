@@ -34,13 +34,15 @@ public class Userapp extends Controller {
                 User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
                 return ok(views.html.User.profile.render(userProfils));
             }
-            //On vérifie  si  le  formulaire est  vide
-            if(formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(password,[error.required],[]), ValidationError(pseudo,[error.required],[])])")||
-               formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: nullidentifiant: 0], errors=[ValidationError(pseudo,[error.required],[]), ValidationError(password,[error.required],[])])")){//Si le formulaire est vide
-                return redirect("/login");
-            }
+//            //On vérifie  si  le  formulaire est  vide
+//            if(formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: null, identifiant: 0], errors=[ValidationError(pseudo,[error.required],[]), ValidationError(password,[error.required],[])]")||
+//               formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: null, identifiant: 0], errors=[ValidationError(password,[error.required],[]), ValidationError(pseudo,[error.required],[])])")){//Si le formulaire est vide
+//                return redirect("/login");
+//            }
+            return redirect("/login");
+
             //S'il y a  une erreur alors on renvoit le formulaire
-            return badRequest(views.html.User.register.render(formulaireRecus, request,messagesApi.preferred(request))); //Marche pas,  on a  un renvoie  de  page  mais pas   de  formulaire
+//            return badRequest(views.html.User.register.render(formulaireRecus, request,messagesApi.preferred(request))); //Marche pas,  on a  un renvoie  de  page  mais pas   de  formulaire
         }
         else{
             //Si tout ce passe bien alors on va créer un objet user qui a les data du formulaire
