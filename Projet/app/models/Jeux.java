@@ -86,6 +86,7 @@ public class Jeux extends Model{
 		}
         return res;
     }
+	
 	public String getPointJ2() {
 		String res="";
 		for (int i : pointJ2){
@@ -94,6 +95,28 @@ public class Jeux extends Model{
         return res;
     }
 
+	public String cop1() {
+		String res="N'as pas encore joué";
+		if(pointJ1.size()!=0){
+			res="Coopère";
+			if (pointJ1.get(pointJ1.size()-1) == 1 || pointJ1.get(pointJ1.size()-1) ==5){
+				res ="Trahie";
+			}
+		}
+		return res;
+    }
+	
+	public String cop2() {
+		String res="N'as pas encore joué";
+		if(pointJ2.size()!=0){
+			res="Coopère";
+			if (pointJ2.get(pointJ2.size()-1) == 1 || pointJ2.get(pointJ2.size()-1) ==5){
+				res ="Trahie";
+			}
+		}
+		return res;
+    }
+	
 	public int getSommePointJ1() {
 		int res=0;
 		for (int i : pointJ1){
@@ -122,8 +145,6 @@ public class Jeux extends Model{
 		//assigniation Joueur1 et Joueur2
 		
 		String res="";
-		
-		
 		if(pseu[0]==null){
 			pseu[0]=joueur;
 		}else if(pseu[1]==null){
@@ -180,6 +201,7 @@ public class Jeux extends Model{
 		}else{
 			res += "en attente du second joueur / ";
 		}
+			
 		}
 	
        return res;
