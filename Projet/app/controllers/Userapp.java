@@ -75,6 +75,14 @@ public class Userapp extends Controller {
             for(User truc : u) {
                 if (truc.getPseudo().equals(userProfils.getPseudo())){
                     if(truc.getPassword().equals(userProfils.getPassword())){
+
+                        //on  check
+                        if(request.session().get("session").isPresent()){//verification si l'id de  l'user  concord avec  la bd
+                            User userOldProfils = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+                            userOldProfils.setStatut(0);
+                            userOldProfils.update();
+                        }
+
                         truc.setStatut(1);
                         truc.update();
                         return redirect("/profile").addingToSession(request, "session", String.valueOf(truc.id));//On ajoute un cookie qui a pour id de session l'id de l'user en sachant que le mieux c'est un truc  aléatoire
