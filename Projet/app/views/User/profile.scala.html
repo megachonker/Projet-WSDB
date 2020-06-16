@@ -1,8 +1,12 @@
-@(userProfils : User)
+@(u: User, userProfils : User)
 
 @main("Profil") {
 <div class="wsdb_login">
+    
+<!-- Si l'utilisateur à la grade "Administrateur" on affiche le contenu de la page -->
+        @if(u.getGrade.equalsIgnoreCase("Administrateur") || u.getGrade.equalsIgnoreCase("Joueur")){
 
+    
 <!-- Entitre de la page de profil où on affiche le pseudo du joueur -->
     
 <h1 class="wsdb_login_entitre">Profil de @userProfils.getPseudo et @userProfils.getPassword - @userProfils.getId - @userProfils.getStatut</h1>
@@ -58,5 +62,8 @@
     </div>
     
 </div>
-
+}else{
+<script>window.location='@routes.HomeController.messagetempo("Vous n'avez pas la permission pour accèder à cette page")';</script>
 }
+}
+
