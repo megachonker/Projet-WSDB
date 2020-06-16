@@ -5,6 +5,10 @@
 @main("Créer un lobby") {
 
 <div class="wsdb_jeux_encadre">
+    
+    
+<!-- Si l'utilisateur à la grade "Administrateur" on affiche le contenu de la page -->
+    @if(u.getGrade.equalsIgnoreCase("Administrateur")){
         
     <article class="wsdb_jeux_publique">
         
@@ -83,5 +87,8 @@
     
         </div>
         
+}else{
+<script>window.location='@routes.HomeController.messagetempo("Vous n'avez pas la permission pour accèder à cette page")';</script>
+}
 }
 

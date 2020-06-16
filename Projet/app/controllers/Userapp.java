@@ -32,7 +32,8 @@ public class Userapp extends Controller {
         if (formulaireRecus.hasErrors()) {
             if(request.session().get("session").isPresent()){//verification si l'id de  l'user  concord avec  la bd
                 User userProfils = User.find.byId(Long.parseLong((request.session().get("session").get())));
-                return ok(views.html.User.profile.render(userProfils));
+                User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+                return ok(views.html.User.profile.render(u, userProfils));
             }
 //            //On vérifie  si  le  formulaire est  vide
 //            if(formulaireRecus.toString().equals("Form(of=class models.User, data={}, value=Optional[pseudo: null, identifiant: 0], errors=[ValidationError(pseudo,[error.required],[]), ValidationError(password,[error.required],[])]")||
