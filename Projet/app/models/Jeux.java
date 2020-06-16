@@ -117,63 +117,67 @@ public class Jeux extends Model{
     }
 
 	public static String jouercoup(String joueur, boolean valeur){
-		//assigniation Joueur1 et Joueur2
+	//assigniation Joueur1 et Joueur2
+	int u=0;
+	while (u<10){
 		if(pseu[0]==null){
 			pseu[0]=joueur;
 		}else if(pseu[1]==null){
 			pseu[1]=joueur;
 		}
-		
 		String res="";
 		//verification des coups
-        if (joueur.equals(pseu[0]) ) {
-            if(coupJ1.size()>coupJ2.size()){
+		if (joueur.equals(pseu[0]) ) {
+			if(coupJ1.size()>coupJ2.size()){
 				res += "Coup J1 déja jouer / ";
-            }else{
+			}else{
 				coupJ1.add(valeur);
 				res += "Coup J1 OK / ";
+				u++;
 			}	
-        }else{
-            if(coupJ2.size()>coupJ1.size()){
+		}else{
+			if(coupJ2.size()>coupJ1.size()){
 				res += "Coup J2 déja jouer / ";
-            }else{
+			}else{
 				coupJ2.add(valeur);
 				res += "Coup J2 OK / ";
+				u++;
 			}
-        }
-		
-		//on  incrémente le coup
-        if(coupJ2.size() == coupJ1.size()){
-            int tour = coupJ1.size()-1;
-            if (coupJ1.get(tour) == coupJ2.get(tour)) {
-                if(coupJ1.get(tour) == true){
-                    res += "les 2 coop (3,3) / ";
+		}
+			//on  incrémente le coup
+		if(coupJ2.size() == coupJ1.size()){
+			int tour = coupJ1.size()-1;
+			if (coupJ1.get(tour) == coupJ2.get(tour)) {
+				if(coupJ1.get(tour) == true){
+					res += "les 2 coop (3,3) / ";
 					pointJ1.add(3);
 					pointJ2.add(3);
-                }
-                else{
-                    res += "les 2 trahie (1,1)/";
+				}
+				else{
+					res += "les 2 trahie (1,1)/";
 					pointJ1.add(1);
 					pointJ2.add(1);
-                }
-            }
-            else{
-                if (coupJ1.get(tour) == true) {
-                    res += "j1 coop, j2  trahie (0,5) / ";
+				}
+			}
+			else{
+				if (coupJ1.get(tour) == true) {
+					res += "j1 coop, j2  trahie (0,5) / ";
 					pointJ1.add(0);
 					pointJ2.add(5);
-                }
-                else{
-                    res += "j1 trahie, j2  coop (5,0) / ";
+				}
+				else{
+					res += "j1 trahie, j2  coop (5,0) / ";
 					pointJ1.add(5);
 					pointJ2.add(0);
-                }
-            }
-        }else{
+				}
+			}
+		}else{
 			res += "en attente du second joueur / ";
+		}
 		}
         return res;
     }
+
 
     //dumping des score
     public String resumerJoueur(){
