@@ -70,6 +70,24 @@ public class Jeux extends Model{
         pseudo2="";
     }
 
+	 public String moi(String joueur) {
+		String res="(J1)";
+		if(pseu[1]==null){
+			res="";
+		}else if (pseu[1].equals(joueur)){
+			res="(J2)";
+			}
+		return res;
+    }
+	public String lui(String joueur) {
+		String res="(J1)";
+		if(pseu[1]==null){
+			res="";
+		}else if (!pseu[1].equals(joueur)){
+			res="(J2)";
+			}
+		return res;
+    }
 
     public void setNoms(String noms) {
         this.noms = noms;
