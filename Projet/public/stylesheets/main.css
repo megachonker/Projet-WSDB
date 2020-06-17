@@ -788,12 +788,16 @@
 
 /* FIN CSS PAGE JEU */
 
+/* CSS EASTER-EGG */
+
+/* CSS Background */
 .ponny{
     height: 100%;
     background-image: url(../images/pony.png);
     
 }
 
+/* CSS pour le coeur */
 .wsdb_pony{
     height: 400px;
     width: 400px;
@@ -807,6 +811,7 @@
 
 }
 
+/* CSS pour la division du texte */
 .divpony{
     margin-top: 100px !important;
     background-color: white !important;
@@ -818,11 +823,13 @@
     width: -webkit-max-content; /* Chrome */
 }
 
+/* CSS pour le texte */
 .pony{
     transform: none !important;
     font-size: 75px;
 }
 
+/* CSS pour le coeur */
 .fa{
     font-size: 400px !important;
     background: url(../images/rainbow.jpg);
@@ -832,6 +839,7 @@
     animation: move 28s infinite linear forwards;
 }
 
+/* CSS pour le coeur */
 @keyframes move{
     100%{
         background-position: 5000px 0;
