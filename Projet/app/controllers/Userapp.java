@@ -78,9 +78,11 @@ public class Userapp extends Controller {
 
                         //on  check
                         if(request.session().get("session").isPresent()){//verification si l'id de  l'user  concord avec  la bd
+                            if(getnbjoueuronline() != 0){
                             User userOldProfils = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
                             userOldProfils.setStatut(0);
                             userOldProfils.update();
+                            }
                         }
 
                         truc.setStatut(1);
