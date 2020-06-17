@@ -4,6 +4,8 @@
 
    <!-- Titre de la page -->
 
+@if(u.getGrade.equalsIgnoreCase("Administrateur")){
+
 <h1 class="wsdb_register_entitre">@liste.size() salons en ligne.</h1>
 
    <!-- Division englobant le contenu de la page -->
@@ -44,4 +46,7 @@
 
 </div>
 
+}else{
+<script>window.location='@routes.HomeController.messagetempo("Vous n'avez pas la permission pour accèder à cette page")';</script>
+}
 }
