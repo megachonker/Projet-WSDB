@@ -162,6 +162,40 @@ public class Jeux extends Model{
         return noms;
     }
 
+	//quiSuisJe
+	public String moi(String joueur) {
+		String res="J1";
+		if(pseu[1]==null){
+			res="";
+		}else if (pseu[1].equals(joueur)){
+			res="J2";
+			}
+		return res;
+    }
+	// pour la page Gagné/perdu
+ 	public boolean fin(){
+		boolean res = false;
+		if (coupJ2.size()==10 && coupJ1.size()==10){
+			res = true;
+		}
+		return res;
+	}
+	
+	public String gop(){ //Gagner Ou Perdu
+		String res = "Bravo, vous avez GAGNER !";
+		if (getSommePointJ1()<getSommePointJ2()){
+			if((moi()).equals("J1")){
+				res = "Dommage, vous avez perdu ...";
+			}
+		}
+		if (getSommePointJ1()>getSommePointJ2()){
+			if((moi()).equals("J2")){
+				res = "Dommage, vous avez perdu ...";
+			}
+		}
+		return res;
+	}
+	
 	public static String jouercoup(String joueur, boolean valeur){
 		//assigniation Joueur1 et Joueur2
 		
