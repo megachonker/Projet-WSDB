@@ -156,9 +156,18 @@ public class Userapp extends Controller {
     
     //Pour avoir le nombre de joueurs inscrit dans la sidebar
     public static int getnbjoueur() {
-        return User.find.all().size();
+        int value = 0;
+        List<User> liste = User.find.all();
+        if (!liste.isEmpty()){
+        for (User u : liste) {
+            if(u.getGrade().equalsIgnoreCase("Administrateur") || u.getGrade().equalsIgnoreCase("Joueur")){
+                    value++;  
+            }
+        }
+        }
+        return value;
     }
-    
+
     //Formulaire de modification de profil pour les administrateurs
     public Result updateuseradmin(Long id, Http.Request request) {
         User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
