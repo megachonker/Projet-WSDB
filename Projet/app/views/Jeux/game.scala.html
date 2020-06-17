@@ -12,6 +12,8 @@
     
 <div class="wsdb_jeux">
     
+    @if(objeux.fin() != true  ){
+    
        <!-- Sous-division englobant tout sauf le tableau -->
     
     <div class="wsdb_jeux_content">
@@ -119,7 +121,23 @@
         </table>
             
     </article>
-</div>
+}else{
+    <div class="wsdb_jeux_content">
+        
+            <div class="wsdb_login_encadre bis">
     
+                <h1 class="wsdb_victoire">RESULTAT :</h1>
 
+                @if(objeux.gop(user.getPseudo).equalsIgnoreCase("Bravo, vous avez GAGNÉ !")){
+                <p class="messagevictoire">@objeux.gop(user.getPseudo)</p>
+                }else{
+                <p class="messagedefaite">@objeux.gop(user.getPseudo)</p>
+                }
+                
+        </div>
+        
+    </div>
 }
+    </div>
+}
+

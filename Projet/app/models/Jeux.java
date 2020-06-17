@@ -182,7 +182,7 @@ public class Jeux extends Model{
 	}
 	
 	public String gop(String joueur){ //Gagner Ou Perdu
-		String res = "Bravo, vous avez GAGNER !";
+		String res = "Bravo, vous avez GAGNÉ !";
 		if (getSommePointJ1()<getSommePointJ2()){
 			if((moi(joueur)).equals("J1")){
 				res = "Dommage, vous avez perdu ...";

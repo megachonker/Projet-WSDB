@@ -1,0 +1,47 @@
+@(u: User, liste:  List[Jeux])
+
+@main("Liste des Loby") {
+
+   <!-- Titre de la page -->
+
+<h1 class="wsdb_register_entitre">@liste.size() salons en ligne.</h1>
+
+   <!-- Division englobant le contenu de la page -->
+
+<div class="wsdb_liste_salon">
+    
+       <!-- Boucle pour généré chaque salon de jeu-->
+
+    @for(p <- liste ) {
+              
+            <div class="wsdb_salon_encadre">
+
+                <h2 class="wsdb_salon_entitre">@p.id - Nom: @p.getNoms</h2>
+
+                <article class="salon-group">
+            
+				    <div class="wsdb_salon_joueur">@{if (p.getUser1() > 0  ) ("Joueur: "+p.getPseudo1 +", id:"+p.getUser1) else "Emplacement libre"  }
+            
+                    <p class="wsdb_salon_versus">VS</p>
+               
+                    @{if (p.getUser2() > 0  ) ("Joueur: "+p.getPseudo2 +", id:"+p.getUser2) else "Emplacement libre"  }
+            
+                    </div>
+            
+               <!-- Bouton pour supprimer la partie -->
+        
+                <div class="btncontactenvoie">
+        
+                    <a href="deletegame/@p.id"><button class="jeuxbtn btn btn-md btn-primary">Supprimer partie</button></a>
+        
+                </div>
+        
+                </article>
+    
+            </div>  
+              
+              }
+
+</div>
+
+}

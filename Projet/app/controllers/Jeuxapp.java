@@ -135,6 +135,7 @@ public class Jeuxapp extends Controller {
         jeuxForm = formFactory.form(Jeux.class);
         return ok("action valide");
     }
+    
 
     public Result flush() {
         List<Jeux> u = Jeux.find.all(); //Type inference works here!
@@ -143,6 +144,22 @@ public class Jeuxapp extends Controller {
         }
         return ok(views.html.messagetempo.render("supression base donnée des jeux"));
     }
+    
+    //On affichage la page des salons de jeu pour administrateur
+    public Result lobylisteadmin(Http.Request request) {
+        User u = User.find.byId(Long.parseLong((request.session().get("session").get()))) ;
+        List<Jeux> liste = Jeux.find.all();
+        return ok(views.html.Jeux.listlobyadmin.render(u, liste));
+    }
+    
+    
+    public Result deletegame(Long id) {
+       Jeux a = Jeux.find.byId(id) ;
+       a.delete();
+       return redirect(routes.Jeuxapp.lobyliste()) ;
+    } 
+    
+    
  	public static int getmatchencours() {
         return Jeux.find.all().size();
     }

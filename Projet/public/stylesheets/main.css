@@ -593,7 +593,24 @@
 /*  CSS pour les boutons */
 .btncontactenvoie.admin{
     margin-top: 20px;
-    width:100%;
+}
+
+/* Media-query pour la page panneladmin */
+@media only screen and (max-width:636px){
+    
+.btncontactenvoie.admin.bis{
+    margin-left: -10% !important;
+}
+
+}
+
+/* Media-query pour la page panneladmin */
+@media only screen and (max-width:690px){
+    
+.btncontactenvoie.admin.bis{
+    margin-left: -5%;
+}
+
 }
 
 /*  FIN CSS PAGE PANNELADMIN */
@@ -761,8 +778,33 @@
     font-weight: 600;
 }
 
+/* CSS pour victoire */
+.wsdb_login_encadre.bis{
+    
+}
+
+/* CSS pour victoire */
+.wsdb_victoire{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* CSS pour message victoire et défaite */
+.messagevictoire, .messagedefaite{
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    transform: none !important;
+    text-align: center
+}
+
+/* CSS pour message défaite */
+.messagedefaite{
+    color: rgb(105,105,105);
+}
+
 /*  CSS pour score */
-.score, .pony{
+.score, .pony, .messagevictoire{
     transform: translate(-50%, -50%);
     user-select: none;
     font-size: 20px;
@@ -845,3 +887,5 @@
         background-position: 5000px 0;
     }
 }
+
+/* FIN CSS PAGE EASTER-EGG */

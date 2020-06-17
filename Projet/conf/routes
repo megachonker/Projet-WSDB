@@ -61,12 +61,14 @@ GET     /panneladmin                controllers.Userapp.panneladmin(request: Req
 #Partie Jeux#
 
 GET     /lobyjoin                   controllers.Jeuxapp.joinlobyAffichage(id:Long)
-GET     /lobyjoin/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
+GET     /listlobyadmin              controllers.Jeuxapp.lobylisteadmin(request: Request)
 GET     /joinloby/:id               controllers.Jeuxapp.joinloby(formulaire : Request,id : Long)
 GET     /lobynew                    controllers.Jeuxapp.newgame(formulaire : Request)
 GET     /lobycreate                 controllers.Jeuxapp.newgame(formulaire : Request)
 
-GET     /jouer			              		controllers.Jeuxapp.jouer(pseudo : String, value : Boolean,id : Long )
+GET     /deletegame/:id		        controllers.Jeuxapp.deletegame(id : Long)
+
+GET     /jouer			            controllers.Jeuxapp.jouer(pseudo : String, value : Boolean,id : Long )
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
