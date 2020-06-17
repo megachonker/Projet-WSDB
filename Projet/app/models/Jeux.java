@@ -166,7 +166,7 @@ public class Jeux extends Model{
 	public String moi(String joueur) {
 		String res="J1";
 		if(pseu[1]==null){
-			res="";
+			res=" ";
 		}else if (pseu[1].equals(joueur)){
 			res="J2";
 			}
