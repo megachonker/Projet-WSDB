@@ -6,7 +6,6 @@
 GET     /                           controllers.HomeController.index
 GET     /index                      controllers.HomeController.index
 GET     /messagetempo               controllers.HomeController.messagetempo(t: String)
-GET     /pony                       controllers.HomeController.pony
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

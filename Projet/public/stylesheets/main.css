@@ -804,7 +804,7 @@
 }
 
 /*  CSS pour score */
-.score, .pony, .messagevictoire{
+.score, .messagevictoire{
     transform: translate(-50%, -50%);
     user-select: none;
     font-size: 20px;
@@ -829,63 +829,3 @@
 }
 
 /* FIN CSS PAGE JEU */
-
-/* CSS EASTER-EGG */
-
-/* CSS Background */
-.ponny{
-    height: 100%;
-    background-image: url(../images/pony.png);
-    
-}
-
-/* CSS pour le coeur */
-.wsdb_pony{
-    height: 400px;
-    width: 400px;
-    
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-}
-
-/* CSS pour la division du texte */
-.divpony{
-    margin-top: 100px !important;
-    background-color: white !important;
-    border: 4px solid pink;
-    padding: 15px;
-    margin: auto;
-    width: fit-content;
-    width: -moz-max-content;    /* Firefox/Gecko */
-    width: -webkit-max-content; /* Chrome */
-}
-
-/* CSS pour le texte */
-.pony{
-    transform: none !important;
-    font-size: 75px;
-}
-
-/* CSS pour le coeur */
-.fa{
-    font-size: 400px !important;
-    background: url(../images/rainbow.jpg);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-size: 550px 400px;
-    animation: move 28s infinite linear forwards;
-}
-
-/* CSS pour le coeur */
-@keyframes move{
-    100%{
-        background-position: 5000px 0;
-    }
-}
-
-/* FIN CSS PAGE EASTER-EGG */
