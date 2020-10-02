@@ -463,6 +463,10 @@
     margin-top: 5px;
 }
 
+dl#password_field {
+    display: inline;
+}
+
 /*  FIN CSS PAGE LOGIN et REGISTER */
 
 /*  CSS PAGE PROFIL */
