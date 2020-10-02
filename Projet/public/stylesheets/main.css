@@ -458,6 +458,11 @@
     margin-bottom: -25px !important;
 }
 
+.btnmontre{
+    display: inline-block;
+    margin-top: 5px;
+}
+
 /*  FIN CSS PAGE LOGIN et REGISTER */
 
 /*  CSS PAGE PROFIL */
