@@ -24,8 +24,14 @@
            
             <h3 class="wsdb_register_titre">Password</h3>
     
-            @helper.inputText(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite")
+                @helper.inputPassword(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+            
+        <div class="btnmontre">
         
+        <input type="checkbox" onclick="myFunction()">Show Password
+        
+        </div>
+            
         </div>
         
         <div class="register-group">
