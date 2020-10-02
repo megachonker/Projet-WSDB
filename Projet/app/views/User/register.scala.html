@@ -24,13 +24,24 @@
            
             <h3 class="wsdb_register_titre">Password</h3>
     
-                @helper.inputPassword(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required")
+                @helper.inputPassword(userForm("password"),'_showConstraints->false,'_label ->null, 'class -> "contactboite required", 'id -> "myInput")
             
         <div class="btnmontre">
         
         <input type="checkbox" onclick="myFunction()">Show Password
         
         </div>
+            
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script>
             
         </div>
         
