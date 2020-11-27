@@ -5,8 +5,9 @@ L’objectif  est  de  permettre  aux  citoyens  de  demain  d’approcher  des 
 ## Fonctionnement basé sur la théorie des jeux.
 
 ### Le joueur peut choisir de :
-- coopérer
-- Trahire
+
+- Coopérer
+- Trahir
 
 __Parmis ces deux choix il devra trouver la  meilleure [stratégie](https://fr.wikipedia.org/wiki/Théorie_des_jeux) gagnante !__
 
